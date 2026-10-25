@@ -31,7 +31,17 @@ By completing an intuitive **8-question consultation quiz**, travelers receive a
 
 ---
 
-### Method 1: Fast Start with `uv` (Recommended)
+### Method 1: 1-Click Windows Launcher (Easiest)
+
+Simply double-click the **`start.bat`** file located in the project folder!  
+It will automatically:
+1. Detect your Python virtual environment.
+2. Launch the Flask web server.
+3. Automatically open your default web browser to **http://127.0.0.1:5000**.
+
+---
+
+### Method 2: Fast Command Line with `uv`
 
 If you use the `uv` toolchain, run:
 
@@ -44,7 +54,7 @@ The application will start immediately. Open your browser and navigate to:
 
 ---
 
-### Method 2: Standard Python & Virtual Environment
+### Method 3: Standard Python & Virtual Environment
 
 1. **Clone or navigate to the project directory:**
    ```powershell
