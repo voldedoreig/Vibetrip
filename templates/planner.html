@@ -1,0 +1,294 @@
+{% extends "base.html" %}
+
+{% block title %}Travel Consultation &bull; Personalized Itinerary Engine &bull; {{ t('brand') }}{% endblock %}
+
+{% block content %}
+<div class="planner-page-container container">
+  <!-- Consultation Header -->
+  <header class="planner-header reveal">
+    <div class="planner-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+      <span>{{ t('planner.badge') }}</span>
+    </div>
+    <h1 class="page-title planner-main-title">{{ t('planner.header_title') }}</h1>
+    <p class="page-subtitle planner-sub-lead">
+      {{ t('planner.header_sub') }}
+    </p>
+  </header>
+
+  <!-- Consultation Progress Meter & Timeline -->
+  <div class="quiz-progress-wrapper" id="progressWrapper">
+    <div class="progress-info">
+      <span class="progress-step-text" id="stepIndicator">
+        {{ t('planner.step_counter', current=1, total=quiz_questions|length) }}
+      </span>
+      <span class="progress-percent-text" id="percentIndicator">12%</span>
+    </div>
+    <div class="progress-bar-track">
+      <div class="progress-bar-fill" 
+           id="progressBar" 
+           role="progressbar" 
+           aria-valuenow="12" 
+           aria-valuemin="0" 
+           aria-valuemax="100" 
+           style="width: 12.5%;">
+      </div>
+    </div>
+    <!-- Step Dots Timeline Navigation -->
+    <nav class="step-dots-timeline" id="stepDotsTimeline" aria-label="Consultation Step Timeline">
+      {% for q in quiz_questions %}
+        <button type="button" 
+                class="step-dot-btn {% if loop.first %}active{% endif %}" 
+                data-step-idx="{{ loop.index0 }}" 
+                title="{{ t('planner.question_counter', num=loop.index) }}: {{ loc_field(q, 'text') }}"
+                aria-label="{{ t('planner.question_counter', num=loop.index) }}">
+          <span class="dot-num">{{ "%02d" % loop.index }}</span>
+        </button>
+      {% endfor %}
+    </nav>
+  </div>
+
+  <!-- General Form Errors (if server validation failed) -->
+  {% if errors and errors.get('general') %}
+    <div class="flash-alert flash-error" role="alert">
+      {{ errors.get('general') }}
+    </div>
+  {% endif %}
+
+  <!-- Consultation Form Split Layout -->
+  <form action="{{ url_for('planner') }}" method="POST" class="quiz-form" id="quizForm" novalidate>
+    <div class="planner-split-layout">
+      <!-- Left Column: Sequential Consultation Queries -->
+      <div class="planner-questions-col">
+        <!-- Step Containers (1 fieldset per question) -->
+        {% for q in quiz_questions %}
+          {% set q_idx = loop.index0 %}
+          <fieldset class="quiz-step {% if loop.first %}active-step{% endif %}" 
+                    id="step-{{ q_idx }}" 
+                    data-step="{{ q_idx }}"
+                    data-qid="{{ q.id }}">
+            <legend class="step-legend">
+              <span class="question-number">{{ t('planner.query_counter', current="%02d" % loop.index, total="%02d" % quiz_questions|length) }}</span>
+              <h2 class="question-heading">{{ loc_field(q, 'text') }}</h2>
+              {% if q.help_text or q.help_text_ne %}
+                <p class="question-help">{{ loc_field(q, 'help_text') }}</p>
+              {% endif %}
+            </legend>
+
+            <!-- Specific validation error for this question -->
+            {% if errors and errors.get(q.id) %}
+              <div class="field-error-message" role="alert">
+                {{ errors.get(q.id) }}
+              </div>
+            {% endif %}
+
+            <!-- Radio Options Grid: Dark Stone Cards with Terracotta Borders & Shortcuts -->
+            <div class="options-grid">
+              {% for opt in q.options %}
+                <label class="option-card {% if answers.get(q.id) == opt.value %}selected{% endif %}" 
+                       for="{{ q.id }}_{{ opt.value }}"
+                       data-opt-val="{{ opt.value }}"
+                       data-opt-label="{{ loc_field(opt, 'label') }}">
+                  <input type="radio" 
+                         name="{{ q.id }}" 
+                         id="{{ q.id }}_{{ opt.value }}" 
+                         value="{{ opt.value }}" 
+                         {% if answers.get(q.id) == opt.value %}checked{% endif %}
+                         required>
+                  <div class="option-content">
+                    <div class="option-header">
+                      <span class="option-shortcut-badge" title="Press key {{ loop.index }} on keyboard">{{ loop.index }}</span>
+                      <span class="option-radio-custom" aria-hidden="true"></span>
+                      <span class="option-label">{{ loc_field(opt, 'label') }}</span>
+                    </div>
+                    {% if opt.description or opt.description_ne %}
+                      <p class="option-desc">{{ loc_field(opt, 'description') }}</p>
+                    {% endif %}
+                  </div>
+                </label>
+              {% endfor %}
+            </div>
+
+            <!-- Optional Dates and Trip Duration attached next to Question 7 (timing) -->
+            {% if q.id in ['q7_timing', 'q7_days'] %}
+              <div class="start-date-container">
+                <!-- Trip Duration Selector -->
+                <div class="trip-duration-picker-section" style="margin-bottom: 1.5rem; padding-bottom: 1.25rem; border-bottom: 1px dashed var(--border-taupe, rgba(43, 42, 39, 0.15));">
+                  <div class="start-date-header" style="margin-bottom: 0.6rem;">
+                    <label class="start-date-label" style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-terracotta);">
+                      {{ t('planner.duration_label') }}
+                    </label>
+                    <span class="start-date-hint">{{ t('planner.duration_hint') }}</span>
+                  </div>
+                  <div class="duration-pills-grid" id="durationPillsContainer" style="display: flex; flex-wrap: wrap; gap: 8px;">
+                    <button type="button" class="duration-pill-btn" data-days="1">{{ t('planner.duration_1') }}</button>
+                    <button type="button" class="duration-pill-btn" data-days="2">{{ t('planner.duration_2') }}</button>
+                    <button type="button" class="duration-pill-btn active" data-days="3">{{ t('planner.duration_3') }}</button>
+                    <button type="button" class="duration-pill-btn" data-days="4">{{ t('planner.duration_4') }}</button>
+                    <button type="button" class="duration-pill-btn" data-days="5">{{ t('planner.duration_5') }}</button>
+                    <button type="button" class="duration-pill-btn" data-days="7">{{ t('planner.duration_7') }}</button>
+                  </div>
+                  <input type="hidden" name="trip_days" id="tripDaysInput" value="{{ answers.get('trip_days', '3') }}">
+                </div>
+
+                <!-- Expedition Scope Selector -->
+                <div class="trip-scope-picker-section" style="margin-bottom: 1.5rem; padding-bottom: 1.25rem; border-bottom: 1px dashed var(--border-taupe, rgba(43, 42, 39, 0.15));">
+                  <div class="start-date-header" style="margin-bottom: 0.6rem;">
+                    <label class="start-date-label" style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-terracotta);">
+                      {{ t('planner.scope_label') }}
+                    </label>
+                    <span class="start-date-hint">{{ t('planner.scope_hint') }}</span>
+                  </div>
+                  <div class="scope-cards-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px;">
+                    <label class="scope-option-card active" id="scopeCardNepal">
+                      <input type="radio" name="destination_scope" value="nepal" checked style="display: none;">
+                      <div class="scope-card-content">
+                        <span class="scope-tag">{{ t('planner.scope_nepal_tag') }}</span>
+                        <div class="scope-title-text">{{ t('planner.scope_nepal_title') }}</div>
+                        <p class="scope-desc-text">{{ t('planner.scope_nepal_desc') }}</p>
+                      </div>
+                    </label>
+                    <label class="scope-option-card" id="scopeCardKathmandu">
+                      <input type="radio" name="destination_scope" value="kathmandu" style="display: none;">
+                      <div class="scope-card-content">
+                        <span class="scope-tag">{{ t('planner.scope_ktm_tag') }}</span>
+                        <div class="scope-title-text">{{ t('planner.scope_ktm_title') }}</div>
+                        <p class="scope-desc-text">{{ t('planner.scope_ktm_desc') }}</p>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="start-date-header">
+                  <label for="startDateInput" class="start-date-label">
+                    {{ t('planner.start_date_label') }}
+                  </label>
+                  <span class="start-date-hint">{{ t('planner.start_date_hint') }}</span>
+                </div>
+                <div class="dates-flex-row">
+                  <div class="date-field-col">
+                    <label for="startDateInput" class="field-sublabel">{{ t('planner.arrival_date') }}</label>
+                    <input type="date" 
+                           id="startDateInput" 
+                           name="start_date" 
+                           class="form-input date-input {% if errors and errors.get('start_date') %}input-error{% endif %}"
+                           value="{{ answers.get('start_date', '') }}"
+                           placeholder="YYYY-MM-DD">
+                  </div>
+                  <div class="date-field-col">
+                    <label for="endDateInput" class="field-sublabel">{{ t('planner.departure_date') }}</label>
+                    <input type="date" 
+                           id="endDateInput" 
+                           name="end_date" 
+                           class="form-input date-input"
+                           value="{{ answers.get('end_date', '') }}"
+                           placeholder="YYYY-MM-DD">
+                  </div>
+                </div>
+                {% if errors and errors.get('start_date') %}
+                  <div class="field-error-message" role="alert">
+                    {{ errors.get('start_date') }}
+                  </div>
+                {% endif %}
+                <div class="calendar-action-row" style="margin-top: 1rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
+                  <span class="start-date-hint" style="margin: 0;">{{ t('planner.calendar_notice') }}</span>
+                  <button type="button" class="btn btn-primary btn-sm btn-continue-calendar" onclick="const btn = document.getElementById('btnNext'); if (btn) btn.click();">
+                    {{ t('planner.next') }} &rarr;
+                  </button>
+                </div>
+              </div>
+            {% endif %}
+
+            <!-- Dynamic Feedback message for missing selection -->
+            <div class="step-validation-msg" id="validationMsg-{{ q_idx }}" aria-live="polite" style="display: none;">
+              {{ t('planner.validation_error') }}
+            </div>
+          </fieldset>
+        {% endfor %}
+
+        <!-- Navigation Buttons Panel -->
+        <div class="quiz-nav-panel" id="quizNavPanel">
+          <button type="button" class="btn btn-outline" id="btnPrev" style="display: none;">
+            &larr; {{ t('planner.prev') }}
+          </button>
+          <button type="button" class="btn btn-primary" id="btnNext">
+            {{ t('planner.next') }} &rarr;
+          </button>
+          <button type="submit" class="btn btn-primary btn-submit-plan" id="btnSubmit" style="display: none;">
+            <span class="btn-text" id="submitBtnText">{{ t('planner.submit') }} &rarr;</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Column: Live Dynamically Updating Monograph Dossier Preview -->
+      <aside class="planner-dossier-col" aria-label="Live Monograph Dossier Preview">
+        <div class="live-dossier-card" id="liveDossierCard">
+          <!-- Top Museum Header -->
+          <div class="dossier-header-strip">
+            <span class="dossier-stamp-tag">{{ t('planner.dossier_stamp') }}</span>
+            <span class="dossier-vol-tag">Vol. IV &bull; 2026</span>
+          </div>
+
+          <!-- Stamped Persona Title -->
+          <div class="dossier-persona-preview">
+            <span class="dossier-eyebrow">{{ t('planner.estimated_archetype') }}</span>
+            <h3 class="dossier-persona-name" id="previewVibeName">{% if current_lang == 'ne' %}शान्त यात्री{% else %}Calm Explorer{% endif %}</h3>
+            <p class="dossier-persona-quote" id="previewVibeTagline">{% if current_lang == 'ne' %}“शान्त वातावरण, ऐतिहासिक मन्दिरका चोकहरू र शीतल बिहानी।”{% else %}“Peaceful reflection, historic temple courtyards, and quiet mountain mornings.”{% endif %}</p>
+          </div>
+
+          <!-- Live Choice Stamps Grid -->
+          <div class="dossier-stamps-grid">
+            <div class="dossier-stamp-item">
+              <span class="stamp-label">{{ t('planner.dossier_pace') }}</span>
+              <strong class="stamp-val" id="previewPace">{% if current_lang == 'ne' %}मन्द र फुर्सदिलो{% else %}Slow &bull; Unhurried{% endif %}</strong>
+            </div>
+            <div class="dossier-stamp-item">
+              <span class="stamp-label">{{ t('planner.dossier_energy') }}</span>
+              <strong class="stamp-val" id="previewEnergy">{% if current_lang == 'ne' %}शान्त र आरामदायी{% else %}Gentle &bull; Low{% endif %}</strong>
+            </div>
+            <div class="dossier-stamp-item">
+              <span class="stamp-label">{{ t('planner.dossier_light') }}</span>
+              <strong class="stamp-val" id="previewSlot">{% if current_lang == 'ne' %}सुनौलो बिहानी{% else %}Golden Morning{% endif %}</strong>
+            </div>
+            <div class="dossier-stamp-item">
+              <span class="stamp-label">{{ t('planner.dossier_curiosity') }}</span>
+              <strong class="stamp-val" id="previewInterests">{% if current_lang == 'ne' %}प्रकृति र दृश्यहरू{% else %}Nature &bull; Views{% endif %}</strong>
+            </div>
+            <div class="dossier-stamp-item">
+              <span class="stamp-label">{{ t('planner.dossier_atmosphere') }}</span>
+              <strong class="stamp-val" id="previewCrowds">{% if current_lang == 'ne' %}शान्त र एकान्त{% else %}Quiet Seclusion{% endif %}</strong>
+            </div>
+            <div class="dossier-stamp-item">
+              <span class="stamp-label">{{ t('planner.dossier_season') }}</span>
+              <strong class="stamp-val" id="previewSeason">{% if current_lang == 'ne' %}शरद ऋतु • नीलो आकाश{% else %}Autumn &bull; Mirror Skies{% endif %}</strong>
+            </div>
+          </div>
+
+          <!-- Live Status Bar -->
+          <div class="dossier-footer-seal">
+            <div class="seal-compass-symbol">✦</div>
+            <div class="seal-text-group">
+              <span class="seal-title">{{ t('planner.monograph_seal') }}</span>
+              <span class="seal-coords">27°42′ N, 85°19′ E &bull; ELEV. 1,400 M</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Noscript / Accessible Fallback for JS-disabled browsers -->
+    <noscript>
+      <div class="noscript-panel">
+        <p class="noscript-text">{{ t('planner.js_notice') }}</p>
+        <button type="submit" class="btn btn-primary btn-large">
+          {{ t('planner.submit') }}
+        </button>
+      </div>
+    </noscript>
+  </form>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+{% endblock %}

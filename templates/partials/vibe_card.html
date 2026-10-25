@@ -1,0 +1,24 @@
+<article class="vibe-card reveal" style="--card-primary: {{ vibe.theme.primary }}; --card-accent: {{ vibe.theme.accent }};">
+  <div class="vibe-card-header">
+    <div class="vibe-card-meta">
+      <span class="vibe-card-eyebrow">Archetype Profile</span>
+      <h3 class="vibe-card-title">{{ vibe.name }}</h3>
+      <p class="vibe-card-tagline">{{ vibe.tagline }}</p>
+    </div>
+  </div>
+
+  <p class="vibe-card-desc">{{ vibe.description }}</p>
+
+  <div class="vibe-traits-summary">
+    <span class="trait-chip"><span class="trait-dot"></span>Energy {{ vibe.target.energy }}/5</span>
+    <span class="trait-chip"><span class="trait-dot"></span>Crowd {{ vibe.target.crowd }}/5</span>
+    <span class="trait-chip"><span class="trait-dot"></span>Culture {{ vibe.target.culture }}/5</span>
+    <span class="trait-chip"><span class="trait-dot"></span>Nature {{ vibe.target.nature }}/5</span>
+  </div>
+
+  <div class="vibe-card-footer">
+    <a href="{{ url_for('planner') }}" class="vibe-card-link">
+      <span>Match This Style</span> &rarr;
+    </a>
+  </div>
+</article>

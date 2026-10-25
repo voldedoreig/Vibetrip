@@ -1,0 +1,10 @@
+{
+  "id": "kathmandu",
+  "name": "Kathmandu Valley",
+  "name_ne": "काठमाडौँ उपत्यका",
+  "country": "Nepal",
+  "timezone": "Asia/Kathmandu",
+  "currency": "NPR",
+  "default_language": "en",
+  "description": "The historic and cultural heart of Nepal, where ancient Newar pagoda architecture, sacred Buddhist stupas, and scenic valley hills meet."
+}

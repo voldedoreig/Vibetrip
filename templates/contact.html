@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block title %}Dispatch &amp; Inquiry &bull; {{ t('contact.title') }} &bull; {{ t('brand') }}{% endblock %}
+
+{% block content %}
+<div class="contact-page-container container">
+  <header class="page-header contact-header reveal">
+    <span class="editorial-eyebrow">Valley Correspondence</span>
+    <h1 class="page-title contact-main-title">Dispatches &amp; Inquiries</h1>
+    <p class="page-subtitle contact-sub-lead">{{ t('contact.subtitle') }}</p>
+  </header>
+
+  <div class="contact-grid">
+    <!-- Contact Info & Valley Map Column -->
+    <div class="contact-info-panel reveal">
+      <span class="panel-eyebrow">Bureau Coordinates</span>
+      <h2 class="subheading">{{ t('contact.info_heading') }}</h2>
+      <ul class="contact-details-list">
+        <li class="contact-item">
+          <span class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </span>
+          <div>
+            <strong>{{ t('contact.address_label') }}:</strong>
+            <p>{{ t('contact.address_val') }}</p>
+          </div>
+        </li>
+        <li class="contact-item">
+          <span class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </span>
+          <div>
+            <strong>{{ t('contact.email_label') }}:</strong>
+            <p><a href="mailto:{{ t('contact.email_val') }}">{{ t('contact.email_val') }}</a></p>
+          </div>
+        </li>
+        <li class="contact-item">
+          <span class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          </span>
+          <div>
+            <strong>{{ t('contact.phone_label') }}:</strong>
+            <p>{{ t('contact.phone_val') }}</p>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Archival Map Plate -->
+      <div class="map-wrapper">
+        <img src="{{ url_for('static', filename='img/kathmandu_map.svg') }}" 
+             alt="{{ t('contact.map_caption') }}" 
+             class="map-svg-img"
+             loading="lazy">
+        <span class="map-caption">Plate &bull; Kathmandu Valley Basin Topology</span>
+      </div>
+    </div>
+
+    <!-- Message Form Column -->
+    <div class="contact-form-panel reveal">
+      {% if submitted %}
+        <div class="submission-success-box text-center">
+          <div class="success-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <h2 class="success-title">{{ t('contact.success_title') }}</h2>
+          <p class="success-message">{{ t('contact.success_msg') }}</p>
+          <div class="success-actions">
+            <a href="{{ url_for('home') }}" class="btn btn-primary">
+              {{ t('not_found.back_home') }}
+            </a>
+          </div>
+        </div>
+      {% else %}
+        <span class="panel-eyebrow">Inquiry Form</span>
+        <h2 class="subheading">{{ t('contact.form_heading') }}</h2>
+        <form action="{{ url_for('contact') }}" method="POST" class="styled-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="contactName" class="form-label">
+              {{ t('contact.name_label') }} <span class="required-asterisk">*</span>
+            </label>
+            <input type="text" 
+                   id="contactName" 
+                   name="name" 
+                   class="form-input {% if errors and errors.get('name') %}input-error{% endif %}" 
+                   maxlength="80" 
+                   value="{{ answers.get('name', '') }}" 
+                   placeholder="Your full name"
+                   required>
+            {% if errors and errors.get('name') %}
+              <div class="field-error-message" role="alert">{{ errors.get('name') }}</div>
+            {% endif %}
+          </div>
+
+          <div class="form-group">
+            <label for="contactEmail" class="form-label">
+              {{ t('contact.email_field_label') }} <span class="required-asterisk">*</span>
+            </label>
+            <input type="email" 
+                   id="contactEmail" 
+                   name="email" 
+                   class="form-input {% if errors and errors.get('email') %}input-error{% endif %}" 
+                   maxlength="120" 
+                   value="{{ answers.get('email', '') }}" 
+                   placeholder="you@example.com"
+                   required>
+            {% if errors and errors.get('email') %}
+              <div class="field-error-message" role="alert">{{ errors.get('email') }}</div>
+            {% endif %}
+          </div>
+
+          <div class="form-group">
+            <label for="contactMessage" class="form-label">
+              {{ t('contact.message_label') }} <span class="required-asterisk">*</span>
+            </label>
+            <textarea id="contactMessage" 
+                      name="message" 
+                      class="form-textarea {% if errors and errors.get('message') %}input-error{% endif %}" 
+                      rows="5" 
+                      maxlength="1000" 
+                      placeholder="Share your travel inquiry, dates, or feedback..." 
+                      required>{{ answers.get('message', '') }}</textarea>
+            {% if errors and errors.get('message') %}
+              <div class="field-error-message" role="alert">{{ errors.get('message') }}</div>
+            {% endif %}
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-large">
+              <span>Transmit Dispatch</span> &rarr;
+            </button>
+          </div>
+        </form>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

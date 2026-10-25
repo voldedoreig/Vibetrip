@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}404 &bull; Coordinate Uncharted &bull; {{ t('brand') }}{% endblock %}
+
+{% block content %}
+<div class="page-container container text-center">
+  <div class="error-404-box reveal">
+    <div class="error-emoji">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+    </div>
+    <span class="error-eyebrow">Uncharted Coordinate</span>
+    <h1 class="error-code">404</h1>
+    <h2 class="error-title">{{ t('not_found.title') }}</h2>
+    <p class="error-desc">{{ message if message else 'This coordinate lies beyond our current valley route cartography. Return to the main expedition journal or initiate a new consultation.' }}</p>
+    <div class="error-actions">
+      <a href="{{ url_for('home') }}" class="btn btn-primary">
+        <span>Return to Valley Journal</span> &rarr;
+      </a>
+      <a href="{{ url_for('planner') }}" class="btn btn-outline">
+        <span>New Consultation</span>
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}

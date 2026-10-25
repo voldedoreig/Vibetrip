@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="{{ 'ne' if current_lang == 'ne' else 'en' }}" data-theme="paper-cream">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{{ t('brand') }} • Kathmandu Valley Hand-Drawn Travel Journal{% endblock %}</title>
+  <meta name="description" content="Discover your travel vibe in the Kathmandu Valley through hand-drawn bamboo illustrations, authentic cultural festivals, and personalized day-by-day itineraries.">
+
+  <!-- Favicon: Hand-Drawn Bamboo Sprig -->
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='img/favicon.svg') }}">
+
+  <!-- Google Fonts: Fraunces (Display Serif with Ink Presence) + DM Sans (Clean Humanist Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+
+  <!-- Main Unified CSS Stylesheet (Hand-Drawn Bamboo & Ink-Wash Theme) -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  {% block extra_css %}{% endblock %}
+</head>
+<body {% block body_attrs %}{% endblock %}>
+  <!-- Shared Hand-Drawn Ink SVG Filters & Component Definitions -->
+  {% include "partials/ink_svgs.html" %}
+
+  <!-- Top Navigation Bar -->
+  {% include "partials/navbar.html" %}
+
+  <!-- Flash Messages Banner (if any) -->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="flash-container">
+        {% for category, message in messages %}
+          <div class="flash-alert flash-{{ category }}" role="alert">
+            <span class="flash-ink-dot" aria-hidden="true"></span>
+            <span class="flash-text">{{ message }}</span>
+            <button type="button" class="flash-close" onclick="this.parentElement.remove();" aria-label="Close message">&times;</button>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <!-- Main Content Block -->
+  <main id="mainContent" class="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Site Footer -->
+  {% include "partials/footer.html" %}
+
+  <!-- Base JavaScript (loads on every page) -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

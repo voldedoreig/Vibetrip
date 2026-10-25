@@ -1,0 +1,929 @@
+[
+  {
+    "id": "boudhanath_stupa",
+    "name": "Boudhanath Stupa Circumambulation",
+    "name_ne": "बौद्धनाथ स्तुप परिक्रमा",
+    "description": "Walk with devotees spinning prayer wheels around one of the largest spherical Buddhist stupas in the world.",
+    "category": "Spiritual Monument",
+    "category_group": "Spiritual",
+    "traits": {
+      "energy": 1,
+      "crowd": 2,
+      "culture": 4,
+      "nature": 1,
+      "food": 1,
+      "spiritual": 5,
+      "adventure": 0
+    },
+    "slots": [
+      "morning",
+      "evening"
+    ],
+    "best_visiting_hours": "Early Morning (6:30 AM – 8:30 AM) or Dusk (5:30 PM – 7:30 PM)",
+    "best_season": "Year-Round (Atmospheric at twilight with glowing butter lamps)",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.0,
+    "location": "Boudha, Kathmandu",
+    "image": "/static/img/places/boudhanath.jpg"
+  },
+  {
+    "id": "swayambhunath_stupa",
+    "name": "Swayambhunath Monkey Temple Steps",
+    "name_ne": "स्वयम्भूनाथ मन्दिर",
+    "description": "Climb the ancient stone stairs through wooded hills for sweeping valley views and historic stupa spires.",
+    "category": "Ancient Viewpoint",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 2,
+      "crowd": 3,
+      "culture": 4,
+      "nature": 3,
+      "food": 1,
+      "spiritual": 4,
+      "adventure": 2
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "Sunrise (6:30 AM – 9:00 AM) or Golden Hour (4:30 PM – 6:00 PM)",
+    "best_season": "Autumn & Spring (Crisp visibility across Kathmandu Valley)",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.0,
+    "location": "Swayambhu, Kathmandu",
+    "image": "/static/img/places/swayambhunath.jpg"
+  },
+  {
+    "id": "pashupatinath_aarti",
+    "name": "Pashupatinath Bagmati Evening Aarti",
+    "name_ne": "पशुपतिनाथ बागमती सन्ध्या आरती",
+    "description": "Experience deep rhythmic chimes, oil lamps, conch shells, and spiritual chanting on the sacred river banks.",
+    "category": "Evening Ritual",
+    "category_group": "Spiritual",
+    "traits": {
+      "energy": 2,
+      "crowd": 3,
+      "culture": 5,
+      "nature": 1,
+      "food": 1,
+      "spiritual": 5,
+      "adventure": 0
+    },
+    "slots": [
+      "evening"
+    ],
+    "best_visiting_hours": "Dusk Aarti (6:00 PM – 7:45 PM)",
+    "best_season": "Year-Round (Breathtaking during Shivaratri and Teej)",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.0,
+    "location": "Pashupati, Kathmandu",
+    "image": "/static/img/places/pashupatinath.jpg"
+  },
+  {
+    "id": "patan_durbar_square",
+    "name": "Patan Durbar Square & Museum",
+    "name_ne": "पाटन दरबार क्षेत्र तथा सङ्ग्रहालय",
+    "description": "Marvel at golden toranas, courtyard stone baths, and the world-renowned bronze casting exhibits.",
+    "category": "Historic Square",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 2,
+      "crowd": 3,
+      "culture": 5,
+      "nature": 1,
+      "food": 2,
+      "spiritual": 3,
+      "adventure": 1
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "Mid-Morning (9:30 AM – 12:30 PM)",
+    "best_season": "Autumn & Winter (Pleasant sunshine warming medieval brick courtyards)",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.5,
+    "location": "Mangal Bazaar, Lalitpur",
+    "image": "/static/img/places/patan_durbar.jpg"
+  },
+  {
+    "id": "bhaktapur_durbar_square",
+    "name": "Bhaktapur 55-Window Palace Walk",
+    "name_ne": "भक्तपुर दरबार तथा ५५ झ्याले दरबार",
+    "description": "Stroll cobblestone alleys preserved in time, featuring the towering Nyatapola Temple and kingly squares.",
+    "category": "Medieval City",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 2,
+      "crowd": 3,
+      "culture": 5,
+      "nature": 1,
+      "food": 2,
+      "spiritual": 3,
+      "adventure": 1
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "Morning to Early Afternoon (9:00 AM – 2:00 PM)",
+    "best_season": "Autumn, Spring & Bisket Jatra festival time in April",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "cost_level": 2,
+    "duration_hours": 3.5,
+    "location": "Bhaktapur Old Town",
+    "image": "/static/img/places/bhaktapur_durbar.jpg"
+  },
+  {
+    "id": "nagarkot_sunrise",
+    "name": "Nagarkot Himalayan Sunrise Horizon",
+    "name_ne": "नगरकोट सूर्योदय दृश्य",
+    "description": "Watch early morning sun rays illuminate the central Himalayan peaks from a quiet mountain ridge.",
+    "category": "Nature Viewpoint",
+    "category_group": "Nature",
+    "traits": {
+      "energy": 1,
+      "crowd": 1,
+      "culture": 1,
+      "nature": 5,
+      "food": 1,
+      "spiritual": 2,
+      "adventure": 3
+    },
+    "slots": [
+      "morning"
+    ],
+    "best_visiting_hours": "Pre-Dawn to Sunrise (5:30 AM – 7:30 AM)",
+    "best_season": "Autumn & Winter (October to March offers crystal-clear horizons)",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "cost_level": 2,
+    "duration_hours": 3.0,
+    "location": "Nagarkot Ridge, Bhaktapur",
+    "image": "/static/img/places/nagarkot_sunrise.jpg"
+  },
+  {
+    "id": "shivapuri_peak_hike",
+    "name": "Shivapuri National Park Trail",
+    "name_ne": "शिवपुरी राष्ट्रिय निकुञ्ज पदयात्रा",
+    "description": "Hike under lush oak and rhododendron canopies up to scenic mountain viewpoints and Buddhist hermitages.",
+    "category": "Forest Trek",
+    "category_group": "Adventure",
+    "traits": {
+      "energy": 4,
+      "crowd": 1,
+      "culture": 1,
+      "nature": 5,
+      "food": 1,
+      "spiritual": 2,
+      "adventure": 5
+    },
+    "slots": [
+      "morning"
+    ],
+    "best_visiting_hours": "Early Morning Start (7:00 AM – 11:30 AM)",
+    "best_season": "Spring (Rhododendrons in bloom) & Autumn (Clear skies)",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "cost_level": 1,
+    "duration_hours": 4.5,
+    "location": "Budhanilkantha, Kathmandu",
+    "image": "/static/img/activities/shivapuri_peak_hike.jpg"
+  },
+  {
+    "id": "thamel_food_walk",
+    "name": "Thamel Street Flavours Discovery",
+    "name_ne": "ठमेल सडक खाना यात्रा",
+    "description": "Follow delicious aromas to sample spicy chatamari, crunchy samosas, sweet lassi, and savoury street delicacies.",
+    "category": "Culinary Tour",
+    "category_group": "Food",
+    "traits": {
+      "energy": 3,
+      "crowd": 4,
+      "culture": 2,
+      "nature": 0,
+      "food": 5,
+      "spiritual": 0,
+      "adventure": 2
+    },
+    "slots": [
+      "afternoon",
+      "evening"
+    ],
+    "best_visiting_hours": "Late Afternoon to Evening (4:00 PM – 8:00 PM)",
+    "best_season": "Year-Round (Bustling and warm food stalls are great in cool evenings)",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.0,
+    "location": "Thamel, Kathmandu",
+    "image": "/static/img/activities/thamel_food_walk.jpg"
+  },
+  {
+    "id": "momo_cooking_class",
+    "name": "Authentic Momo & Achar Cooking Class",
+    "name_ne": "नेपाली म:म र अचार पाककला",
+    "description": "Master the art of folding traditional pleated dumplings and blending fire-roasted tomato and sesame chutneys.",
+    "category": "Cooking Workshop",
+    "category_group": "Food",
+    "traits": {
+      "energy": 2,
+      "crowd": 2,
+      "culture": 3,
+      "nature": 1,
+      "food": 5,
+      "spiritual": 1,
+      "adventure": 1
+    },
+    "slots": [
+      "afternoon"
+    ],
+    "best_visiting_hours": "Afternoon Session (1:00 PM – 3:30 PM)",
+    "best_season": "Year-Round (Ideal indoor activity anytime of year)",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 2,
+    "duration_hours": 2.5,
+    "location": "Paknajol, Thamel",
+    "image": "/static/img/activities/momo_cooking_class.jpg"
+  },
+  {
+    "id": "thangka_art_workshop",
+    "name": "Sacred Thangka Painting Masterclass",
+    "name_ne": "थान्का चित्रकला कार्यशाला",
+    "description": "Learn ancient geometric proportions and mineral pigment brush techniques from master Buddhist artists.",
+    "category": "Art & Craft",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 2,
+      "crowd": 1,
+      "culture": 4,
+      "nature": 1,
+      "food": 1,
+      "spiritual": 3,
+      "adventure": 1
+    },
+    "slots": [
+      "afternoon"
+    ],
+    "best_visiting_hours": "Afternoon Studio Hours (1:30 PM – 4:00 PM)",
+    "best_season": "Year-Round (Relaxing studio workshop in any weather)",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 2,
+    "duration_hours": 2.5,
+    "location": "Boudha Mandala Square",
+    "image": "/static/img/activities/thangka_art_workshop.jpg"
+  },
+  {
+    "id": "chandragiri_cable_car",
+    "name": "Chandragiri Hills Panoramic Cable Car",
+    "name_ne": "चन्द्रागिरि केबलकार तथा भ्यू पोइन्ट",
+    "description": "Glide above green forest hills on a cable car to reach Bhaleshwor Mahadev and Himalayan panoramas.",
+    "category": "Family Adventure",
+    "category_group": "Adventure",
+    "traits": {
+      "energy": 3,
+      "crowd": 3,
+      "culture": 2,
+      "nature": 4,
+      "food": 2,
+      "spiritual": 2,
+      "adventure": 3
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "Morning (9:00 AM – 11:30 AM before afternoon mist)",
+    "best_season": "Autumn & Spring (Clear vistas from Everest to Annapurna)",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "cost_level": 3,
+    "duration_hours": 3.5,
+    "location": "Thankot, Kathmandu",
+    "image": "/static/img/activities/chandragiri_cable_car.jpg"
+  },
+  {
+    "id": "thamel_live_music",
+    "name": "Thamel Acoustic & Folk Live Music",
+    "name_ne": "ठमेल लाइभ म्युजिक कन्सर्ट",
+    "description": "Immerse yourself in upbeat Nepali rock, acoustic fusion, and lively nightlife vibes in energetic cafes.",
+    "category": "Nightlife & Music",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 5,
+      "crowd": 5,
+      "culture": 2,
+      "nature": 0,
+      "food": 3,
+      "spiritual": 0,
+      "adventure": 2
+    },
+    "slots": [
+      "evening"
+    ],
+    "best_visiting_hours": "Night (8:00 PM – 11:00 PM)",
+    "best_season": "Year-Round (Thriving music scene every Friday & weekend)",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 2,
+    "duration_hours": 3.0,
+    "location": "Thamel Marg, Kathmandu",
+    "image": "/static/img/activities/thamel_live_music.jpg"
+  },
+  {
+    "id": "basantapur_durbar_square",
+    "name": "Basantapur Durbar Square & Freak Street",
+    "name_ne": "वसन्तपुर दरबार क्षेत्र",
+    "description": "Sit on the towering Maju Deval steps watching lively street life, palace facades, and bustling bazaars.",
+    "category": "Historic Hub",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 4,
+      "crowd": 5,
+      "culture": 5,
+      "nature": 0,
+      "food": 3,
+      "spiritual": 2,
+      "adventure": 1
+    },
+    "slots": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "best_visiting_hours": "Late Afternoon (3:30 PM – 6:30 PM)",
+    "best_season": "Autumn (Indra Jatra) & Spring (Holi festival at its peak)",
+    "best_months": [
+      3,
+      4,
+      9,
+      10,
+      11
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.0,
+    "location": "Basantapur, Kathmandu",
+    "image": "/static/img/places/holi_basantapur.jpg"
+  },
+  {
+    "id": "garden_of_dreams",
+    "name": "Garden of Dreams Neoclassical Oasis",
+    "name_ne": "स्वप्न बगैँचा (गार्डेन अफ ड्रिम्स)",
+    "description": "Relax with a book beside tranquil lotus ponds, marble amphitheaters, and lush manicured lawns.",
+    "category": "Quiet Garden",
+    "category_group": "Nature",
+    "traits": {
+      "energy": 1,
+      "crowd": 2,
+      "culture": 2,
+      "nature": 3,
+      "food": 3,
+      "spiritual": 2,
+      "adventure": 0
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "Sunny Midday or Sunset (1:00 PM – 5:30 PM)",
+    "best_season": "Winter & Spring (Sunny spots in winter, blossoming flowers in spring)",
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "cost_level": 1,
+    "duration_hours": 1.5,
+    "location": "Kaiser Mahal, Tridevi Marg",
+    "image": "/static/img/activities/garden_of_dreams.jpg"
+  },
+  {
+    "id": "taumadhi_pottery_square",
+    "name": "Bhaktapur Pottery Square Crafts",
+    "name_ne": "भक्तपुर पोटरी स्क्वायर माटोको भाँडा",
+    "description": "Try your hands at spinning a wooden potter’s wheel and watch thousands of earthen vessels bake under the sun.",
+    "category": "Traditional Craft",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 2,
+      "crowd": 2,
+      "culture": 5,
+      "nature": 1,
+      "food": 1,
+      "spiritual": 1,
+      "adventure": 1
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "Morning Sunshine (9:30 AM – 1:00 PM when pots are drying)",
+    "best_season": "Autumn, Winter & Spring (Sunny days are best for drying clay)",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.0,
+    "location": "Pottery Square, Bhaktapur",
+    "image": "/static/img/activities/taumadhi_pottery_square.jpg"
+  },
+  {
+    "id": "kopan_monastery_meditation",
+    "name": "Kopan Monastery Hilltop Meditation",
+    "name_ne": "कोपन गुम्बा ध्यान",
+    "description": "Find tranquility in peaceful hillside Tibetan gardens overlooking the valley, surrounded by chanting monks.",
+    "category": "Peaceful Sanctuary",
+    "category_group": "Spiritual",
+    "traits": {
+      "energy": 1,
+      "crowd": 1,
+      "culture": 4,
+      "nature": 4,
+      "food": 1,
+      "spiritual": 5,
+      "adventure": 0
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "Morning to Mid-Afternoon (10:00 AM – 3:00 PM)",
+    "best_season": "Autumn, Spring & November meditation courses",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.5,
+    "location": "Kopan Hill, Kathmandu",
+    "image": "/static/img/activities/kopan_monastery_meditation.jpg"
+  },
+  {
+    "id": "newari_feasting_kirtipur",
+    "name": "Kirtipur Hilltop Newari Khaja Feast",
+    "name_ne": "कीर्तिपुर नेवारी खाजा भोज",
+    "description": "Taste choila, samay baji, bara, and spicy aloo tama served on leaf plates with valley vistas.",
+    "category": "Heritage Food",
+    "category_group": "Food",
+    "traits": {
+      "energy": 2,
+      "crowd": 3,
+      "culture": 4,
+      "nature": 1,
+      "food": 5,
+      "spiritual": 1,
+      "adventure": 1
+    },
+    "slots": [
+      "afternoon"
+    ],
+    "best_visiting_hours": "Lunch & Early Sunset (12:30 PM – 4:30 PM)",
+    "best_season": "Year-Round (Warm fresh spicy dishes with hilltop views)",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 2,
+    "duration_hours": 2.0,
+    "location": "Kirtipur Old Town",
+    "image": "/static/img/activities/newari_feasting_kirtipur.jpg"
+  },
+  {
+    "id": "champadevi_ridge_trail",
+    "name": "Champadevi Hill Ridge Trek",
+    "name_ne": "चम्पादेवी डाँडा पदयात्रा",
+    "description": "A vigorous pine ridge trek reaching 2,285 meters with dramatic viewpoints of the central Himalayan chain.",
+    "category": "Scenic Hike",
+    "category_group": "Adventure",
+    "traits": {
+      "energy": 5,
+      "crowd": 1,
+      "culture": 1,
+      "nature": 5,
+      "food": 1,
+      "spiritual": 1,
+      "adventure": 5
+    },
+    "slots": [
+      "morning"
+    ],
+    "best_visiting_hours": "Early Morning (7:00 AM – 12:00 PM)",
+    "best_season": "Autumn & Spring (Dry trails and maximum mountain clarity)",
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 4.0,
+    "location": "Pharping Trailhead, Kathmandu",
+    "image": "/static/img/activities/champadevi_ridge_trail.jpg"
+  },
+  {
+    "id": "indoor_climbing_adventure",
+    "name": "Astrek Wall Bouldering & Climbing",
+    "name_ne": "एस्ट्रिक पर्खाल क्लाइम्बिङ",
+    "description": "Test your strength and agility on world-standard outdoor bouldering walls and harness routes.",
+    "category": "Adventure Sport",
+    "category_group": "Adventure",
+    "traits": {
+      "energy": 5,
+      "crowd": 3,
+      "culture": 0,
+      "nature": 1,
+      "food": 1,
+      "spiritual": 0,
+      "adventure": 5
+    },
+    "slots": [
+      "afternoon",
+      "evening"
+    ],
+    "best_visiting_hours": "Afternoon to Dusk (2:00 PM – 6:30 PM)",
+    "best_season": "Year-Round (Great active workout in any season)",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 2,
+    "duration_hours": 2.0,
+    "location": "Amrit Marg, Thamel",
+    "image": "/static/img/activities/indoor_climbing_adventure.jpg"
+  },
+  {
+    "id": "asan_spice_bazaar",
+    "name": "Asan Tole Early Spice & Brass Bazaar",
+    "name_ne": "असन टोल मसला तथा बजार भ्रमण",
+    "description": "Immerse your senses in mountains of turmeric, dried chilies, brass vessels, and non-stop merchant energy.",
+    "category": "Historic Market",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 4,
+      "crowd": 5,
+      "culture": 4,
+      "nature": 0,
+      "food": 4,
+      "spiritual": 1,
+      "adventure": 2
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "Early Morning Rush (7:30 AM – 10:00 AM) or Late Afternoon",
+    "best_season": "Year-Round (Extremely vibrant before Dashain & Tihar festivals)",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 1.5,
+    "location": "Asan Chowk, Kathmandu",
+    "image": "/static/img/activities/asan_spice_bazaar.jpg"
+  },
+  {
+    "id": "heritage_puppet_show",
+    "name": "Traditional String Puppet Folklore",
+    "name_ne": "परम्परागत काठको पुतली नाच",
+    "description": "Enjoy enchanting Newar folk stories brought to life with handmade carved puppets and live sarangi fiddles.",
+    "category": "Folk Theatre",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 3,
+      "crowd": 3,
+      "culture": 4,
+      "nature": 1,
+      "food": 2,
+      "spiritual": 1,
+      "adventure": 1
+    },
+    "slots": [
+      "evening"
+    ],
+    "best_visiting_hours": "Evening Performance (6:30 PM – 8:00 PM)",
+    "best_season": "Year-Round (Indoor cultural storytelling)",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 2,
+    "duration_hours": 1.5,
+    "location": "Jhamsikhel, Lalitpur",
+    "image": "/static/img/activities/heritage_puppet_show.jpg"
+  },
+  {
+    "id": "godavari_botanical_gardens",
+    "name": "Godavari Royal Botanical Gardens",
+    "name_ne": "गोदावरी वनस्पति उद्यान",
+    "description": "Wander peaceful shaded avenues of ferns, orchids, quiet streams, and fluttering Himalayan butterflies.",
+    "category": "Botanical Haven",
+    "category_group": "Nature",
+    "traits": {
+      "energy": 2,
+      "crowd": 1,
+      "culture": 1,
+      "nature": 5,
+      "food": 2,
+      "spiritual": 2,
+      "adventure": 2
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "Mid-Morning to Sunny Afternoon (10:00 AM – 3:30 PM)",
+    "best_season": "Spring (Orchids blooming) & Post-Monsoon (Lush green flora)",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "cost_level": 1,
+    "duration_hours": 3.0,
+    "location": "Godavari, Lalitpur",
+    "image": "/static/img/activities/godavari_botanical_gardens.jpg"
+  },
+  {
+    "id": "woodcarving_patachitra_studio",
+    "name": "Patan Master Woodcarving Studio",
+    "name_ne": "पाटन काष्ठकला कार्यशाला",
+    "description": "Observe generational master woodcarvers shaping intricate peacock windows and mythological deities.",
+    "category": "Craft Atelier",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 2,
+      "crowd": 1,
+      "culture": 5,
+      "nature": 1,
+      "food": 1,
+      "spiritual": 2,
+      "adventure": 1
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "Morning Work Hours (10:00 AM – 1:00 PM)",
+    "best_season": "Year-Round (Watch artisans carving ancient Newari motifs)",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 2,
+    "duration_hours": 2.0,
+    "location": "Patan Industrial Estate, Lalitpur",
+    "image": "/static/img/activities/woodcarving_patachitra_studio.jpg"
+  },
+  {
+    "id": "mandala_acoustic_jam",
+    "name": "Mandala Rooftop Fusion & Drums",
+    "name_ne": "मण्डला रुफटप साङ्गीतिक साँझ",
+    "description": "Gather for hypnotic djembe drums, bansuri flute notes, and communal bonfire singing under the evening sky.",
+    "category": "Celebration & Music",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 5,
+      "crowd": 5,
+      "culture": 3,
+      "nature": 0,
+      "food": 2,
+      "spiritual": 2,
+      "adventure": 2
+    },
+    "slots": [
+      "evening"
+    ],
+    "best_visiting_hours": "Sunset to Night (6:00 PM – 9:00 PM)",
+    "best_season": "Autumn & Spring (Mild pleasant rooftop evenings)",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "cost_level": 2,
+    "duration_hours": 2.5,
+    "location": "Boudha Rooftops, Kathmandu",
+    "image": "/static/img/activities/mandala_acoustic_jam.jpg"
+  },
+  {
+    "id": "central_zoo_jawalakhel",
+    "name": "Jawalakhel Wildlife Garden & Lake",
+    "name_ne": "जावलाखेल प्राणी उद्यान",
+    "description": "An easy family outing around the central lake observing royal Bengal tigers, one-horned rhinos, and aviaries.",
+    "category": "Family Outing",
+    "category_group": "Nature",
+    "traits": {
+      "energy": 3,
+      "crowd": 3,
+      "culture": 1,
+      "nature": 4,
+      "food": 2,
+      "spiritual": 1,
+      "adventure": 2
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "Sunny Midday (11:00 AM – 2:30 PM)",
+    "best_season": "Winter & Spring (Sunny lake strolls with active animals)",
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.0,
+    "location": "Jawalakhel, Lalitpur",
+    "image": "/static/img/activities/central_zoo_jawalakhel.jpg"
+  }
+]

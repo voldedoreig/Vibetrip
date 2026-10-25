@@ -1,0 +1,337 @@
+{% extends "base.html" %}
+
+{% block title %}{{ t('brand') }} • Kathmandu Valley Hand-Drawn Travel Journal{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/video_intro.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Mountain Trekking Journey Canvas -->
+<section id="vibetour-stage" class="stage" aria-label="VibeTrip Himalayan Expedition Animation" {% if request.args.get('skip_intro') %}style="display: none;"{% endif %}>
+  <!-- Primary Canvas Surface -->
+  <canvas id="vibetour-canvas"></canvas>
+
+  <!-- Top Right Indicators: Skip Button & Scroll Down Pill -->
+  <div class="video-scroll-indicator">
+    <button type="button" class="skip-intro-pill" id="btn-skip-intro" title="{{ t('home.skip_intro') }}">
+      <span>{{ t('home.skip_intro') }}</span>
+    </button>
+    <a href="#home-main" class="scroll-down-pill" id="scrollDownPill" title="{{ t('home.intro_hint') }}">
+      <span class="scroll-pill-text">{{ t('home.intro_hint') }}</span>
+      <span class="scroll-pill-arrow" aria-hidden="true">&darr;</span>
+    </a>
+  </div>
+
+  <!-- Stationary Hero Brand Reveal -->
+  <div class="narrative-layer" id="narrative-layer">
+    <div class="brand-finale" id="brand-finale" aria-hidden="true">
+      <div class="brand-monogram">
+        <span class="devanagari-seal">काठमाडौं उपत्यका</span>
+        <span>&bull; VALLEY JOURNAL</span>
+      </div>
+      <h1 class="brand-title">VibeTrip</h1>
+      <p class="brand-tagline">
+        Travel not merely by coordinates, but by authentic temperament, sacred rhythm &amp; Himalayan mountain light.
+      </p>
+      
+      <!-- Primary CTA: Plan My Trip -->
+      <div class="brand-actions">
+        <a href="{{ url_for('planner') }}" class="brand-cta-plan">
+          <span>{{ t('home.cta_plan') }}</span> &rarr;
+        </a>
+        <a href="#home-main" class="brand-cta-explore" id="brandExploreBtn">
+          <span>{{ t('home.cta_explore') }}</span> &darr;
+        </a>
+        <button id="replay-cta" class="replay-btn" type="button" title="Replay Mountain Journey">
+          {{ t('home.replay_journey') }} &#x21bb;
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unobtrusive HUD Controls -->
+  <nav class="hud-controls" id="hud-controls" aria-label="Animation Controls">
+    <div class="hud-progress-wrap" id="progress-bar-Click" title="Seek timeline">
+      <div class="hud-progress-fill" id="hud-progress-fill"></div>
+    </div>
+
+    <div class="hud-bar">
+      <div class="hud-left">
+        <button id="btn-play-pause" class="hud-btn" type="button" title="Play / Pause (Space)">
+          <span id="icon-play-pause">Pause</span>
+        </button>
+        <button id="btn-restart" class="hud-btn" type="button" title="Restart (R)">
+          Restart
+        </button>
+        <button id="btn-audio" class="hud-btn" type="button" title="Toggle Soundscape (M)">
+          <span id="icon-audio">Sound: Off</span>
+        </button>
+      </div>
+
+      <div class="hud-center">
+        <span id="hud-scene-indicator" class="hud-scene-label">01 / The Mist Trail</span>
+        <span id="hud-time" class="hud-time">00:00 / 00:48</span>
+      </div>
+
+      <div class="hud-right">
+        <button id="btn-fullscreen" class="hud-btn" type="button" title="Fullscreen (F)">
+          Fullscreen
+        </button>
+      </div>
+    </div>
+  </nav>
+</section>
+
+<!-- Main Homepage Content -->
+<div id="home-main" class="home-main-wrapper">
+
+  <!-- Editorial Hero -->
+  <section class="editorial-hero-section" id="editorialHero" {% if request.args.get('focus') == 'festivals' %}style="display: none;"{% endif %}>
+    <!-- Faint Topographic Contour Lines Texture in Background -->
+    <svg class="hero-topo-bg" viewBox="0 0 1200 800" fill="none" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M -50 300 C 150 240, 250 380, 450 320 C 650 260, 750 420, 950 350 C 1100 300, 1250 400, 1300 380" stroke="#8C8579" stroke-width="1" stroke-dasharray="3 4"/>
+      <path d="M -50 450 C 120 380, 300 520, 520 440 C 700 370, 850 540, 1050 460 C 1180 410, 1250 510, 1300 490" stroke="#8C8579" stroke-width="1"/>
+      <path d="M -50 600 C 200 550, 380 680, 600 590 C 820 500, 980 670, 1200 580" stroke="#8C8579" stroke-width="1" stroke-dasharray="4 6"/>
+      <path d="M 50 150 C 220 90, 380 200, 580 140 C 780 80, 920 220, 1120 160" stroke="#8C8579" stroke-width="0.8"/>
+    </svg>
+
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="editorial-hero-grid">
+        <!-- Left Column: Editorial Headline & Actions -->
+        <div class="hero-left-column">
+          <div class="editorial-eyebrow" style="margin-bottom: 14px;">
+            <span class="devanagari-seal">{{ t('home.hero_title') }}</span>
+          </div>
+
+          <h1 class="editorial-hero-title">
+            {{ t('home.hero_headline') }}
+          </h1>
+
+          <span class="hero-accent-dash" aria-hidden="true"></span>
+
+          <p class="editorial-hero-sub">
+            {{ t('home.hero_description') }}
+          </p>
+
+          <!-- Buttons: Solid dark button with arrow + Plain underlined text link -->
+          <div class="hero-cta-group">
+            <a href="{{ url_for('planner') }}" class="btn-editorial-dark">
+              <span>{{ t('home.cta_plan') }}</span>
+              <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+            <a href="{{ url_for('gallery') }}" class="link-editorial-underlined">
+              {{ t('home.cta_browse') }}
+            </a>
+          </div>
+
+          <!-- Bottom Left: Circular Monogram Badge -->
+          <div class="circular-monogram-badge" title="VibeTrip • Kathmandu Edition 01" aria-hidden="true">
+            <span class="mono-letters">VT</span>
+            <span class="mono-divider"></span>
+            <span class="mono-sub">०१</span>
+          </div>
+        </div>
+
+        <!-- Right Column: Photograph in Curved Cut-Out with Overlapping Ink Bamboo -->
+        <div class="hero-right-column">
+          <div class="hero-curved-cutout-frame">
+            <img src="{{ url_for('static', filename='img/places/boudhanath.jpg') }}" alt="Boudhanath Stupa at Golden Hour, Kathmandu Valley" class="hero-cutout-img">
+            
+            <!-- Hand-drawn ink bamboo overlapping the curved edge -->
+            <div class="hero-bamboo-overlap" aria-hidden="true">
+              <svg width="120" height="240" viewBox="0 0 120 240" fill="none">
+                <!-- Slender Bamboo Stalk -->
+                <path d="M 60 235 C 55 170, 70 100, 48 10" stroke="#2B2A27" stroke-width="2.8" stroke-linecap="round"/>
+                <!-- Joints -->
+                <path d="M 52 170 L 68 166" stroke="#2B2A27" stroke-width="2" stroke-linecap="round"/>
+                <path d="M 58 95 L 74 91" stroke="#2B2A27" stroke-width="2" stroke-linecap="round"/>
+                <!-- Delicate Bamboo Leaves -->
+                <path d="M 54 168 C 30 160, 10 170, 0 160 C 15 175, 35 175, 54 168 Z" fill="#6F7F5A" stroke="#2B2A27" stroke-width="1.2"/>
+                <path d="M 64 92 C 85 85, 105 90, 115 80 C 102 98, 80 100, 64 92 Z" fill="#6F7F5A" stroke="#2B2A27" stroke-width="1.2"/>
+                <path d="M 50 20 C 25 15, 10 22, 2 12 C 16 26, 32 26, 50 20 Z" fill="#6F7F5A" stroke="#2B2A27" stroke-width="1.2"/>
+                <circle cx="50" cy="12" r="2.5" fill="#C8442F"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cultural Celebrations & Festivals -->
+  <section class="festivals-section" id="valleyFestivals">
+    <div class="container">
+      <div class="festivals-header-block reveal">
+        <div class="editorial-eyebrow">
+          <span class="devanagari-seal">चाडपर्व र जात्रा</span>
+          <span>{{ t('home.festivals_eyebrow') }}</span>
+        </div>
+        <h2 class="memories-title">{{ t('home.festivals_title') }}</h2>
+        <p class="memories-lead">
+          {{ t('home.festivals_lead') }}
+        </p>
+      </div>
+
+            <!-- 6 Authentic Vibe-to-Festival Pairing Plates -->
+      {% set festival_list = [
+        {
+          'vibe': 'Festival Spark',
+          'timing': 'March (Phalguna)',
+          'title': 'Holi &amp; Spring Awakening',
+          'desc': 'Basantapur Durbar Square transforms into a joyous tempest of dry vermilion powder, cheerful songs, and rainbow clouds celebrating the victory of good over darkness.',
+          'location_type': 'Historic Square',
+          'place_id': 'holi_basantapur',
+          'place_label': 'Basantapur Durbar'
+        },
+        {
+          'vibe': 'Heritage Historian',
+          'timing': 'April (Chaitra)',
+          'title': 'Bisket Jatra &amp; Chariot Battles',
+          'desc': 'Massive timber chariots carrying wrathful deities are pulled by rival halves of Bhaktapur through medieval cobblestone lanes accompanied by ancient Dhime drums.',
+          'location_type': 'Medieval Capital',
+          'place_id': 'bhaktapur_durbar',
+          'place_label': 'Bhaktapur Durbar'
+        },
+        {
+          'vibe': 'Spiritual Seeker',
+          'timing': 'Feb &bull; March',
+          'title': 'Maha Shivaratri &amp; Losar',
+          'desc': 'Over a million pilgrims and ash-covered sadhus gather around the holy Bagmati River for sacred midnight fires, while Tibetan monks light 10,000 lamps at Boudhanath.',
+          'location_type': 'Sacred Stupa',
+          'place_id': 'boudhanath',
+          'place_label': 'Boudhanath Stupa'
+        },
+        {
+          'vibe': 'Calm Explorer',
+          'timing': 'Nov (Kartik)',
+          'title': 'Tihar &bull; Festival of Golden Lights',
+          'desc': 'Every home and brick temple is lined with small earthenware oil lamps and yellow marigold garlands to welcome Lakshmi, goddess of peace and prosperity.',
+          'location_type': 'Mountain Ridge',
+          'place_id': 'nagarkot_sunrise',
+          'place_label': 'Nagarkot Ridge'
+        },
+        {
+          'vibe': 'Creative Soul',
+          'timing': 'Year-Round',
+          'title': 'Patan Metal &amp; Thangka Guilds',
+          'desc': 'Master artisans beat glowing bronze and paint intricate gold-leaf Tibetan mandalas using ground mineral pigments and single-hair yak brushes in hidden bahals.',
+          'location_type': 'Artisan City',
+          'place_id': 'patan_durbar',
+          'place_label': 'Patan Durbar'
+        },
+        {
+          'vibe': 'Adventure Seeker',
+          'timing': 'Oct &bull; Nov',
+          'title': 'Ridge Trails &amp; High Passes',
+          'desc': 'Autumn skies reveal crisp panoramic views of eight Himalayan ranges. Hike along sacred ridge crests adorned with fluttering lungta flags above the cloud line.',
+          'location_type': 'High Trail',
+          'place_id': 'ebc_trail',
+          'place_label': 'Everest Ridge Trail'
+        }
+      ] %}
+      <div class="festivals-grid reveal">
+        {% for item in festival_list %}
+        <article class="festival-plate">
+          <div>
+            <div class="festival-vibe-header">
+              <span class="festival-vibe-name">{{ item.vibe }}</span>
+              <span class="festival-timing">{{ item.timing|safe }}</span>
+            </div>
+            <h3 class="festival-title">{{ item.title|safe }}</h3>
+            <p class="festival-desc">{{ item.desc }}</p>
+          </div>
+          <div class="festival-pair-footer">
+            <span style="font-size: 0.8rem; color: var(--ink-wash-grey);">{{ item.location_type }}</span>
+            <a href="{{ url_for('place_detail', place_id=item.place_id) }}" class="festival-place-link">
+              {{ item.place_label }} &rarr;
+            </a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Monograph Inscription Ribbon -->
+  <section class="monograph-quote-ribbon reveal" aria-label="Valley Monograph Inscription">
+    <div class="container text-center">
+      <div class="monograph-seal-mark" aria-hidden="true">
+        <span class="seal-glyph">✦</span>
+      </div>
+      <blockquote class="monograph-quote-text">
+        “In the Kathmandu Valley, ancient stone chaityas are not museum artifacts of the past; they are the living, bell-scented hearths of each morning.”
+      </blockquote>
+      <cite class="monograph-quote-author">Kathmandu Basin Monograph • Vol. IV • Folio 88</cite>
+    </div>
+  </section>
+
+  <!-- Paper Sanctuary Call to Action -->
+  <section class="paper-sanctuary-section reveal">
+    <div class="container">
+      <div class="sanctuary-card">
+        <!-- Bamboo Sprig SVG Accent -->
+        <div class="sanctuary-top-bamboo" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 64 64" fill="none" style="margin: 0 auto; display: block;">
+            <path d="M 28 58 C 29 44, 33 28, 38 8" stroke="#2B2A27" stroke-width="3" stroke-linecap="round"/>
+            <path d="M 26 42 L 34 40" stroke="#2B2A27" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M 30 25 L 38 23" stroke="#2B2A27" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M 32 41 C 24 38, 14 41, 8 36 C 14 43, 24 44, 32 41 Z" fill="#6F7F5A" stroke="#2B2A27" stroke-width="1.2"/>
+            <path d="M 34 24 C 42 21, 52 23, 58 17 C 52 25, 42 27, 34 24 Z" fill="#6F7F5A" stroke="#2B2A27" stroke-width="1.2"/>
+            <path d="M 37 9 C 45 6, 54 8, 60 4 C 54 11, 45 13, 37 9 Z" fill="#6F7F5A" stroke="#2B2A27" stroke-width="1.2"/>
+          </svg>
+        </div>
+
+        <div class="editorial-eyebrow">
+          <span class="devanagari-seal">यात्रा सुरु गर्नुहोस्</span>
+          <span>Personalised Valley Generator</span>
+        </div>
+
+        <h2 class="sanctuary-title">
+          {{ t('home.ready_title') }}
+        </h2>
+
+        <p class="sanctuary-desc">
+          Answer 8 gentle questions about how you travel — your pace, your energy, and the kind of quiet or celebration you are looking for. We will synthesize an authentic day-by-day plan with opening hours, local tea stops, and sacred temple festivals.
+        </p>
+
+        <!-- The One Clear Primary Action -->
+        <div class="sanctuary-action-group">
+          <a href="{{ url_for('planner') }}" class="btn-editorial-dark" style="font-size: 1.05rem; padding: 16px 36px;">
+            <span>{{ t('home.cta_plan') }}</span> &rarr;
+          </a>
+
+          <a href="{{ url_for('gallery') }}" class="link-editorial-underlined">
+            Or browse all destinations &rarr;
+          </a>
+        </div>
+
+        <!-- Reassurance Guarantees in Local Voice -->
+        <div class="sanctuary-guarantees">
+          <span class="guarantee-item">
+            <span class="guarantee-dot"></span>
+            Takes 2 minutes
+          </span>
+          <span class="guarantee-item">
+            <span class="guarantee-dot"></span>
+            100% Free
+          </span>
+          <span class="guarantee-item">
+            <span class="guarantee-dot"></span>
+            Save or share your route
+          </span>
+          <span class="guarantee-item">
+            <span class="guarantee-dot"></span>
+            No login required to start
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/video_intro.js') }}"></script>
+{% endblock %}

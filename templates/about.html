@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}The Monograph Manifesto &bull; {{ t('about.title') }} &bull; {{ t('brand') }}{% endblock %}
+
+{% block content %}
+<div class="page-container container about-page-container">
+  <!-- Editorial Page Header -->
+  <header class="page-header about-header reveal">
+    <span class="editorial-eyebrow">Publication Manifesto &bull; Vol. IV</span>
+    <h1 class="page-title about-main-title">{{ t('about.title') }}</h1>
+    <p class="page-subtitle about-sub-lead">
+      {{ t('about.subtitle') }}
+    </p>
+  </header>
+
+  <!-- Core Story Section: Editorial Essay -->
+  <section class="about-story-editorial reveal">
+    <div class="story-content-box">
+      <span class="editorial-eyebrow">Our Guiding Principle</span>
+      <h2 class="editorial-story-heading">{{ t('about.story_heading') }}</h2>
+      <p class="editorial-story-lead">{{ t('about.story_text') }}</p>
+      <div class="story-pull-quote">
+        <p>“Travel is not an exercise in accumulation, but a calibration of consciousness.”</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-Step Explanation: Architectural Numbered Columns -->
+  <section class="about-steps-editorial">
+    <div class="editorial-header reveal">
+      <span class="editorial-eyebrow">The Methodology</span>
+      <h2 class="editorial-title">{{ t('about.steps_heading') }}</h2>
+    </div>
+
+    <div class="about-steps-grid">
+      {% for num in ['1', '2', '3', '4'] %}
+      <div class="about-step-col reveal">
+        <span class="about-step-num">0{{ num }}</span>
+        <h3 class="about-step-title">{{ t('about.step' ~ num ~ '_title') }}</h3>
+        <p class="about-step-desc">{{ t('about.step' ~ num ~ '_desc') }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- 8 Vibes Grid: Editorial Personas Showcase -->
+  <section class="about-vibes-section">
+    <div class="editorial-header reveal">
+      <span class="editorial-eyebrow">The Archetypes</span>
+      <h2 class="editorial-title">{{ t('about.vibes_heading') }}</h2>
+      <p class="editorial-lead">Each persona balances pace, energy, budget, culture, and solitude across the valley basin.</p>
+    </div>
+
+    <div class="vibes-grid">
+      {% for vibe in vibes %}
+        {% include "partials/vibe_card.html" %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Project Objectives Section: Crisp Editorial Checklist -->
+  <section class="about-objectives-editorial reveal">
+    <div class="editorial-header">
+      <span class="editorial-eyebrow">Technical Architecture</span>
+      <h2 class="editorial-title">{{ t('about.objectives_heading') }}</h2>
+    </div>
+    <ul class="editorial-objectives-list">
+      <li class="editorial-objective-item">
+        <span class="obj-index">01</span>
+        <div>
+          <h4>Heuristic Recommendation Engine</h4>
+          <p>{{ t('about.obj1') }}</p>
+        </div>
+      </li>
+      <li class="editorial-objective-item">
+        <span class="obj-index">02</span>
+        <div>
+          <h4>Authentic Cultural Data</h4>
+          <p>{{ t('about.obj2') }}</p>
+        </div>
+      </li>
+      <li class="editorial-objective-item">
+        <span class="obj-index">03</span>
+        <div>
+          <h4>Accessible Web Craftsmanship</h4>
+          <p>{{ t('about.obj3') }}</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+</div>
+{% endblock %}

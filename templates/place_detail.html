@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+
+{% block title %}{{ loc(place) }} &bull; {{ t('place.archival_badge') }} &bull; {{ t('brand') }}{% endblock %}
+
+{% block content %}
+<div class="place-detail-wrapper">
+  <!-- Top Navigation Breadcrumb -->
+  <div class="container detail-nav-bar">
+    <a href="{{ url_for('home') }}" class="back-link">
+      <span aria-hidden="true">&larr;</span> {{ t('place.back') }}
+    </a>
+    <div class="detail-quick-actions">
+      <!-- Save to Tour Research Button -->
+      <form action="{{ url_for('place_save', place_id=place.id) }}" method="POST" class="save-place-form" id="savePlaceForm">
+        <button type="submit" 
+                class="btn-save-research {% if is_saved %}is-saved{% endif %}"
+                id="savePlaceBtn"
+                aria-pressed="{% if is_saved %}true{% else %}false{% endif %}">
+          <span class="save-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="{% if is_saved %}currentColor{% else %}none{% endif %}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </span>
+          <span class="save-text">{% if is_saved %}{{ t('place.saved') }}{% else %}{{ t('place.save_wishlist') }}{% endif %}</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Hero Header Section: Editorial Spread -->
+  <header class="detail-hero">
+    <div class="container detail-hero-grid">
+      <div class="detail-hero-content">
+        <span class="detail-eyebrow">{{ t('place.archival_badge') }}</span>
+        <h1 class="detail-title">{{ loc(place) }}</h1>
+        <div class="detail-location-row">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span>{{ place.country }}</span>
+        </div>
+        <p class="detail-overview-text">{{ place.overview }}</p>
+      </div>
+
+      <div class="detail-hero-photo-wrap">
+        <figure class="detail-main-figure">
+          <img src="{{ place.image }}" alt="{{ place.name }}, {{ place.country }}" class="detail-main-img">
+          <figcaption class="detail-photo-caption">
+            <span class="quote-mark">“</span>{{ place.caption }}<span class="quote-mark">”</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <!-- Quick Facts Strip: When & How to Visit -->
+  <section class="detail-facts-section">
+    <div class="container">
+      <div class="facts-grid">
+        <div class="fact-card">
+          <div class="fact-card-header">
+            <div class="fact-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <span class="fact-label">Best Hours</span>
+          </div>
+          <p class="fact-val">{{ place.best_hours }}</p>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-card-header">
+            <div class="fact-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </div>
+            <span class="fact-label">Best Season</span>
+          </div>
+          <p class="fact-val">{{ place.best_season }}</p>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-card-header">
+            <div class="fact-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg>
+            </div>
+            <span class="fact-label">Budget</span>
+          </div>
+          <p class="fact-val">{{ place.budget }}</p>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-card-header">
+            <div class="fact-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14"></path><path d="M5 2h14"></path><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"></path><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"></path></svg>
+            </div>
+            <span class="fact-label">Visit Duration</span>
+          </div>
+          <p class="fact-val">{{ place.duration }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- In-Depth Content & Tour Planning Research -->
+  <div class="container detail-body-layout">
+    <div class="detail-main-column">
+      <!-- Key Highlights -->
+      {% if place.highlights %}
+      <section class="detail-section">
+        <h2 class="section-title">What to Experience</h2>
+        <ul class="highlights-list">
+          {% for item in place.highlights %}
+            <li class="highlight-item">
+              <span class="check-icon" aria-hidden="true">
+                <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="8"></circle></svg>
+              </span>
+              <span class="highlight-text">{{ item }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+    </div>
+
+    <!-- Sidebar: Personal Tour Planning Helper Box -->
+    <aside class="detail-sidebar">
+      <div class="sidebar-sticky-card">
+        <div class="helper-header">
+          <span class="helper-badge">Expedition Dossier</span>
+          <h3 class="helper-title">Your Research Notes</h3>
+        </div>
+
+        {% if current_user %}
+          <!-- Logged in: note editor -->
+          <form action="{{ url_for('place_note', place_id=place.id) }}" method="POST" class="note-form">
+            <label for="tourNoteInput" class="note-label">
+              Add personal ideas, travel dates, or packing reminders:
+            </label>
+            <textarea id="tourNoteInput" 
+                      name="note" 
+                      rows="5" 
+                      class="note-textarea" 
+                      placeholder="e.g. Visit at dawn for meditation; pack a light shawl; try courtyard tea...">{{ user_note }}</textarea>
+            <button type="submit" class="btn-save-note">
+              <span>Save Note</span>
+            </button>
+          </form>
+
+          <div class="helper-status">
+            {% if is_saved %}
+              <p class="status-msg text-saved">Saved in your <a href="{{ url_for('my_tour') }}">My Tour</a> dossier.</p>
+            {% else %}
+              <p class="status-msg">Click "Save to Wishlist" above to pin this sanctuary.</p>
+            {% endif %}
+          </div>
+        {% else %}
+          <!-- Guest: prompt to login -->
+          <div class="guest-helper-prompt">
+            <p class="prompt-text">
+              Log in to save <strong>{{ place.name }}</strong> to your personal travel dossier and keep private planning notes.
+            </p>
+            <div class="prompt-actions">
+              <a href="{{ url_for('login', next=url_for('place_detail', place_id=place.id)) }}" class="btn-prompt-login">
+                Log In
+              </a>
+              <a href="{{ url_for('register') }}" class="btn-prompt-signup">
+                Sign Up
+              </a>
+            </div>
+          </div>
+        {% endif %}
+
+        <!-- Quick Quiz CTA -->
+        <div class="sidebar-quiz-box">
+          <h4>Match More Sanctuaries</h4>
+          <p>Discover which other locations match your energy.</p>
+          <a href="{{ url_for('planner') }}" class="btn-sidebar-quiz">
+            <span>Take Vibe Quiz &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+{% endblock %}

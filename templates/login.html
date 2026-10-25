@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block title %}{{ t('auth.login_title') }} &bull; {{ t('brand') }}{% endblock %}
+
+{% block content %}
+<div class="auth-page-container">
+  <div class="auth-card">
+    <div class="auth-card-header">
+      <div class="auth-icon-circle">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+      </div>
+      <span class="auth-eyebrow">{{ t('auth.login_badge') }}</span>
+      <h1 class="auth-title">{{ t('auth.login_heading') }}</h1>
+      <p class="auth-subtitle">{{ t('auth.login_subtitle') }}</p>
+    </div>
+
+    <!-- Quick Demo Access / One-Click Autofill -->
+    <div class="demo-access-box">
+      <div class="demo-box-head">
+        <span class="demo-badge-dot"></span>
+        <span class="demo-box-title">{{ t('auth.demo_box_title') }}</span>
+      </div>
+      <p class="demo-box-desc">{{ t('auth.demo_box_desc') }}</p>
+      <div class="demo-quick-buttons">
+        <button type="button" class="btn-demo-fill" id="btnFillDemo" onclick="fillCredentials('demo_user_123', 'password123')">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span>{{ t('auth.fill_demo_btn') }}</span>
+        </button>
+        <button type="button" class="btn-demo-fill btn-demo-bishesh" id="btnFillBishesh" onclick="fillCredentials('bishesh', 'password123')">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 22 22 22"></polygon></svg>
+          <span>{{ t('auth.fill_bishesh_btn') }}</span>
+        </button>
+      </div>
+      <div class="demo-credentials-text">
+        <code>demo_user_123</code> / <code>password123</code> &bull; <code>bishesh</code> / <code>password123</code>
+      </div>
+    </div>
+
+    {% if errors %}
+      <div class="auth-error-alert" role="alert">
+        {% for field, msg in errors.items() %}
+          <p class="error-msg">{{ msg }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <form action="{{ url_for('login') }}" method="POST" class="auth-form" id="loginForm" novalidate>
+      {% if next_url %}
+        <input type="hidden" name="next" value="{{ next_url }}">
+      {% endif %}
+
+      <div class="form-group">
+        <label for="usernameOrEmail" class="form-label">{{ t('auth.username_or_email_label') }}</label>
+        <input type="text" 
+               id="usernameOrEmail" 
+               name="username_or_email" 
+               class="form-control {% if errors.username_or_email or errors.auth %}is-invalid{% endif %}"
+               value="{{ answers.username_or_email|default('') }}" 
+               placeholder="{{ t('auth.username_or_email_placeholder') }}"
+               autocomplete="username"
+               required>
+      </div>
+
+      <div class="form-group password-group">
+        <label for="loginPassword" class="form-label">{{ t('auth.password_label') }}</label>
+        <div class="password-input-wrapper">
+          <input type="password" 
+                 id="loginPassword" 
+                 name="password" 
+                 class="form-control {% if errors.password or errors.auth %}is-invalid{% endif %}"
+                 placeholder="{{ t('auth.password_placeholder') }}"
+                 autocomplete="current-password"
+                 required>
+          <button type="button" class="btn-toggle-password" id="togglePasswordBtn" onclick="togglePasswordVisibility('loginPassword', this)" aria-label="Toggle password visibility" title="Toggle password visibility">
+            <svg class="eye-open" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            <svg class="eye-closed" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+          </button>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-auth-submit" id="btnSignInSubmit">
+        <span>{{ t('auth.sign_in_btn') }}</span> &rarr;
+      </button>
+    </form>
+
+    <div class="auth-card-footer">
+      <p>{{ t('auth.new_user_prompt') }} <a href="{{ url_for('register') }}" class="auth-link">{{ t('auth.create_account_link') }}</a></p>
+      <p class="auth-subnote">{{ t('auth.privacy_subnote') }}</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function fillCredentials(username, password) {
+  var userField = document.getElementById('usernameOrEmail');
+  var passField = document.getElementById('loginPassword');
+  if (userField && passField) {
+    userField.value = username;
+    passField.value = password;
+    userField.classList.remove('is-invalid');
+    passField.classList.remove('is-invalid');
+    userField.focus();
+    
+    [userField, passField].forEach(function(el) {
+      el.classList.add('field-autofilled');
+      setTimeout(function() { el.classList.remove('field-autofilled'); }, 1200);
+    });
+  }
+}
+
+function togglePasswordVisibility(inputId, btn) {
+  var input = document.getElementById(inputId);
+  if (!input) return;
+  var eyeOpen = btn.querySelector('.eye-open');
+  var eyeClosed = btn.querySelector('.eye-closed');
+  if (input.type === 'password') {
+    input.type = 'text';
+    if (eyeOpen) eyeOpen.style.display = 'none';
+    if (eyeClosed) eyeClosed.style.display = 'inline-block';
+  } else {
+    input.type = 'password';
+    if (eyeOpen) eyeOpen.style.display = 'inline-block';
+    if (eyeClosed) eyeClosed.style.display = 'none';
+  }
+}
+</script>
+{% endblock %}

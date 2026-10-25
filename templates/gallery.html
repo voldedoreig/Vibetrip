@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% block title %}{{ t('gallery.page_title', brand=t('brand')) }}{% endblock %}
+
+{% block content %}
+<div class="page-container container gallery-page-container">
+  <!-- Editorial Page Header -->
+  <header class="page-header gallery-editorial-header reveal">
+    <div class="gallery-header-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+      <span>{{ t('gallery.header_badge', count=activities|length) }}</span>
+    </div>
+    <h1 class="page-title gallery-main-title">{{ t('gallery.main_title') }}</h1>
+    <p class="page-subtitle gallery-sub-lead">
+      {{ t('gallery.sub_lead') }}
+    </p>
+  </header>
+
+  <!-- Search Controls Panel: Sleek Editorial Search Bar -->
+  <div class="gallery-controls-bar reveal">
+    <!-- Live Keyword Search Bar -->
+    <div class="gallery-search-row">
+      <div class="gallery-search-box">
+        <span class="search-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
+        <input type="search" 
+               id="gallerySearch" 
+               class="gallery-search-input" 
+               placeholder="{{ t('gallery.search_placeholder') }}" 
+               autocomplete="off"
+               aria-label="{{ t('gallery.search_aria_label') }}">
+        <button type="button" id="btnClearSearch" class="btn-clear-search" aria-label="Clear search" style="display: none;">
+          &times;
+        </button>
+      </div>
+
+      <div class="gallery-status-bar">
+        <span id="galleryCount" 
+              class="gallery-count-badge"
+              data-total="{{ activities|length }}"
+              data-listed-template="{{ t('gallery.count_listed', count='__COUNT__') }}"
+              data-showing-template="{{ t('gallery.count_showing', visible='__VISIBLE__', total='__TOTAL__') }}">
+          {{ t('gallery.count_listed', count=activities|length) }}
+        </span>
+        <button type="button" id="btnResetFilters" class="btn-reset-filters" style="display: none;">
+          {{ t('gallery.clear_search') }} &times;
+        </button>
+      </div>
+    </div>
+
+    <!-- Active Filter Summary Chips Container (Appears when search query is active) -->
+    <div class="active-filter-chips-container" id="activeFilterChips" style="display: none;" data-search-label="{{ t('gallery.active_search') }}">
+      <span class="active-chips-label">{{ t('gallery.active_search') }}</span>
+      <div class="chips-flex-row" id="chipsFlexRow"></div>
+      <button type="button" id="btnClearAllChips" class="btn-clear-all-chips">
+        {{ t('gallery.clear_btn') }} &times;
+      </button>
+    </div>
+  </div>
+
+  <!-- Activity Cards Grid: Uniform Editorial Monograph -->
+  <div class="gallery-grid" id="galleryGrid">
+    {% for act in activities %}
+      <article class="gallery-card reveal" 
+               data-vibe="{{ act.primary_vibe_id }}" 
+               data-category="{{ act.cat_id }}"
+               data-search-terms="{{ act.name|lower }} {{ (act.name_ne or '')|lower }} {{ act.description|lower }} {{ act.location|lower }} {{ act.category|lower }} {{ act.primary_vibe_name|lower }}"
+               id="activity-{{ act.id }}">
+        
+        <!-- Real Destination Photography Viewport -->
+        <div class="gallery-image-wrapper">
+          <a href="{{ url_for('place_detail', place_id=act.id) }}" class="gallery-image-link" aria-label="Read Monograph for {{ loc(act) }}">
+            <img src="{{ act.image }}" 
+                 alt="{{ loc(act) }}" 
+                 class="gallery-image"
+                 loading="lazy"
+                 onerror="this.src='/static/img/places/boudhanath.jpg'">
+          </a>
+          
+          <div class="gallery-image-badges">
+            <span class="gallery-vibe-badge" style="--vibe-color: {{ act.primary_vibe_color }};">{{ act.primary_vibe_name }}</span>
+            <span class="gallery-cat-badge">{{ act.category }}</span>
+          </div>
+        </div>
+
+        <!-- Card Body: Refined Editorial Typography -->
+        <div class="gallery-card-body">
+          <div class="gallery-title-row">
+            <h3 class="gallery-title">
+              <a href="{{ url_for('place_detail', place_id=act.id) }}" class="gallery-title-link" style="color: inherit; text-decoration: none;">
+                {{ loc(act) }}
+              </a>
+            </h3>
+          </div>
+
+          <div class="gallery-meta-row">
+            <span class="gallery-meta-loc">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>{{ act.location }}</span>
+            </span>
+            <span class="gallery-meta-sep" aria-hidden="true">&bull;</span>
+            <span class="gallery-meta-time">{{ act.best_visiting_hours }}</span>
+            <span class="gallery-meta-sep" aria-hidden="true">&bull;</span>
+            <span class="gallery-meta-season">{{ act.best_season }}</span>
+          </div>
+
+          <p class="gallery-desc-text">{{ act.description }}</p>
+
+          <div class="gallery-card-footer">
+            <a href="{{ url_for('place_detail', place_id=act.id) }}" class="gallery-monograph-link gallery-action-link" title="Read Monograph for {{ loc(act) }}">
+              <span>{{ t('gallery.read_monograph') }}</span> &rarr;
+            </a>
+            <a href="{{ url_for('planner') }}" class="gallery-action-link gallery-plan-link" title="Include in your custom itinerary">
+              <span>{{ t('gallery.plan_in_trip') }}</span> &rarr;
+            </a>
+          </div>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+
+  <!-- Empty State when 0 items match search -->
+  <div class="gallery-empty-state" id="galleryEmptyState" style="display: none;">
+    <div class="empty-icon" aria-hidden="true">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    </div>
+    <h3 class="empty-title">{{ t('gallery.empty_title') }}</h3>
+    <p class="empty-desc">
+      {{ t('gallery.empty_desc') }}
+    </p>
+    <button type="button" class="btn btn-primary" id="btnEmptyReset">
+      {{ t('gallery.clear_search') }}
+    </button>
+  </div>
+</div>
+
+<!-- Floating Toast Notification for Wishlist Saving -->
+<div id="galleryToast" class="gallery-toast" role="status" aria-live="polite" aria-hidden="true"></div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/gallery.js') }}"></script>
+{% endblock %}

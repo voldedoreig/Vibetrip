@@ -1,0 +1,2352 @@
+[
+  {
+    "id": "boudhanath_stupa",
+    "name": "Boudhanath Stupa Circumambulation",
+    "name_ne": "बौद्धनाथ स्तुप परिक्रमा",
+    "description": "Walk with devotees spinning prayer wheels around one of the largest spherical Buddhist stupas in the world.",
+    "category": "Spiritual Monument",
+    "category_group": "Spiritual",
+    "traits": {
+      "energy": 1,
+      "crowd": 2,
+      "culture": 4,
+      "nature": 1,
+      "food": 1,
+      "spiritual": 5,
+      "adventure": 0
+    },
+    "slots": [
+      "morning",
+      "evening"
+    ],
+    "best_visiting_hours": "Early Morning (6:30 AM – 8:30 AM) or Dusk (5:30 PM – 7:30 PM)",
+    "best_season": "Year-Round (Atmospheric at twilight with glowing butter lamps)",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.0,
+    "location": "Boudha, Kathmandu",
+    "image": "/static/img/places/boudhanath.jpg"
+  },
+  {
+    "id": "swayambhunath_stupa",
+    "name": "Swayambhunath Monkey Temple Steps",
+    "name_ne": "स्वयम्भूनाथ मन्दिर",
+    "description": "Climb the ancient stone stairs through wooded hills for sweeping valley views and historic stupa spires.",
+    "category": "Ancient Viewpoint",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 2,
+      "crowd": 3,
+      "culture": 4,
+      "nature": 3,
+      "food": 1,
+      "spiritual": 4,
+      "adventure": 2
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "Sunrise (6:30 AM – 9:00 AM) or Golden Hour (4:30 PM – 6:00 PM)",
+    "best_season": "Autumn & Spring (Crisp visibility across Kathmandu Valley)",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.0,
+    "location": "Swayambhu, Kathmandu",
+    "image": "/static/img/places/swayambhunath.jpg"
+  },
+  {
+    "id": "pashupatinath_aarti",
+    "name": "Pashupatinath Bagmati Evening Aarti",
+    "name_ne": "पशुपतिनाथ बागमती सन्ध्या आरती",
+    "description": "Experience deep rhythmic chimes, oil lamps, conch shells, and spiritual chanting on the sacred river banks.",
+    "category": "Evening Ritual",
+    "category_group": "Spiritual",
+    "traits": {
+      "energy": 2,
+      "crowd": 3,
+      "culture": 5,
+      "nature": 1,
+      "food": 1,
+      "spiritual": 5,
+      "adventure": 0
+    },
+    "slots": [
+      "evening"
+    ],
+    "best_visiting_hours": "Dusk Aarti (6:00 PM – 7:45 PM)",
+    "best_season": "Year-Round (Breathtaking during Shivaratri and Teej)",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.0,
+    "location": "Pashupati, Kathmandu",
+    "image": "/static/img/places/pashupatinath.jpg"
+  },
+  {
+    "id": "patan_durbar_square",
+    "name": "Patan Durbar Square & Museum",
+    "name_ne": "पाटन दरबार क्षेत्र तथा सङ्ग्रहालय",
+    "description": "Marvel at golden toranas, courtyard stone baths, and the world-renowned bronze casting exhibits.",
+    "category": "Historic Square",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 2,
+      "crowd": 3,
+      "culture": 5,
+      "nature": 1,
+      "food": 2,
+      "spiritual": 3,
+      "adventure": 1
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "Mid-Morning (9:30 AM – 12:30 PM)",
+    "best_season": "Autumn & Winter (Pleasant sunshine warming medieval brick courtyards)",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.5,
+    "location": "Mangal Bazaar, Lalitpur",
+    "image": "/static/img/places/patan_durbar.jpg"
+  },
+  {
+    "id": "bhaktapur_durbar_square",
+    "name": "Bhaktapur 55-Window Palace Walk",
+    "name_ne": "भक्तपुर दरबार तथा ५५ झ्याले दरबार",
+    "description": "Stroll cobblestone alleys preserved in time, featuring the towering Nyatapola Temple and kingly squares.",
+    "category": "Medieval City",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 2,
+      "crowd": 3,
+      "culture": 5,
+      "nature": 1,
+      "food": 2,
+      "spiritual": 3,
+      "adventure": 1
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "Morning to Early Afternoon (9:00 AM – 2:00 PM)",
+    "best_season": "Autumn, Spring & Bisket Jatra festival time in April",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "cost_level": 2,
+    "duration_hours": 3.5,
+    "location": "Bhaktapur Old Town",
+    "image": "/static/img/places/bhaktapur_durbar.jpg"
+  },
+  {
+    "id": "nagarkot_sunrise",
+    "name": "Nagarkot Himalayan Sunrise Horizon",
+    "name_ne": "नगरकोट सूर्योदय दृश्य",
+    "description": "Watch early morning sun rays illuminate the central Himalayan peaks from a quiet mountain ridge.",
+    "category": "Nature Viewpoint",
+    "category_group": "Nature",
+    "traits": {
+      "energy": 1,
+      "crowd": 1,
+      "culture": 1,
+      "nature": 5,
+      "food": 1,
+      "spiritual": 2,
+      "adventure": 3
+    },
+    "slots": [
+      "morning"
+    ],
+    "best_visiting_hours": "Pre-Dawn to Sunrise (5:30 AM – 7:30 AM)",
+    "best_season": "Autumn & Winter (October to March offers crystal-clear horizons)",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "cost_level": 2,
+    "duration_hours": 3.0,
+    "location": "Nagarkot Ridge, Bhaktapur",
+    "image": "/static/img/places/nagarkot_sunrise.jpg"
+  },
+  {
+    "id": "shivapuri_peak_hike",
+    "name": "Shivapuri National Park Trail",
+    "name_ne": "शिवपुरी राष्ट्रिय निकुञ्ज पदयात्रा",
+    "description": "Hike under lush oak and rhododendron canopies up to scenic mountain viewpoints and Buddhist hermitages.",
+    "category": "Forest Trek",
+    "category_group": "Adventure",
+    "traits": {
+      "energy": 4,
+      "crowd": 1,
+      "culture": 1,
+      "nature": 5,
+      "food": 1,
+      "spiritual": 2,
+      "adventure": 5
+    },
+    "slots": [
+      "morning"
+    ],
+    "best_visiting_hours": "Early Morning Start (7:00 AM – 11:30 AM)",
+    "best_season": "Spring (Rhododendrons in bloom) & Autumn (Clear skies)",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "cost_level": 1,
+    "duration_hours": 4.5,
+    "location": "Budhanilkantha, Kathmandu",
+    "image": "/static/img/activities/shivapuri_peak_hike.jpg"
+  },
+  {
+    "id": "thamel_food_walk",
+    "name": "Thamel Street Flavours Discovery",
+    "name_ne": "ठमेल सडक खाना यात्रा",
+    "description": "Follow delicious aromas to sample spicy chatamari, crunchy samosas, sweet lassi, and savoury street delicacies.",
+    "category": "Culinary Tour",
+    "category_group": "Food",
+    "traits": {
+      "energy": 3,
+      "crowd": 4,
+      "culture": 2,
+      "nature": 0,
+      "food": 5,
+      "spiritual": 0,
+      "adventure": 2
+    },
+    "slots": [
+      "afternoon",
+      "evening"
+    ],
+    "best_visiting_hours": "Late Afternoon to Evening (4:00 PM – 8:00 PM)",
+    "best_season": "Year-Round (Bustling and warm food stalls are great in cool evenings)",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.0,
+    "location": "Thamel, Kathmandu",
+    "image": "/static/img/activities/thamel_food_walk.jpg"
+  },
+  {
+    "id": "momo_cooking_class",
+    "name": "Authentic Momo & Achar Cooking Class",
+    "name_ne": "नेपाली म:म र अचार पाककला",
+    "description": "Master the art of folding traditional pleated dumplings and blending fire-roasted tomato and sesame chutneys.",
+    "category": "Cooking Workshop",
+    "category_group": "Food",
+    "traits": {
+      "energy": 2,
+      "crowd": 2,
+      "culture": 3,
+      "nature": 1,
+      "food": 5,
+      "spiritual": 1,
+      "adventure": 1
+    },
+    "slots": [
+      "afternoon"
+    ],
+    "best_visiting_hours": "Afternoon Session (1:00 PM – 3:30 PM)",
+    "best_season": "Year-Round (Ideal indoor activity anytime of year)",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 2,
+    "duration_hours": 2.5,
+    "location": "Paknajol, Thamel",
+    "image": "/static/img/activities/momo_cooking_class.jpg"
+  },
+  {
+    "id": "thangka_art_workshop",
+    "name": "Sacred Thangka Painting Masterclass",
+    "name_ne": "थान्का चित्रकला कार्यशाला",
+    "description": "Learn ancient geometric proportions and mineral pigment brush techniques from master Buddhist artists.",
+    "category": "Art & Craft",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 2,
+      "crowd": 1,
+      "culture": 4,
+      "nature": 1,
+      "food": 1,
+      "spiritual": 3,
+      "adventure": 1
+    },
+    "slots": [
+      "afternoon"
+    ],
+    "best_visiting_hours": "Afternoon Studio Hours (1:30 PM – 4:00 PM)",
+    "best_season": "Year-Round (Relaxing studio workshop in any weather)",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 2,
+    "duration_hours": 2.5,
+    "location": "Boudha Mandala Square",
+    "image": "/static/img/activities/thangka_art_workshop.jpg"
+  },
+  {
+    "id": "chandragiri_cable_car",
+    "name": "Chandragiri Hills Panoramic Cable Car",
+    "name_ne": "चन्द्रागिरि केबलकार तथा भ्यू पोइन्ट",
+    "description": "Glide above green forest hills on a cable car to reach Bhaleshwor Mahadev and Himalayan panoramas.",
+    "category": "Family Adventure",
+    "category_group": "Adventure",
+    "traits": {
+      "energy": 3,
+      "crowd": 3,
+      "culture": 2,
+      "nature": 4,
+      "food": 2,
+      "spiritual": 2,
+      "adventure": 3
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "Morning (9:00 AM – 11:30 AM before afternoon mist)",
+    "best_season": "Autumn & Spring (Clear vistas from Everest to Annapurna)",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "cost_level": 3,
+    "duration_hours": 3.5,
+    "location": "Thankot, Kathmandu",
+    "image": "/static/img/activities/chandragiri_cable_car.jpg"
+  },
+  {
+    "id": "thamel_live_music",
+    "name": "Thamel Acoustic & Folk Live Music",
+    "name_ne": "ठमेल लाइभ म्युजिक कन्सर्ट",
+    "description": "Immerse yourself in upbeat Nepali rock, acoustic fusion, and lively nightlife vibes in energetic cafes.",
+    "category": "Nightlife & Music",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 5,
+      "crowd": 5,
+      "culture": 2,
+      "nature": 0,
+      "food": 3,
+      "spiritual": 0,
+      "adventure": 2
+    },
+    "slots": [
+      "evening"
+    ],
+    "best_visiting_hours": "Night (8:00 PM – 11:00 PM)",
+    "best_season": "Year-Round (Thriving music scene every Friday & weekend)",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 2,
+    "duration_hours": 3.0,
+    "location": "Thamel Marg, Kathmandu",
+    "image": "/static/img/activities/thamel_live_music.jpg"
+  },
+  {
+    "id": "basantapur_durbar_square",
+    "name": "Basantapur Durbar Square & Freak Street",
+    "name_ne": "वसन्तपुर दरबार क्षेत्र",
+    "description": "Sit on the towering Maju Deval steps watching lively street life, palace facades, and bustling bazaars.",
+    "category": "Historic Hub",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 4,
+      "crowd": 5,
+      "culture": 5,
+      "nature": 0,
+      "food": 3,
+      "spiritual": 2,
+      "adventure": 1
+    },
+    "slots": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "best_visiting_hours": "Late Afternoon (3:30 PM – 6:30 PM)",
+    "best_season": "Autumn (Indra Jatra) & Spring (Holi festival at its peak)",
+    "best_months": [
+      3,
+      4,
+      9,
+      10,
+      11
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.0,
+    "location": "Basantapur, Kathmandu",
+    "image": "/static/img/places/holi_basantapur.jpg"
+  },
+  {
+    "id": "garden_of_dreams",
+    "name": "Garden of Dreams Neoclassical Oasis",
+    "name_ne": "स्वप्न बगैँचा (गार्डेन अफ ड्रिम्स)",
+    "description": "Relax with a book beside tranquil lotus ponds, marble amphitheaters, and lush manicured lawns.",
+    "category": "Quiet Garden",
+    "category_group": "Nature",
+    "traits": {
+      "energy": 1,
+      "crowd": 2,
+      "culture": 2,
+      "nature": 3,
+      "food": 3,
+      "spiritual": 2,
+      "adventure": 0
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "Sunny Midday or Sunset (1:00 PM – 5:30 PM)",
+    "best_season": "Winter & Spring (Sunny spots in winter, blossoming flowers in spring)",
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "cost_level": 1,
+    "duration_hours": 1.5,
+    "location": "Kaiser Mahal, Tridevi Marg",
+    "image": "/static/img/activities/garden_of_dreams.jpg"
+  },
+  {
+    "id": "taumadhi_pottery_square",
+    "name": "Bhaktapur Pottery Square Crafts",
+    "name_ne": "भक्तपुर पोटरी स्क्वायर माटोको भाँडा",
+    "description": "Try your hands at spinning a wooden potter’s wheel and watch thousands of earthen vessels bake under the sun.",
+    "category": "Traditional Craft",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 2,
+      "crowd": 2,
+      "culture": 5,
+      "nature": 1,
+      "food": 1,
+      "spiritual": 1,
+      "adventure": 1
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "Morning Sunshine (9:30 AM – 1:00 PM when pots are drying)",
+    "best_season": "Autumn, Winter & Spring (Sunny days are best for drying clay)",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.0,
+    "location": "Pottery Square, Bhaktapur",
+    "image": "/static/img/activities/taumadhi_pottery_square.jpg"
+  },
+  {
+    "id": "kopan_monastery_meditation",
+    "name": "Kopan Monastery Hilltop Meditation",
+    "name_ne": "कोपन गुम्बा ध्यान",
+    "description": "Find tranquility in peaceful hillside Tibetan gardens overlooking the valley, surrounded by chanting monks.",
+    "category": "Peaceful Sanctuary",
+    "category_group": "Spiritual",
+    "traits": {
+      "energy": 1,
+      "crowd": 1,
+      "culture": 4,
+      "nature": 4,
+      "food": 1,
+      "spiritual": 5,
+      "adventure": 0
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "Morning to Mid-Afternoon (10:00 AM – 3:00 PM)",
+    "best_season": "Autumn, Spring & November meditation courses",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.5,
+    "location": "Kopan Hill, Kathmandu",
+    "image": "/static/img/activities/kopan_monastery_meditation.jpg"
+  },
+  {
+    "id": "newari_feasting_kirtipur",
+    "name": "Kirtipur Hilltop Newari Khaja Feast",
+    "name_ne": "कीर्तिपुर नेवारी खाजा भोज",
+    "description": "Taste choila, samay baji, bara, and spicy aloo tama served on leaf plates with valley vistas.",
+    "category": "Heritage Food",
+    "category_group": "Food",
+    "traits": {
+      "energy": 2,
+      "crowd": 3,
+      "culture": 4,
+      "nature": 1,
+      "food": 5,
+      "spiritual": 1,
+      "adventure": 1
+    },
+    "slots": [
+      "afternoon"
+    ],
+    "best_visiting_hours": "Lunch & Early Sunset (12:30 PM – 4:30 PM)",
+    "best_season": "Year-Round (Warm fresh spicy dishes with hilltop views)",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 2,
+    "duration_hours": 2.0,
+    "location": "Kirtipur Old Town",
+    "image": "/static/img/activities/newari_feasting_kirtipur.jpg"
+  },
+  {
+    "id": "champadevi_ridge_trail",
+    "name": "Champadevi Hill Ridge Trek",
+    "name_ne": "चम्पादेवी डाँडा पदयात्रा",
+    "description": "A vigorous pine ridge trek reaching 2,285 meters with dramatic viewpoints of the central Himalayan chain.",
+    "category": "Scenic Hike",
+    "category_group": "Adventure",
+    "traits": {
+      "energy": 5,
+      "crowd": 1,
+      "culture": 1,
+      "nature": 5,
+      "food": 1,
+      "spiritual": 1,
+      "adventure": 5
+    },
+    "slots": [
+      "morning"
+    ],
+    "best_visiting_hours": "Early Morning (7:00 AM – 12:00 PM)",
+    "best_season": "Autumn & Spring (Dry trails and maximum mountain clarity)",
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 4.0,
+    "location": "Pharping Trailhead, Kathmandu",
+    "image": "/static/img/activities/champadevi_ridge_trail.jpg"
+  },
+  {
+    "id": "indoor_climbing_adventure",
+    "name": "Astrek Wall Bouldering & Climbing",
+    "name_ne": "एस्ट्रिक पर्खाल क्लाइम्बिङ",
+    "description": "Test your strength and agility on world-standard outdoor bouldering walls and harness routes.",
+    "category": "Adventure Sport",
+    "category_group": "Adventure",
+    "traits": {
+      "energy": 5,
+      "crowd": 3,
+      "culture": 0,
+      "nature": 1,
+      "food": 1,
+      "spiritual": 0,
+      "adventure": 5
+    },
+    "slots": [
+      "afternoon",
+      "evening"
+    ],
+    "best_visiting_hours": "Afternoon to Dusk (2:00 PM – 6:30 PM)",
+    "best_season": "Year-Round (Great active workout in any season)",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 2,
+    "duration_hours": 2.0,
+    "location": "Amrit Marg, Thamel",
+    "image": "/static/img/activities/indoor_climbing_adventure.jpg"
+  },
+  {
+    "id": "asan_spice_bazaar",
+    "name": "Asan Tole Early Spice & Brass Bazaar",
+    "name_ne": "असन टोल मसला तथा बजार भ्रमण",
+    "description": "Immerse your senses in mountains of turmeric, dried chilies, brass vessels, and non-stop merchant energy.",
+    "category": "Historic Market",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 4,
+      "crowd": 5,
+      "culture": 4,
+      "nature": 0,
+      "food": 4,
+      "spiritual": 1,
+      "adventure": 2
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "Early Morning Rush (7:30 AM – 10:00 AM) or Late Afternoon",
+    "best_season": "Year-Round (Extremely vibrant before Dashain & Tihar festivals)",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 1.5,
+    "location": "Asan Chowk, Kathmandu",
+    "image": "/static/img/activities/asan_spice_bazaar.jpg"
+  },
+  {
+    "id": "heritage_puppet_show",
+    "name": "Traditional String Puppet Folklore",
+    "name_ne": "परम्परागत काठको पुतली नाच",
+    "description": "Enjoy enchanting Newar folk stories brought to life with handmade carved puppets and live sarangi fiddles.",
+    "category": "Folk Theatre",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 3,
+      "crowd": 3,
+      "culture": 4,
+      "nature": 1,
+      "food": 2,
+      "spiritual": 1,
+      "adventure": 1
+    },
+    "slots": [
+      "evening"
+    ],
+    "best_visiting_hours": "Evening Performance (6:30 PM – 8:00 PM)",
+    "best_season": "Year-Round (Indoor cultural storytelling)",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 2,
+    "duration_hours": 1.5,
+    "location": "Jhamsikhel, Lalitpur",
+    "image": "/static/img/activities/heritage_puppet_show.jpg"
+  },
+  {
+    "id": "godavari_botanical_gardens",
+    "name": "Godavari Royal Botanical Gardens",
+    "name_ne": "गोदावरी वनस्पति उद्यान",
+    "description": "Wander peaceful shaded avenues of ferns, orchids, quiet streams, and fluttering Himalayan butterflies.",
+    "category": "Botanical Haven",
+    "category_group": "Nature",
+    "traits": {
+      "energy": 2,
+      "crowd": 1,
+      "culture": 1,
+      "nature": 5,
+      "food": 2,
+      "spiritual": 2,
+      "adventure": 2
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "Mid-Morning to Sunny Afternoon (10:00 AM – 3:30 PM)",
+    "best_season": "Spring (Orchids blooming) & Post-Monsoon (Lush green flora)",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "cost_level": 1,
+    "duration_hours": 3.0,
+    "location": "Godavari, Lalitpur",
+    "image": "/static/img/activities/godavari_botanical_gardens.jpg"
+  },
+  {
+    "id": "woodcarving_patachitra_studio",
+    "name": "Patan Master Woodcarving Studio",
+    "name_ne": "पाटन काष्ठकला कार्यशाला",
+    "description": "Observe generational master woodcarvers shaping intricate peacock windows and mythological deities.",
+    "category": "Craft Atelier",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 2,
+      "crowd": 1,
+      "culture": 5,
+      "nature": 1,
+      "food": 1,
+      "spiritual": 2,
+      "adventure": 1
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "Morning Work Hours (10:00 AM – 1:00 PM)",
+    "best_season": "Year-Round (Watch artisans carving ancient Newari motifs)",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 2,
+    "duration_hours": 2.0,
+    "location": "Patan Industrial Estate, Lalitpur",
+    "image": "/static/img/activities/woodcarving_patachitra_studio.jpg"
+  },
+  {
+    "id": "mandala_acoustic_jam",
+    "name": "Mandala Rooftop Fusion & Drums",
+    "name_ne": "मण्डला रुफटप साङ्गीतिक साँझ",
+    "description": "Gather for hypnotic djembe drums, bansuri flute notes, and communal bonfire singing under the evening sky.",
+    "category": "Celebration & Music",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 5,
+      "crowd": 5,
+      "culture": 3,
+      "nature": 0,
+      "food": 2,
+      "spiritual": 2,
+      "adventure": 2
+    },
+    "slots": [
+      "evening"
+    ],
+    "best_visiting_hours": "Sunset to Night (6:00 PM – 9:00 PM)",
+    "best_season": "Autumn & Spring (Mild pleasant rooftop evenings)",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "cost_level": 2,
+    "duration_hours": 2.5,
+    "location": "Boudha Rooftops, Kathmandu",
+    "image": "/static/img/activities/mandala_acoustic_jam.jpg"
+  },
+  {
+    "id": "central_zoo_jawalakhel",
+    "name": "Jawalakhel Wildlife Garden & Lake",
+    "name_ne": "जावलाखेल प्राणी उद्यान",
+    "description": "An easy family outing around the central lake observing royal Bengal tigers, one-horned rhinos, and aviaries.",
+    "category": "Family Outing",
+    "category_group": "Nature",
+    "traits": {
+      "energy": 3,
+      "crowd": 3,
+      "culture": 1,
+      "nature": 4,
+      "food": 2,
+      "spiritual": 1,
+      "adventure": 2
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "Sunny Midday (11:00 AM – 2:30 PM)",
+    "best_season": "Winter & Spring (Sunny lake strolls with active animals)",
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.0,
+    "location": "Jawalakhel, Lalitpur",
+    "image": "/static/img/activities/central_zoo_jawalakhel.jpg"
+  },
+  {
+    "id": "phewa_lake_boating",
+    "name": "Phewa Lake Wooden Doonga Boating",
+    "name_ne": "फेवा ताल काठे डुङ्गा सयर",
+    "description": "Drift on a hand-carved painted wooden doonga across tranquil turquoise waters reflecting the dramatic snowy pyramid of Mount Machhapuchhre (Fishtail). Visit the sacred Tal Barahi Island Temple in the lake center.",
+    "category": "Alpine Lake & Boating",
+    "category_group": "Nature",
+    "traits": {
+      "energy": 2.0,
+      "crowd": 2.5,
+      "culture": 3.0,
+      "nature": 5.0,
+      "food": 2.5,
+      "spiritual": 3.5,
+      "adventure": 2.0
+    },
+    "slots": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "best_visiting_hours": "06:30 – 09:00 (Glass Reflection) or 16:30 – 18:30 (Sunset Glow)",
+    "best_season": "Year-round (Autumn & Spring optimal)",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.5,
+    "location": "Lakeside, Pokhara",
+    "image": "/static/img/places/phewa_lake.jpg"
+  },
+  {
+    "id": "world_peace_pagoda_pokhara",
+    "name": "World Peace Pagoda (Shanti Stupa)",
+    "name_ne": "विश्व शान्ति स्तूप पोखरा",
+    "description": "A brilliant white Buddhist monument perched atop Anadu Hill, offering 360-degree vistas over Phewa Lake, Pokhara Valley, and the snow-clad peaks of the Annapurna Massif.",
+    "category": "Panoramic Buddhist Stupa",
+    "category_group": "Spiritual",
+    "traits": {
+      "energy": 2.5,
+      "crowd": 2.0,
+      "culture": 4.0,
+      "nature": 4.5,
+      "food": 1.5,
+      "spiritual": 5.0,
+      "adventure": 2.5
+    },
+    "slots": [
+      "morning",
+      "evening"
+    ],
+    "best_visiting_hours": "06:00 – 08:30 (Sunrise Glow) or 16:30 – 18:00 (Sunset Silence)",
+    "best_season": "September through May",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 3.0,
+    "location": "Anadu Hill, Pokhara",
+    "image": "/static/img/places/world_peace_pagoda_pokhara.jpg"
+  },
+  {
+    "id": "sarangkot_sunrise_viewpoint",
+    "name": "Sarangkot Sunrise & Mountain Horizon",
+    "name_ne": "सराङकोट सूर्योदय तथा हिमशृङ्खला",
+    "description": "Witness the magical dawn as first sunlight ignites the snowy spires of Dhaulagiri, Annapurna I, and Machhapuchhre in glowing shades of amber, gold, and crimson from Sarangkot ridge.",
+    "category": "Mountain Horizon & Sunrise",
+    "category_group": "Nature",
+    "traits": {
+      "energy": 3.0,
+      "crowd": 3.5,
+      "culture": 2.0,
+      "nature": 5.0,
+      "food": 2.0,
+      "spiritual": 4.0,
+      "adventure": 3.0
+    },
+    "slots": [
+      "morning"
+    ],
+    "best_visiting_hours": "05:15 – 07:30 (Pre-Dawn to Golden Morning)",
+    "best_season": "October to April",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.5,
+    "location": "Sarangkot Ridge, Pokhara",
+    "image": "/static/img/places/sarangkot_sunrise.jpg"
+  },
+  {
+    "id": "begnas_lake_retreat",
+    "name": "Begnas Lake Quiet Waters",
+    "name_ne": "बेगनास ताल शान्त सयर",
+    "description": "A serene, unhurried freshwater lake 15 km east of Pokhara, surrounded by terraced paddy hills, tranquil lotus marshes, and authentic lakeside fish eateries away from the tourist crowds.",
+    "category": "Tranquil Freshwater Lake",
+    "category_group": "Nature",
+    "traits": {
+      "energy": 1.5,
+      "crowd": 1.5,
+      "culture": 2.0,
+      "nature": 5.0,
+      "food": 3.0,
+      "spiritual": 3.5,
+      "adventure": 1.5
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "08:00 – 11:30 or 14:00 – 17:00",
+    "best_season": "September to May",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 3.0,
+    "location": "Begnas, Pokhara Valley",
+    "image": "/static/img/places/begnas_lake.jpg"
+  },
+  {
+    "id": "gupteshwor_cave_davis_fall",
+    "name": "Gupteshwor Mahadev Cave & Davis Falls",
+    "name_ne": "गुप्तेश्वर महादेव गुफा र पातले छाँगो",
+    "description": "Descend through spiraling limestone tunnels into an underground cavern enshrining a sacred Shiva lingam, where the thunderous subterranean torrents of Davis Falls crash through dark stone chasms.",
+    "category": "Sacred Cavern & Chasm",
+    "category_group": "Spiritual",
+    "traits": {
+      "energy": 2.5,
+      "crowd": 3.5,
+      "culture": 4.0,
+      "nature": 4.0,
+      "food": 1.0,
+      "spiritual": 4.5,
+      "adventure": 3.0
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "08:00 – 17:00 (Open daily)",
+    "best_season": "Year-round (Monsoon for waterfall volume; Autumn for calm cave exploration)",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.0,
+    "location": "Chhorepatan, Pokhara",
+    "image": "/static/img/places/davis_falls_gupteshwor.jpg"
+  },
+  {
+    "id": "international_mountain_museum",
+    "name": "International Mountain Museum Pokhara",
+    "name_ne": "अन्तर्राष्ट्रिय पर्वतीय सङ्ग्रहालय",
+    "description": "A premier cultural repository chronicling legendary Himalayan mountaineering conquests, 8,000m summits, indigenous mountain communities, and fragile alpine ecosystems.",
+    "category": "Himalayan Alpine Museum",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 2.0,
+      "crowd": 2.5,
+      "culture": 4.5,
+      "nature": 3.5,
+      "food": 1.5,
+      "spiritual": 2.0,
+      "adventure": 3.0
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "09:00 – 17:00 (Open daily)",
+    "best_season": "Year-round",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.5,
+    "location": "Rato Pahir, Pokhara",
+    "image": "/static/img/places/mountain_museum_pokhara.jpg"
+  },
+  {
+    "id": "poon_hill_ghorepani_trek",
+    "name": "Poon Hill Himalayan Sunrise Trek",
+    "name_ne": "पून हिल पदयात्रा तथा सूर्योदय",
+    "description": "Trek through blooming rhododendron forests to the summit ridge of Poon Hill (3,210m) for an iconic sunrise panorama across Dhaulagiri, Annapurna South, and the sacred Machhapuchhre.",
+    "category": "Alpine Trekking & Horizon",
+    "category_group": "Adventure",
+    "traits": {
+      "energy": 4.5,
+      "crowd": 3.0,
+      "culture": 3.0,
+      "nature": 5.0,
+      "food": 2.0,
+      "spiritual": 3.5,
+      "adventure": 4.5
+    },
+    "slots": [
+      "morning"
+    ],
+    "best_visiting_hours": "05:00 – 07:30 (Dawn Ascent)",
+    "best_season": "Autumn (Oct–Nov) and Spring (March–April for blooming rhododendrons)",
+    "best_months": [
+      3,
+      4,
+      10,
+      11
+    ],
+    "cost_level": 2,
+    "duration_hours": 4.0,
+    "location": "Ghorepani, Annapurna Conservation Area",
+    "image": "/static/img/places/poon_hill.jpg"
+  },
+  {
+    "id": "annapurna_base_camp_sanctuary",
+    "name": "Annapurna Base Camp Sanctuary",
+    "name_ne": "अन्नपूर्ण आधार शिविर",
+    "description": "Stand inside a magnificent glacial amphitheater situated at 4,130m, completely enclosed by towering 7,000m and 8,000m sheer ice faces of Annapurna I, Annapurna South, and Hiunchuli.",
+    "category": "Glacial Amphitheater Trek",
+    "category_group": "Adventure",
+    "traits": {
+      "energy": 5.0,
+      "crowd": 2.0,
+      "culture": 2.5,
+      "nature": 5.0,
+      "food": 1.5,
+      "spiritual": 4.5,
+      "adventure": 5.0
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "05:30 – 12:00 (Clear mornings before afternoon clouds)",
+    "best_season": "October–November and March–May",
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "cost_level": 3,
+    "duration_hours": 6.0,
+    "location": "ABC, Annapurna Sanctuary",
+    "image": "/static/img/places/annapurna_base_camp.jpg"
+  },
+  {
+    "id": "mardi_himal_ridge_trail",
+    "name": "Mardi Himal High Ridge Trail",
+    "name_ne": "मार्दी हिमाल उच्च पदमार्ग",
+    "description": "Traverse along an exhilarating narrow alpine ridge straight toward the majestic south face of Mount Machhapuchhre, offering dramatic close-up views of the sacred Fishtail summit.",
+    "category": "High Ridge Wilderness",
+    "category_group": "Adventure",
+    "traits": {
+      "energy": 4.5,
+      "crowd": 1.5,
+      "culture": 2.0,
+      "nature": 5.0,
+      "food": 1.5,
+      "spiritual": 4.0,
+      "adventure": 5.0
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "06:00 – 11:30 (Morning ridge views)",
+    "best_season": "October to December & March to May",
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 2,
+    "duration_hours": 5.0,
+    "location": "Mardi Himal, Kaski",
+    "image": "/static/img/places/mardi_himal.jpg"
+  },
+  {
+    "id": "chitwan_jungle_safari",
+    "name": "Chitwan National Park Jeep Safari",
+    "name_ne": "चितवन राष्ट्रिय निकुञ्ज जिप सफारी",
+    "description": "Venture through dense sal forests and tall elephant grasslands to spot endangered greater one-horned rhinoceroses, Royal Bengal tigers, wild boars, and over 500 species of exotic birds.",
+    "category": "Subtropical Wildlife Safari",
+    "category_group": "Nature",
+    "traits": {
+      "energy": 3.5,
+      "crowd": 3.0,
+      "culture": 2.5,
+      "nature": 5.0,
+      "food": 2.0,
+      "spiritual": 1.5,
+      "adventure": 4.5
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "06:30 – 10:30 (Morning Animal Activity) or 14:30 – 17:30",
+    "best_season": "October to March (dry season with optimal visibility)",
+    "best_months": [
+      1,
+      2,
+      3,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 2,
+    "duration_hours": 4.0,
+    "location": "Sauraha, Chitwan",
+    "image": "/static/img/places/chitwan_safari.jpg"
+  },
+  {
+    "id": "rapti_river_canoe_safari",
+    "name": "Rapti River Wooden Canoe Float",
+    "name_ne": "राप्ती नदी काठे डुङ्गा सफारी",
+    "description": "Glide silently down the mist-shrouded Rapti River in a traditional hollowed-trunk canoe, observing marsh mugger crocodiles, critically endangered fish-eating gharials, and riverine kingfishers.",
+    "category": "River Wildlife Float",
+    "category_group": "Nature",
+    "traits": {
+      "energy": 2.0,
+      "crowd": 2.0,
+      "culture": 2.0,
+      "nature": 5.0,
+      "food": 1.5,
+      "spiritual": 2.5,
+      "adventure": 3.5
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "07:00 – 09:30 (Morning mist and bird activity)",
+    "best_season": "October through April",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.0,
+    "location": "Rapti Riverbank, Chitwan",
+    "image": "/static/img/places/rapti_river_canoe.jpg"
+  },
+  {
+    "id": "tharu_cultural_village_walk",
+    "name": "Tharu Indigenous Village & Cultural Dance",
+    "name_ne": "थारु सांस्कृतिक गाउँ तथा लाठी नाच",
+    "description": "Walk among traditional mud-and-thatch homesteads of the indigenous Tharu community, discovering their deep forest animist heritage, and witness an energetic evening fire and stick dance performance.",
+    "category": "Indigenous Living Culture",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 3.0,
+      "crowd": 3.5,
+      "culture": 5.0,
+      "nature": 3.0,
+      "food": 3.5,
+      "spiritual": 3.0,
+      "adventure": 2.0
+    },
+    "slots": [
+      "afternoon",
+      "evening"
+    ],
+    "best_visiting_hours": "16:00 – 20:00 (Village walk followed by evening cultural show)",
+    "best_season": "Year-round",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.5,
+    "location": "Tharu Village, Sauraha",
+    "image": "/static/img/places/tharu_cultural_village.jpg"
+  },
+  {
+    "id": "bardia_tiger_tracking_safari",
+    "name": "Bardia National Park Tiger Wilderness",
+    "name_ne": "बर्दिया राष्ट्रिय निकुञ्ज बाघ सफारी",
+    "description": "Nepal's wildest and most pristine lowland wilderness in the far-western Terai, offering walking safaris guided by expert naturalist trackers along the Geruwa River to track wild Royal Bengal tigers.",
+    "category": "Deep Jungle Tiger Safari",
+    "category_group": "Adventure",
+    "traits": {
+      "energy": 4.5,
+      "crowd": 1.0,
+      "culture": 2.0,
+      "nature": 5.0,
+      "food": 1.5,
+      "spiritual": 2.5,
+      "adventure": 5.0
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "06:00 – 11:00 & 14:00 – 18:00",
+    "best_season": "February to April (tiger sightings peak near water holes)",
+    "best_months": [
+      2,
+      3,
+      4,
+      10,
+      11
+    ],
+    "cost_level": 2,
+    "duration_hours": 5.0,
+    "location": "Thakurdwara, Bardia",
+    "image": "/static/img/places/bardia_national_park.jpg"
+  },
+  {
+    "id": "muktinath_temple_108_spouts",
+    "name": "Muktinath Sacred Temple of 108 Spouts",
+    "name_ne": "मुक्तिनाथ मन्दिर १०८ धारा",
+    "description": "A sacred high-altitude sanctuary (3,710m) revered by both Hindus and Buddhists, famed for 108 icy bronze waterspouts shaped like cow heads and an eternal natural gas flame burning over a sacred stream.",
+    "category": "Sacred Himalayan Pilgrimage",
+    "category_group": "Spiritual",
+    "traits": {
+      "energy": 3.5,
+      "crowd": 3.0,
+      "culture": 5.0,
+      "nature": 4.5,
+      "food": 1.5,
+      "spiritual": 5.0,
+      "adventure": 4.0
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "06:30 – 12:00 (Holy bath and morning aarti)",
+    "best_season": "March–May and September–November",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "cost_level": 2,
+    "duration_hours": 3.0,
+    "location": "Muktinath Valley, Mustang",
+    "image": "/static/img/places/muktinath_temple.jpg"
+  },
+  {
+    "id": "lo_manthang_walled_city",
+    "name": "Lo Manthang Walled Kingdom of Upper Mustang",
+    "name_ne": "लो मान्थाङ प्राचीन दरबार तथा पर्खाल सहर",
+    "description": "Step inside the 14th-century capital of the ancient Kingdom of Lo, surrounded by massive whitewashed ramparts, ancient Tibetan monasteries (Jampa Lhakhang), and mystical cliffside sky caves.",
+    "category": "Ancient Tibetan Kingdom",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 3.5,
+      "crowd": 1.0,
+      "culture": 5.0,
+      "nature": 5.0,
+      "food": 2.0,
+      "spiritual": 4.5,
+      "adventure": 5.0
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "08:00 – 17:00 (Monastery visits & royal courtyard walk)",
+    "best_season": "May through October (rain shadow region; ideal during monsoon)",
+    "best_months": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "cost_level": 3,
+    "duration_hours": 4.5,
+    "location": "Upper Mustang, Gandaki",
+    "image": "/static/img/places/lo_manthang.jpg"
+  },
+  {
+    "id": "marpha_apple_village_walk",
+    "name": "Marpha Whitewashed Apple Village",
+    "name_ne": "मार्फा स्याउ बगैँचा गाउँ",
+    "description": "Wander along polished cobblestone alleyways past gleaming whitewashed stone houses with flat mud roofs, timber firewood stacks, and traditional apple brandy distilleries along the Kali Gandaki.",
+    "category": "Himalayan Apple Oasis",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 2.0,
+      "crowd": 1.5,
+      "culture": 4.5,
+      "nature": 4.5,
+      "food": 4.0,
+      "spiritual": 3.0,
+      "adventure": 2.5
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "09:00 – 16:30 (Orchard walks & distillery tasting)",
+    "best_season": "Autumn (harvest season in Sep–Nov) & Spring",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.5,
+    "location": "Marpha, Mustang",
+    "image": "/static/img/places/marpha_village.jpg"
+  },
+  {
+    "id": "kagbeni_monastery_gateway",
+    "name": "Kagbeni Medieval Gateway & Red Monastery",
+    "name_ne": "कागबेनी प्राचीन बस्ती तथा रातो गुम्बा",
+    "description": "The historic fortress gateway into Upper Mustang, where the sacred Kali Gandaki and Mustang Khola rivers converge beneath a 600-year-old crimson Sakya monastery and earthen chortens.",
+    "category": "Medieval Fortress Gateway",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 2.5,
+      "crowd": 2.0,
+      "culture": 5.0,
+      "nature": 4.5,
+      "food": 2.0,
+      "spiritual": 4.5,
+      "adventure": 3.5
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "07:30 – 16:00",
+    "best_season": "March to November",
+    "best_months": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.0,
+    "location": "Kagbeni, Mustang",
+    "image": "/static/img/places/kagbeni_monastery.jpg"
+  },
+  {
+    "id": "maya_devi_temple_lumbini",
+    "name": "Maya Devi Temple & Sacred Garden",
+    "name_ne": "मायादेवी मन्दिर तथा पवित्र उद्यान लुम्बिनी",
+    "description": "The sacred birthplace of Prince Siddhartha Gautama (Lord Buddha), designated as a UNESCO World Heritage site, enshrining the marker stone, the sacred Puskarini bathing pond, and Ashoka's pillar.",
+    "category": "Sacred World Heritage",
+    "category_group": "Spiritual",
+    "traits": {
+      "energy": 1.5,
+      "crowd": 3.5,
+      "culture": 5.0,
+      "nature": 3.5,
+      "food": 1.5,
+      "spiritual": 5.0,
+      "adventure": 1.0
+    },
+    "slots": [
+      "morning",
+      "evening"
+    ],
+    "best_visiting_hours": "06:00 – 09:00 (Quiet contemplation) or 16:30 – 18:30 (Sunset candle prayer)",
+    "best_season": "October through March (cooler winter climate)",
+    "best_months": [
+      1,
+      2,
+      3,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.5,
+    "location": "Sacred Garden, Lumbini",
+    "image": "/static/img/places/maya_devi_temple_lumbini.jpg"
+  },
+  {
+    "id": "lumbini_monastic_zone_walk",
+    "name": "Lumbini International Monastic Zone",
+    "name_ne": "लुम्बिनी अन्तर्राष्ट्रिय विहार क्षेत्र",
+    "description": "Cycle or stroll along tranquil lotus canals connecting dozens of monumental Buddhist monasteries erected by nations worldwide, from Tibetan and Thai spires to Korean and German pagodas.",
+    "category": "Global Buddhist Sanctuary",
+    "category_group": "Spiritual",
+    "traits": {
+      "energy": 2.0,
+      "crowd": 2.0,
+      "culture": 4.5,
+      "nature": 4.0,
+      "food": 1.5,
+      "spiritual": 4.5,
+      "adventure": 2.0
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "08:00 – 17:00 (Bicycle or electric rickshaw exploration)",
+    "best_season": "October through March",
+    "best_months": [
+      1,
+      2,
+      3,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 3.5,
+    "location": "Monastic Zone, Lumbini",
+    "image": "/static/img/places/lumbini_monastic_zone.jpg"
+  },
+  {
+    "id": "tilaurakot_ancient_kapilavastu",
+    "name": "Tilaurakot Ancient Palace Ruins",
+    "name_ne": "तिलौराकोट प्राचीन शाक्य दरबार",
+    "description": "Walk across the ancient brick foundations, moat, and royal gateways of ancient Kapilavastu, where Prince Siddhartha lived his first 29 years before his great renunciation.",
+    "category": "Archaeological Palace Grounds",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 2.0,
+      "crowd": 1.5,
+      "culture": 5.0,
+      "nature": 3.5,
+      "food": 1.0,
+      "spiritual": 4.0,
+      "adventure": 2.0
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "07:30 – 11:30 or 15:00 – 17:30",
+    "best_season": "November to February",
+    "best_months": [
+      1,
+      2,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.5,
+    "location": "Tilaurakot, Kapilvastu",
+    "image": "/static/img/places/tilaurakot_kapilavastu.jpg"
+  },
+  {
+    "id": "namche_bazaar_sherpa_hub",
+    "name": "Namche Bazaar Sherpa Capital & Market",
+    "name_ne": "नाम्चे बजार शेर्पा राजधानी",
+    "description": "The amphitheater-shaped mountain capital of the Sherpa community (3,440m), lined with artisan bakeries, Tibetan gear shops, and panoramic viewpoints overlooking Kongde Ri and Thamserku.",
+    "category": "High Alpine Sherpa Hub",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 3.5,
+      "crowd": 3.0,
+      "culture": 5.0,
+      "nature": 5.0,
+      "food": 3.5,
+      "spiritual": 3.5,
+      "adventure": 4.0
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "08:00 – 17:00 (Saturday morning market is especially vibrant)",
+    "best_season": "October–December & March–May",
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 2,
+    "duration_hours": 3.5,
+    "location": "Namche Bazaar, Solukhumbu",
+    "image": "/static/img/places/namche_bazaar.jpg"
+  },
+  {
+    "id": "tengboche_monastery_view",
+    "name": "Tengboche Monastery Mountain Panorama",
+    "name_ne": "तेङबोचे गुम्बा शिखर दृश्य",
+    "description": "The spiritual heart of the Khumbu Sherpas, perched on a dramatic forested ridge (3,867m) directly framed by the awe-inspiring spires of Mount Ama Dablam, Mount Everest, and Lhotse.",
+    "category": "Sacred Alpine Gompa",
+    "category_group": "Spiritual",
+    "traits": {
+      "energy": 3.5,
+      "crowd": 2.0,
+      "culture": 5.0,
+      "nature": 5.0,
+      "food": 1.5,
+      "spiritual": 5.0,
+      "adventure": 4.5
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "06:00 – 08:30 (Morning Puja) or 15:00 – 16:30 (Afternoon chanting)",
+    "best_season": "October to November (Mani Rimdu festival) & March to May",
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "cost_level": 2,
+    "duration_hours": 2.5,
+    "location": "Tengboche, Khumbu",
+    "image": "/static/img/places/tengboche_monastery.jpg"
+  },
+  {
+    "id": "everest_base_camp_trek",
+    "name": "Everest Base Camp & Khumbu Glacier",
+    "name_ne": "सगरमाथा आधार शिविर पदमार्ग",
+    "description": "Trek along terminal glacial moraines to the foot of the world's highest peak (5,364m), standing beside towering ice seracs, prayer flags, and the roaring edge of the Khumbu Icefall.",
+    "category": "Iconic Himalayan Expedition",
+    "category_group": "Adventure",
+    "traits": {
+      "energy": 5.0,
+      "crowd": 2.5,
+      "culture": 3.0,
+      "nature": 5.0,
+      "food": 1.5,
+      "spiritual": 4.0,
+      "adventure": 5.0
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "07:00 – 13:00 (High altitude trek before afternoon breeze)",
+    "best_season": "October–November & March–May",
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "cost_level": 3,
+    "duration_hours": 6.0,
+    "location": "Khumbu Glacier, Solukhumbu",
+    "image": "/static/img/places/ebc_trail.jpg"
+  },
+  {
+    "id": "kala_patthar_everest_sunrise",
+    "name": "Kala Patthar Panoramic Summit (5,644m)",
+    "name_ne": "कालापत्थर शिखर ५,६४४मि",
+    "description": "A rocky high-altitude ridge summit delivering the most direct, soul-stirring close-up view of Mount Everest's black pyramid, Nuptse, and the entire Khumbu glacier bathed in dawn amber light.",
+    "category": "Himalayan Summit Panorama",
+    "category_group": "Adventure",
+    "traits": {
+      "energy": 5.0,
+      "crowd": 2.0,
+      "culture": 2.0,
+      "nature": 5.0,
+      "food": 1.0,
+      "spiritual": 4.5,
+      "adventure": 5.0
+    },
+    "slots": [
+      "morning"
+    ],
+    "best_visiting_hours": "05:30 – 08:30 (Pre-dawn climb from Gorakshep)",
+    "best_season": "October–November & April–May",
+    "best_months": [
+      4,
+      5,
+      10,
+      11
+    ],
+    "cost_level": 3,
+    "duration_hours": 3.5,
+    "location": "Gorakshep, Khumbu",
+    "image": "/static/img/places/kala_patthar.jpg"
+  },
+  {
+    "id": "gokyo_lakes_and_ri",
+    "name": "Gokyo Turquoise Sacred Lakes & Gokyo Ri",
+    "name_ne": "गोक्यो पवित्र नीलो ताल र गोक्यो री",
+    "description": "A constellation of sparkling emerald and turquoise oligotrophic alpine lakes fed by the Ngozumpa Glacier, with a summit ascent of Gokyo Ri (5,357m) unveiling four 8,000m Himalayan giants.",
+    "category": "Turquoise Alpine Glacial Lakes",
+    "category_group": "Adventure",
+    "traits": {
+      "energy": 4.5,
+      "crowd": 1.5,
+      "culture": 2.5,
+      "nature": 5.0,
+      "food": 1.5,
+      "spiritual": 4.5,
+      "adventure": 5.0
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "06:00 – 12:00",
+    "best_season": "October to November & March to May",
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "cost_level": 3,
+    "duration_hours": 5.0,
+    "location": "Gokyo Valley, Solukhumbu",
+    "image": "/static/img/places/gokyo_lakes.jpg"
+  },
+  {
+    "id": "kyanjin_gompa_cheese_factory",
+    "name": "Kyanjin Gompa & Himalayan Cheese Factory",
+    "name_ne": "क्यान्जिन गुम्बा र याक चिज केन्द्र",
+    "description": "A peaceful high alpine sanctuary at 3,870m beneath Langtang Lirung, renowned for early morning chanting at its sacred Buddhist gompa and tasting fresh, artisanal Swiss-guided yak cheese.",
+    "category": "Glacial Valley Sanctuary",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 3.5,
+      "crowd": 1.5,
+      "culture": 4.5,
+      "nature": 5.0,
+      "food": 3.5,
+      "spiritual": 4.5,
+      "adventure": 4.0
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "07:30 – 16:00",
+    "best_season": "March–May and October–November",
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "cost_level": 2,
+    "duration_hours": 3.0,
+    "location": "Langtang Valley, Rasuwa",
+    "image": "/static/img/places/kyanjin_gompa.jpg"
+  },
+  {
+    "id": "gosaikunda_sacred_alpine_lakes",
+    "name": "Gosaikunda Sacred Alpine Holy Lakes",
+    "name_ne": "गोसाइँकुण्ड पवित्र तीर्थ ताल",
+    "description": "A revered cluster of 108 high alpine freshwater glacial lakes situated at 4,380m, believed in Hindu mythology to have been struck from rock by Lord Shiva's holy trident to drink and calm poison.",
+    "category": "Sacred Alpine Glacier Lake",
+    "category_group": "Spiritual",
+    "traits": {
+      "energy": 4.5,
+      "crowd": 2.0,
+      "culture": 4.5,
+      "nature": 5.0,
+      "food": 1.5,
+      "spiritual": 5.0,
+      "adventure": 4.5
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "07:00 – 14:00 (Lake circumambulation)",
+    "best_season": "August (Janai Purnima festival) and September to November",
+    "best_months": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "cost_level": 2,
+    "duration_hours": 4.0,
+    "location": "Langtang National Park, Rasuwa",
+    "image": "/static/img/places/gosaikunda_lake.jpg"
+  },
+  {
+    "id": "bandipur_medieval_hill_town",
+    "name": "Bandipur Preserved Medieval Newar Bazaar",
+    "name_ne": "बन्दीपुर प्राचीन नेवार बस्ती",
+    "description": "A vehicle-free living architectural jewel of 18th-century Newari town planning perched on a high mountain ridge, featuring slate-paved bazaar lanes, carved wooden verandas, and Himalayan vistas.",
+    "category": "Preserved Newar Heritage Town",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 2.0,
+      "crowd": 2.5,
+      "culture": 5.0,
+      "nature": 4.0,
+      "food": 3.5,
+      "spiritual": 3.0,
+      "adventure": 2.0
+    },
+    "slots": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "best_visiting_hours": "08:00 – 19:30 (Stroll the pedestrian main street)",
+    "best_season": "October to May",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 3.0,
+    "location": "Bandipur, Tanahun",
+    "image": "/static/img/places/bandipur_town.jpg"
+  },
+  {
+    "id": "gorkha_historic_durbar",
+    "name": "Gorkha Historical Durbar & Fort",
+    "name_ne": "गोरखा ऐतिहासिक दरबार तथा गढी",
+    "description": "Perched atop a 1,000-meter rocky hill with 360-degree vistas of the central Himalayas, this fortified palace-shrine was the seat of King Prithvi Narayan Shah and the cradle of modern unified Nepal.",
+    "category": "Royal Fortress & Shrine",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 3.5,
+      "crowd": 2.5,
+      "culture": 5.0,
+      "nature": 4.0,
+      "food": 2.0,
+      "spiritual": 4.5,
+      "adventure": 3.0
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "07:00 – 16:30 (Climb stone steps in the morning cool)",
+    "best_season": "September to May",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 3.0,
+    "location": "Gorkha Hilltop, Gorkha",
+    "image": "/static/img/places/gorkha_durbar.jpg"
+  },
+  {
+    "id": "rani_mahal_palpa",
+    "name": "Rani Mahal \"Taj Mahal of Nepal\"",
+    "name_ne": "रानी महल पाल्पा (नेपालको ताज महल)",
+    "description": "A grand 1893 neoclassical riverside palace commissioned by General Khadga Shumsher in memory of his beloved queen, standing dramatically atop a rock cliff over the turquoise Kali Gandaki gorge.",
+    "category": "Riverside Historic Monument",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 3.0,
+      "crowd": 2.0,
+      "culture": 4.5,
+      "nature": 4.5,
+      "food": 2.0,
+      "spiritual": 2.5,
+      "adventure": 3.5
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "09:00 – 16:00",
+    "best_season": "October to April",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 3.0,
+    "location": "Ranimahal, Palpa",
+    "image": "/static/img/places/rani_mahal_palpa.jpg"
+  },
+  {
+    "id": "tansen_dhaka_and_shrinagar",
+    "name": "Tansen Historic Hilltown & Dhaka Weavers",
+    "name_ne": "तानसेन पाल्पा तथा ढाका कपडा",
+    "description": "A peaceful hill station renowned for its steep cobblestone streets, views from Shrinagar Hill, Palpa Durbar Museum, and artisan workshops hand-weaving Nepal's famous patterned Dhaka fabric.",
+    "category": "Artisan Hilltown & Weaving",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 2.0,
+      "crowd": 2.0,
+      "culture": 5.0,
+      "nature": 4.0,
+      "food": 3.0,
+      "spiritual": 3.0,
+      "adventure": 2.0
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "09:00 – 17:00 (Shops and weaver looms open daily)",
+    "best_season": "September to May",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 3.0,
+    "location": "Tansen, Palpa",
+    "image": "/static/img/places/tansen_palpa.jpg"
+  },
+  {
+    "id": "rara_lake_national_park",
+    "name": "Rara Lake Circuit \"Queen of Himalayan Lakes\"",
+    "name_ne": "रारा ताल पदमार्ग तथा नौका बिहार",
+    "description": "Nepal's largest and deepest lake (2,990m), nestled within virgin blue pine, spruce, and juniper forests of Mugu, reflecting snow-capped peaks in absolute tranquil silence.",
+    "category": "Pristine Himalayan Alpine Lake",
+    "category_group": "Nature",
+    "traits": {
+      "energy": 3.5,
+      "crowd": 1.0,
+      "culture": 2.5,
+      "nature": 5.0,
+      "food": 2.0,
+      "spiritual": 4.5,
+      "adventure": 4.5
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "07:00 – 16:30 (Daylight lake rim circuit & boat ride)",
+    "best_season": "March to May & September to November",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "cost_level": 2,
+    "duration_hours": 4.5,
+    "location": "Rara National Park, Mugu",
+    "image": "/static/img/places/rara_lake.jpg"
+  },
+  {
+    "id": "shey_phoksundo_deep_blue_lake",
+    "name": "Shey Phoksundo Deep Blue Lake & Waterfall",
+    "name_ne": "शे-फोक्सुण्डो गहिरो ताल तथा झरना",
+    "description": "An alpine lake of otherworldly turquoise hue in Upper Dolpo (3,611m), ringed by vertical pine cliffs, centuries-old Bon Po monasteries in Ringmo, and a thunderous 167m waterfall.",
+    "category": "Remote High-Altitude Wonder",
+    "category_group": "Nature",
+    "traits": {
+      "energy": 4.0,
+      "crowd": 1.0,
+      "culture": 4.5,
+      "nature": 5.0,
+      "food": 1.5,
+      "spiritual": 5.0,
+      "adventure": 5.0
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "07:30 – 15:30",
+    "best_season": "April to October (Dolpo rain shadow is great in summer)",
+    "best_months": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "cost_level": 3,
+    "duration_hours": 5.0,
+    "location": "Shey Phoksundo, Dolpo",
+    "image": "/static/img/places/shey_phoksundo_lake.jpg"
+  },
+  {
+    "id": "khaptad_national_park_meadows",
+    "name": "Khaptad National Park Sacred Patans",
+    "name_ne": "खप्तड राष्ट्रिय निकुञ्ज तथा पाटन",
+    "description": "A mystical highland plateau of 22 rolling green moorlands (patans), dense oak-rhododendron forests, and sacred meditation ashrams where the revered Khaptad Baba meditated for decades.",
+    "category": "Sacred Alpine Moorlands",
+    "category_group": "Nature",
+    "traits": {
+      "energy": 4.0,
+      "crowd": 1.0,
+      "culture": 3.5,
+      "nature": 5.0,
+      "food": 1.5,
+      "spiritual": 5.0,
+      "adventure": 4.5
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "07:00 – 16:00",
+    "best_season": "Spring (March–May blooming) and Autumn (October–November)",
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "cost_level": 2,
+    "duration_hours": 5.0,
+    "location": "Khaptad Plateau, Doti / Bajhang",
+    "image": "/static/img/places/khaptad_national_park.jpg"
+  },
+  {
+    "id": "suklaphanta_grassland_safari",
+    "name": "Suklaphanta National Park Wildlife Reserve",
+    "name_ne": "शुक्लाफाँटा राष्ट्रिय निकुञ्ज सफारी",
+    "description": "The largest continuous open grassland habitat in Asia, sheltering the planet's largest concentration of golden swamp deer (barasingha), wild elephants, Bengal floricans, and Royal Bengal tigers.",
+    "category": "Untamed Grassland Reserve",
+    "category_group": "Nature",
+    "traits": {
+      "energy": 3.5,
+      "crowd": 1.0,
+      "culture": 1.5,
+      "nature": 5.0,
+      "food": 1.5,
+      "spiritual": 2.0,
+      "adventure": 4.5
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "06:30 – 10:30 & 14:30 – 17:30",
+    "best_season": "November to April",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      11,
+      12
+    ],
+    "cost_level": 2,
+    "duration_hours": 4.0,
+    "location": "Kanchanpur, Far-West Nepal",
+    "image": "/static/img/places/suklaphanta_wildlife.jpg"
+  },
+  {
+    "id": "kanyam_tea_gardens_ilam",
+    "name": "Kanyam & Fikkal Rolling Tea Estates",
+    "name_ne": "कन्याम चिया बगान इलाम",
+    "description": "Endless undulating emerald carpets of tea bushes spanning mist-covered hill slopes, where visitors can stroll through lush tea rows, ride ponies, and sample freshly brewed orthodox Himalayan tea.",
+    "category": "Himalayan Tea Estates",
+    "category_group": "Nature",
+    "traits": {
+      "energy": 2.0,
+      "crowd": 2.5,
+      "culture": 4.0,
+      "nature": 5.0,
+      "food": 4.0,
+      "spiritual": 3.0,
+      "adventure": 2.0
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "08:00 – 16:30 (Morning mist lifting over green tea rows)",
+    "best_season": "September to May",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 3.0,
+    "location": "Kanyam, Ilam",
+    "image": "/static/img/places/kanyam_tea_garden.jpg"
+  },
+  {
+    "id": "sri_antu_kanchenjunga_sunrise",
+    "name": "Antu Danda Sunrise Horizon (Sri Antu)",
+    "name_ne": "श्रीअन्तु सूर्योदय तथा कञ्चनजङ्घा",
+    "description": "The celebrated easternmost sunrise crest of Nepal (1,823m), watching the morning sun illuminate endless valleys of green tea while Mount Kanchenjunga rises gracefully in the morning sky.",
+    "category": "Eastern Peak Sunrise",
+    "category_group": "Nature",
+    "traits": {
+      "energy": 2.5,
+      "crowd": 2.5,
+      "culture": 2.5,
+      "nature": 5.0,
+      "food": 2.5,
+      "spiritual": 4.0,
+      "adventure": 2.5
+    },
+    "slots": [
+      "morning"
+    ],
+    "best_visiting_hours": "05:00 – 07:30 (Dawn sunrise over tea hills)",
+    "best_season": "October to April",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.5,
+    "location": "Sri Antu, Ilam",
+    "image": "/static/img/places/sri_antu_sunrise.jpg"
+  },
+  {
+    "id": "janaki_mandir_janakpur",
+    "name": "Janaki Mandir \"Nau Lakha\" Marble Palace",
+    "name_ne": "जानकी मन्दिर जनकपुरधाम (नौ लाख मन्दिर)",
+    "description": "A breathtaking 1910 palace-temple constructed entirely of sparkling white marble, combining Mughal and Rajput palace architecture, dedicated to Goddess Sita in the heart of ancient Mithila.",
+    "category": "Sacred Marble Palace Temple",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 3.0,
+      "crowd": 4.0,
+      "culture": 5.0,
+      "nature": 2.0,
+      "food": 3.5,
+      "spiritual": 5.0,
+      "adventure": 2.0
+    },
+    "slots": [
+      "morning",
+      "evening"
+    ],
+    "best_visiting_hours": "06:00 – 12:00 & 16:30 – 20:30 (Evening Ganga Sagar aarti & illumination)",
+    "best_season": "October to March (Vivah Panchami festival in Nov/Dec)",
+    "best_months": [
+      1,
+      2,
+      3,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.5,
+    "location": "Janakpurdham, Dhanusa",
+    "image": "/static/img/places/janaki_mandir.jpg"
+  },
+  {
+    "id": "vivaha_mandap_mithila_art",
+    "name": "Vivaha Mandap & Mithila Folk Art Center",
+    "name_ne": "विवाह मण्डप तथा मिथिला कला केन्द्र",
+    "description": "The sacred garden pavilion commemorating the mythological wedding of Lord Rama and Princess Sita, surrounded by traditional centers preserving intricate, colorful geometric Mithila painting.",
+    "category": "Mithila Folk Heritage",
+    "category_group": "Culture",
+    "traits": {
+      "energy": 2.0,
+      "crowd": 3.0,
+      "culture": 5.0,
+      "nature": 2.5,
+      "food": 3.0,
+      "spiritual": 4.5,
+      "adventure": 1.5
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "08:00 – 17:00",
+    "best_season": "October to March",
+    "best_months": [
+      1,
+      2,
+      3,
+      10,
+      11,
+      12
+    ],
+    "cost_level": 1,
+    "duration_hours": 2.0,
+    "location": "Janakpurdham, Mithila",
+    "image": "/static/img/places/vivaha_mandap_janakpur.jpg"
+  },
+  {
+    "id": "pathibhara_devi_taplejung",
+    "name": "Pathibhara Devi Sacred Mountain Shrine",
+    "name_ne": "पाथीभरा देवी मन्दिर ताप्लेजुङ",
+    "description": "A deeply revered mountain shrine situated at 3,794m, where pilgrims trek through sacred rhododendron forests and fluttering prayer flags seeking blessings, with sweeping vistas of Mount Kanchenjunga.",
+    "category": "High Mountain Pilgrimage",
+    "category_group": "Spiritual",
+    "traits": {
+      "energy": 4.5,
+      "crowd": 2.5,
+      "culture": 5.0,
+      "nature": 5.0,
+      "food": 1.5,
+      "spiritual": 5.0,
+      "adventure": 4.5
+    },
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "best_visiting_hours": "06:00 – 12:00",
+    "best_season": "March–June & September–November",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "cost_level": 2,
+    "duration_hours": 4.0,
+    "location": "Taplejung, Eastern Nepal",
+    "image": "/static/img/places/pathibhara_devi.jpg"
+  }
+]

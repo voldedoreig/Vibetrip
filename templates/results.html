@@ -1,0 +1,526 @@
+{% extends "base.html" %}
+
+{% block title %}{{ vibe.name }} • {{ destination.name }} Field Dossier{% endblock %}
+
+{% block extra_css %}
+  <!-- Leaflet Map CSS for Interactive Valley Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+{% endblock %}
+
+{% block body_attrs %}
+class="results-page-body"
+style="--vibe-accent: {{ vibe.theme.primary }}; --vibe-highlight: {{ vibe.theme.accent }};"
+{% endblock %}
+
+{% block content %}
+<div class="results-page-container">
+  <!-- Minimalist Top Architectural Masthead -->
+  <header class="monograph-masthead">
+    <div class="masthead-meta-left">
+      <span class="masthead-journal-vol">{% if destination.id == 'nepal' %}NEPAL EXPEDITION MONOGRAPH{% else %}KATHMANDU VALLEY FIELD MONOGRAPH{% endif %}</span>
+      <span class="masthead-sep">/</span>
+      <span class="masthead-edition">{{ t('results.masthead_edition') }}</span>
+    </div>
+    <div class="masthead-meta-right">
+      <span class="masthead-persona-tag">{{ vibe.name }}</span>
+      <span class="masthead-sep">/</span>
+      <span>{{ destination.name }}, {{ destination.country }}</span>
+      {% if plan.start_date %}
+        <span class="masthead-sep">/</span>
+        <span>{{ plan.start_date }}</span>
+      {% endif %}
+    </div>
+  </header>
+
+  <!-- 1. Editorial Hero & Spec Ledger -->
+  <section class="results-hero-monograph reveal">
+    <div class="results-hero-monograph-grid">
+      <!-- Left Column: Persona, Philosophy, Architectural Spec Ledger & Actions -->
+      <div class="hero-left-col">
+        <div class="hero-terracotta-badge-row">
+          <span class="vibe-match-pill">
+            <span class="badge-devanagari-prefix">यात्रा शैली</span>
+            <span class="badge-english-label">CURATED FOR YOUR RHYTHM</span>
+          </span>
+          <span class="destination-location-pill">📍 {{ destination.name }}, {{ destination.country }}</span>
+          {% if plan.start_date %}
+            <span class="travel-date-pill">📅 {{ plan.start_date }}</span>
+          {% endif %}
+        </div>
+
+        <h1 class="hero-persona-title">
+          <span class="hero-title-prefix">{% if destination.id == 'nepal' %}Nepal Expedition Monograph{% else %}Kathmandu Valley Field Dossier{% endif %}</span>
+          <span class="hero-title-name">{{ vibe.name }}</span>
+        </h1>
+        <p class="hero-persona-tagline" id="heroPersonaTagline">
+          {% if plan.personalized_narrative and plan.personalized_narrative.bespoke_headline %}
+            “{{ plan.personalized_narrative.bespoke_headline }}”
+          {% else %}
+            “{{ vibe.tagline }}”
+          {% endif %}
+        </p>
+
+        <!-- Journey Philosophy -->
+        <div class="hero-editorial-philosophy">
+          <p class="hero-philosophy-body" id="heroPhilosophyText">
+            {% if plan.personalized_narrative and (plan.personalized_narrative.philosophy_of_journey or plan.personalized_narrative.journey_philosophy) %}
+              {{ plan.personalized_narrative.philosophy_of_journey or plan.personalized_narrative.journey_philosophy }}
+            {% else %}
+              {{ vibe.description }}
+            {% endif %}
+          </p>
+          <p class="hero-rhythm-inline" id="heroRhythmText" {% if not (plan.personalized_narrative and plan.personalized_narrative.local_rhythm_advice) %}style="display: none;"{% endif %}>
+            <strong>Local Rhythm Advice:</strong> <span class="rhythm-content">{{ plan.personalized_narrative.local_rhythm_advice if (plan.personalized_narrative and plan.personalized_narrative.local_rhythm_advice) else '' }}</span>
+          </p>
+          <p class="hero-golden-rule-inline" id="heroGoldenRuleText" {% if not (plan.personalized_narrative and plan.personalized_narrative.golden_rule) %}style="display: none;"{% endif %}>
+            ✦ <span class="golden-rule-content">{{ plan.personalized_narrative.golden_rule if (plan.personalized_narrative and plan.personalized_narrative.golden_rule) else '' }}</span>
+          </p>
+        </div>
+
+        <!-- Architectural Spec Ledger -->
+        <div class="spec-ledger-grid">
+          {% set pace_pill = (plan.dna_pills | selectattr('label', 'equalto', 'Pace') | list | first) %}
+          {% set focus_pill = (plan.dna_pills | selectattr('label', 'equalto', 'Focus') | list | first) %}
+          {% set vibe_pill = (plan.dna_pills | selectattr('label', 'equalto', 'Vibe') | list | first) %}
+          {% set window_pill = (plan.dna_pills | selectattr('label', 'equalto', 'Window') | list | first) %}
+
+          <div class="spec-ledger-col">
+            <span class="spec-col-label">PACE &amp; CADENCE</span>
+            <span class="spec-col-value">
+              {% if pace_pill %}{{ pace_pill.val }}{% else %}Contemplative &amp; Slow{% endif %}
+            </span>
+          </div>
+          <div class="spec-ledger-col">
+            <span class="spec-col-label">PRIMARY FOCUS</span>
+            <span class="spec-col-value">
+              {% if focus_pill %}{{ focus_pill.val }}{% else %}{{ vibe.name }}{% endif %}
+            </span>
+          </div>
+          <div class="spec-ledger-col">
+            <span class="spec-col-label">ATMOSPHERE</span>
+            <span class="spec-col-value">
+              {% if vibe_pill %}{{ vibe_pill.val }}{% else %}Quiet Sanctuaries &amp; Bahals{% endif %}
+            </span>
+          </div>
+          <div class="spec-ledger-col">
+            <span class="spec-col-label">OPTIMAL WINDOW</span>
+            <span class="spec-col-value">
+              {% if window_pill %}{{ window_pill.val }}{% else %}Dawn to Dusk (6 AM Start){% endif %}
+            </span>
+          </div>
+        </div>
+
+        <!-- Action Toolbar -->
+        <div class="hero-action-toolbar">
+          <button type="button" class="btn-dossier-tool btn-tool-print" id="btnPrint" title="Print Monograph">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+            <span>Print Monograph</span>
+          </button>
+
+          <a href="{{ url_for('my_tour') }}" class="btn-dossier-tool btn-tool-save" title="Save to My Tour">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+            <span>Save to Tour</span>
+          </a>
+
+          <button type="button" class="btn-dossier-tool btn-tool-share" id="btnShare" title="Copy shareable trip link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            <span id="shareBtnText">{{ t('results.btn_share') }}</span>
+          </button>
+
+          <a href="{{ url_for('planner') }}" class="btn-dossier-tool btn-tool-adjust" title="Recalibrate Diagnostics">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+            <span>Recalibrate</span>
+          </a>
+
+          <button type="button" class="btn-dossier-tool btn-tool-gemini" id="btnOpenGeminiModal" title="Gemini AI Options & Regeneration">
+            {% if plan.personalized_narrative and (plan.personalized_narrative.is_ai_generated or plan.personalized_narrative.gemini_powered) %}
+              <span class="gemini-pill-sparkle">✦</span>
+              <span>{{ t('results.ai_regenerate') }}</span>
+            {% else %}
+              <span class="gemini-pill-sparkle">✨</span>
+              <span>Enhance with AI ↻</span>
+            {% endif %}
+          </button>
+        </div>
+
+        <div class="share-toast" id="shareToast" role="status" aria-live="polite">
+          ✓ {{ t('results.copied_toast') }}
+        </div>
+      </div>
+
+      <!-- Valley Lexicon Table -->
+      <div class="hero-right-col">
+        <div class="valley-lexicon-table">
+          <div class="lexicon-table-header">
+            <div class="lexicon-header-badge">
+              <span class="devanagari-seal">भाषा संवाद</span>
+              <span class="lexicon-badge-text">{% if destination.id == 'nepal' %}Living Nepal Lexicon &amp; Protocol{% else %}Living Valley Lexicon &amp; Protocol{% endif %}</span>
+            </div>
+            <p class="lexicon-intro">
+              Nepali (नेपाली) &amp; Nepal Bhasa spoken cadences. Tap any entry to listen:
+            </p>
+          </div>
+
+          <div class="lexicon-entries-list">
+            <button type="button" class="phrase-audio-btn lexicon-row" data-phrase="Namaste" title="Listen to pronunciation">
+              <div class="lexicon-term-col">
+                <strong class="lexicon-romanized">Namaste</strong>
+                <span class="lexicon-devanagari">नमस्ते</span>
+                <span class="lexicon-phonetic">"nuh-muh-stay"</span>
+              </div>
+              <div class="lexicon-leader-line"></div>
+              <div class="lexicon-meaning-col">
+                <span class="lexicon-translation">Sacred Greeting</span>
+                <span class="lexicon-sound-glyph">🔊</span>
+              </div>
+            </button>
+
+            <button type="button" class="phrase-audio-btn lexicon-row" data-phrase="Dhanyabad" title="Listen to pronunciation">
+              <div class="lexicon-term-col">
+                <strong class="lexicon-romanized">Dhanyabad</strong>
+                <span class="lexicon-devanagari">धन्यवाद</span>
+                <span class="lexicon-phonetic">"dhun-yuh-baad"</span>
+              </div>
+              <div class="lexicon-leader-line"></div>
+              <div class="lexicon-meaning-col">
+                <span class="lexicon-translation">Deep Gratitude</span>
+                <span class="lexicon-sound-glyph">🔊</span>
+              </div>
+            </button>
+
+            <button type="button" class="phrase-audio-btn lexicon-row" data-phrase="Jwajolapa" title="Listen to pronunciation">
+              <div class="lexicon-term-col">
+                <strong class="lexicon-romanized">Jwajolapa</strong>
+                <span class="lexicon-devanagari">ज्वज्वलपा</span>
+                <span class="lexicon-phonetic">"jwuh-juh-luh-puh"</span>
+              </div>
+              <div class="lexicon-leader-line"></div>
+              <div class="lexicon-meaning-col">
+                <span class="lexicon-translation">Newari Welcome</span>
+                <span class="lexicon-sound-glyph">🔊</span>
+              </div>
+            </button>
+
+            <button type="button" class="phrase-audio-btn lexicon-row" data-phrase="Mitho cha" title="Listen to pronunciation">
+              <div class="lexicon-term-col">
+                <strong class="lexicon-romanized">Mitho Cha</strong>
+                <span class="lexicon-devanagari">मिठो छ</span>
+                <span class="lexicon-phonetic">"mee-tho chha"</span>
+              </div>
+              <div class="lexicon-leader-line"></div>
+              <div class="lexicon-meaning-col">
+                <span class="lexicon-translation">Delicious Feast Approval</span>
+                <span class="lexicon-sound-glyph">🔊</span>
+              </div>
+            </button>
+          </div>
+
+          <!-- Integrated Seasonal Context Strip (Unboxed) -->
+          <div class="lexicon-seasonal-strip">
+            <div class="seasonal-glyph">🍂</div>
+            <div class="seasonal-meta">
+              <strong class="seasonal-title">{{ plan.timing_overview.title }}</strong>
+              <span class="seasonal-desc">{{ plan.timing_overview.weather }} • {{ plan.timing_overview.best_hours_summary }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Sticky Day Navigation & Transit Ribbon -->
+  <nav class="sticky-transit-subnav" id="stickyTransitNav" aria-label="Itinerary Navigation">
+    <div class="sticky-transit-inner">
+      <!-- Day Filter Tabs (Left) -->
+      <div class="day-filter-tabs" id="dayFilterTabs" role="tablist">
+        {% for day in plan.days %}
+          <button type="button" 
+                  class="day-tab-btn {% if loop.first %}is-active{% endif %}" 
+                  data-day="{{ day.day }}" 
+                  role="tab" 
+                  aria-selected="{% if loop.first %}true{% else %}false{% endif %}">
+            <span class="tab-day-num">Day {{ "%02d" % day.day }}</span>
+            <span class="tab-day-sub">Morning to Evening</span>
+          </button>
+        {% endfor %}
+        <button type="button" class="day-tab-btn" data-day="all" role="tab" aria-selected="false">
+          <span class="tab-day-num">View All Days</span>
+          <span class="tab-day-sub">Complete Valley Loop</span>
+        </button>
+      </div>
+
+      <!-- Sequential Route Chain (Right: dynamically synced to active day) -->
+      <div class="sequential-route-chain" id="sequentialRouteChain" aria-label="Route Chain Timeline">
+        <!-- Rendered via JS based on active day -->
+      </div>
+    </div>
+  </nav>
+
+  <!-- 3. Stop Cards & Interactive Map -->
+  <main class="dossier-workspace-container">
+    <div class="dossier-section-header">
+      <div class="editorial-eyebrow">
+        <span class="devanagari-seal">मार्ग दर्शन</span>
+        <span>Sequential Journey Route</span>
+      </div>
+      <h2 class="editorial-section-title">The Right Places to Visit</h2>
+      <p class="editorial-section-subtitle">
+        {% if destination.id == 'nepal' %}
+          Follow your curated expedition path across Nepal: Himalayan alpine ridges, sacred pilgrimage sanctuaries, wildlife conservation reserves, and serene lakesides.
+        {% else %}
+          Follow your curated field path across Kathmandu Valley: dawn stupa circumambulations, artisan bahal courtyards, local culinary feasts, and evening sacred river rituals.
+        {% endif %}
+      </p>
+    </div>
+
+    <div class="dossier-workspace-grid">
+      <!-- Left Column: Compact Stop Cards Feed -->
+      <div class="dossier-cards-feed" id="dossierCardsFeed">
+        {% set stop_counter = namespace(value=1) %}
+        {% for day in plan.days %}
+          {% for slot_name in ['morning', 'afternoon', 'evening'] %}
+            {% set slot_data = day.slots.get(slot_name) %}
+            {% if slot_data and slot_data.name %}
+              <article class="stop-card stop-monograph-spread {% if stop_counter.value == 1 %}is-active{% endif %}" 
+                       id="stop-card-{{ stop_counter.value }}"
+                       data-stop-idx="{{ stop_counter.value }}"
+                       data-day="{{ day.day }}"
+                       data-slot="{{ slot_name }}"
+                       data-lat="{{ slot_data.lat or 27.7172 }}"
+                       data-lng="{{ slot_data.lng or 85.3240 }}"
+                       data-title="{{ slot_data.name }}"
+                       data-transit-next="{{ slot_data.next_transit_label or '' }}">
+                
+                <!-- Stop Top Metadata Header: Plain uppercase terracotta text, duration on right, NO square boxes -->
+                <div class="stop-monograph-meta-row">
+                  <div class="stop-meta-left">
+                    <span class="stop-seq-label">यात्रा क्र{{ stop_counter.value|devanagari_num }} • STOP {{ "%02d" % stop_counter.value }} • DAY {{ "%02d" % day.day }} {{ slot_name|upper }}</span>
+                    <span class="stop-archetype-inline">
+                      {% if slot_name == 'morning' %}— Dawn Awakening
+                      {% elif slot_name == 'afternoon' %}— Artisan Courtyard
+                      {% else %}— Twilight Sanctuary{% endif %}
+                    </span>
+                  </div>
+                  <div class="stop-meta-right">
+                    <span>⏳ {{ slot_data.duration_hours or 2.0 }} Hours</span>
+                    <span class="meta-dot">/</span>
+                    <span>⏰ {{ slot_data.ideal_window or 'Optimal Light' }}</span>
+                  </div>
+                </div>
+
+                <!-- Unboxed Italic Why-line in Terracotta -->
+                {% if slot_data.why_for_you %}
+                  <p class="stop-monograph-why">
+                    <span class="why-glyph">✦</span>
+                    <em>Why this fits your rhythm: {{ slot_data.why_for_you }}</em>
+                  </p>
+                {% endif %}
+
+                <!-- Editorial Lead Row: 200px Sharp Photo on Left / Directive on Right with NO border box -->
+                <div class="stop-editorial-lead-row">
+                  <div class="stop-lead-photo-col">
+                    <div class="stop-sharp-photo-frame">
+                      <img src="{{ slot_data.image or '/static/img/places/boudhanath.jpg' }}" 
+                           alt="{{ slot_data.name }}" 
+                           class="stop-monograph-img" 
+                           loading="lazy" 
+                           onerror="this.src='/static/img/places/boudhanath.jpg'">
+                    </div>
+                    {% if slot_data.activity_id and slot_data.activity_id != 'free_time' %}
+                      <a href="{{ url_for('place_detail', place_id=slot_data.activity_id) }}" class="stop-monograph-link">
+                        Read Full Monograph →
+                      </a>
+                    {% endif %}
+                  </div>
+
+                  <div class="stop-lead-text-col">
+                    <h3 class="stop-monograph-title">{{ slot_data.name }}</h3>
+                    <div class="stop-location-line">
+                      <span>📍 {{ slot_data.location or 'Kathmandu Valley, Nepal' }}</span>
+                      {% if slot_data.category %}
+                        <span class="meta-sep">/</span>
+                        <span class="stop-category-text">{{ slot_data.category }}</span>
+                      {% endif %}
+                    </div>
+
+                    <!-- First 30-Minute Directive -->
+                    <div class="stop-directive-unboxed">
+                      <span class="directive-kicker">01. FIRST 30-MINUTE DIRECTIVE</span>
+                      <p class="directive-copy">
+                        {{ slot_data.what_to_do or slot_data.reason or 'Arrive at sunrise to observe morning rituals and immerse yourself in the quiet cadence.' }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Stop Details Cross-Matrix -->
+                <div class="hairline-cross-matrix">
+                  <!-- Top Left: Taste & Sit -->
+                  <div class="matrix-cell matrix-cell-left matrix-cell-top">
+                    <span class="matrix-label">🍵 TASTE &amp; SIT</span>
+                    <p class="matrix-text">{{ slot_data.taste_pairing or 'Sip fresh cardamom-infused chiya and warm local bakery pastries at a quiet courtyard vantage point.' }}</p>
+                  </div>
+
+                  <!-- Top Right: Insider Secret -->
+                  <div class="matrix-cell matrix-cell-right matrix-cell-top">
+                    <span class="matrix-label">👁️ INSIDER SECRET</span>
+                    <p class="matrix-text">{{ slot_data.insider_secret or 'Inspect the intricate woodcarvings and subtle Licchavi stone chaityas hidden in the corners.' }}</p>
+                  </div>
+
+                  <!-- Bottom Left: Local Etiquette -->
+                  <div class="matrix-cell matrix-cell-left matrix-cell-bottom">
+                    <span class="matrix-label">🕊️ LOCAL ETIQUETTE &amp; PROTOCOL</span>
+                    <p class="matrix-text">{{ slot_data.etiquette_tip or 'Always walk clockwise around sacred monuments; ask permission before taking portraits of devotees.' }}</p>
+                  </div>
+
+                  <!-- Bottom Right: Transit & Timing -->
+                  <div class="matrix-cell matrix-cell-right matrix-cell-bottom">
+                    <span class="matrix-label">🚕 TRANSIT &amp; TIMING</span>
+                    <p class="matrix-text">{{ slot_data.transit_tip or 'Walk through pedestrian bahals or take an electric taxi outside peak rush hour.' }}</p>
+                  </div>
+                </div>
+
+                <!-- Footer Quick Map Focus -->
+                <div class="stop-monograph-footer">
+                  <button type="button" 
+                          class="btn-focus-stop-map" 
+                          data-stop-idx="{{ stop_counter.value }}"
+                          data-lat="{{ slot_data.lat or 27.7172 }}"
+                          data-lng="{{ slot_data.lng or 85.3240 }}">
+                    <span>📍 Focus on Valley Map</span>
+                  </button>
+                </div>
+              </article>
+              {% set stop_counter.value = stop_counter.value + 1 %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </div>
+
+      <!-- Right Column: Sticky Interactive Valley Map -->
+      <aside class="sticky-map-wrapper">
+        <div class="sticky-map-card" id="stickyMapCard">
+          <div class="sticky-map-header">
+            <div class="map-header-meta">
+              <span class="map-day-indicator" id="mapDayIndicator">Day 01 Route</span>
+              <span class="map-stops-count" id="mapStopsCount">3 Stops Active</span>
+            </div>
+            <button type="button" class="btn-map-reset" id="btnResetMapView" title="Reset map bounds">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><polyline points="3 3 3 8 8 8"></polyline></svg>
+              <span>Reset View</span>
+            </button>
+          </div>
+
+          <div id="valleyResultsMap" class="valley-sticky-leaflet-map"></div>
+
+          <div class="sticky-map-footer">
+            <div class="map-legend-pill">
+              <span class="legend-dot-terracotta"></span>
+              <span>Terracotta Pins: Numbered Stop Sequence</span>
+            </div>
+            <span>✦ Scroll dossier or click pins to inspect</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- 4. Cultural Celebrations & Festivals -->
+  {% if plan.festival_highlights or plan.also_happening %}
+    <section class="timing-festivals-wrapper reveal" style="margin-top: 56px; border-top: 1.5px solid #1C1917; padding-top: 40px;">
+      <div class="festivals-section-header" style="margin-bottom: 24px;">
+        <div class="editorial-eyebrow">
+          <span class="devanagari-seal">जात्रा र चाडपर्व</span>
+          <span>Cultural Calendar</span>
+        </div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: #1C1917; margin: 0 0 6px;">
+          Living Cultural Celebrations During Your Travel Dates
+        </h3>
+        <p style="font-size: 0.92rem; color: #57524A; margin: 0;">
+          Traditional valley festivals occurring during your dates with auspicious timings and locations.
+        </p>
+      </div>
+
+      <div class="festivals-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+        {% for fest in plan.festival_highlights %}
+          <div class="festival-item-card" style="background: #F4EFE4; border: 1px solid #DFD8C8; border-top: 2.5px solid var(--terracotta, #B84A27); border-radius: 3px; padding: 22px; box-shadow: none;">
+            <span style="display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--terracotta, #B84A27); margin-bottom: 6px;">
+              Signature Highlight
+            </span>
+            <h4 style="font-family: var(--font-serif); font-size: 1.25rem; color: #1C1917; margin: 0 0 6px;">
+              {{ loc(fest) }}
+            </h4>
+            <p style="font-size: 0.82rem; font-weight: 600; color: #7A7265; margin-bottom: 8px;">
+              📍 {{ fest.location }}
+            </p>
+            <p style="font-size: 0.9rem; color: #3E3A33; line-height: 1.58; margin: 0;">
+              {{ fest.description }}
+            </p>
+            {% if fest.verify_note %}
+              <p style="font-size: 0.8rem; color: #8C5832; margin-top: 10px;">
+                <em>Note: {{ fest.verify_note }}</em>
+              </p>
+            {% endif %}
+          </div>
+        {% endfor %}
+
+        {% for fest in plan.also_happening %}
+          <div class="festival-item-card" style="background: #F4EFE4; border: 1px solid #DFD8C8; border-top: 2.5px solid #3F522C; border-radius: 3px; padding: 22px; box-shadow: none;">
+            <span style="display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #3F522C; margin-bottom: 6px;">
+              Cultural Event
+            </span>
+            <h4 style="font-family: var(--font-serif); font-size: 1.25rem; color: #1E1B18; margin: 0 0 6px;">
+              {{ loc(fest) }}
+            </h4>
+            <p style="font-size: 0.82rem; font-weight: 600; color: #7A7265; margin-bottom: 8px;">
+              {{ fest.start }} &bull; 📍 {{ fest.location }}
+            </p>
+            <p style="font-size: 0.9rem; color: #3E3A33; line-height: 1.58; margin: 0;">
+              {{ fest.description }}
+            </p>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  <!-- 5. Gemini AI Synthesis Modal -->
+  <div class="gemini-modal-backdrop" id="geminiModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="geminiModalTitle">
+    <div class="gemini-modal-card">
+      <div class="gemini-modal-header">
+        <h3 id="geminiModalTitle">✨ Google Gemini AI Itinerary Synthesis</h3>
+        <button type="button" class="gemini-modal-close" id="btnCloseGeminiModal" aria-label="Close dialog">&times;</button>
+      </div>
+      <div class="gemini-modal-body">
+        <p class="gemini-modal-desc">
+          Generate an evocative cultural preface and sensory local guidance tailored to your exact travel preferences across {{ destination.name }}.
+        </p>
+
+        <div class="gemini-input-group">
+          <label class="gemini-input-label" for="geminiApiKeyField">Google Gemini API Key (Optional):</label>
+          <input type="password" 
+                 id="geminiApiKeyField" 
+                 class="gemini-api-key-field" 
+                 placeholder="AIzaSy... (leave blank to use system key)" 
+                 autocomplete="off">
+        </div>
+
+        <div class="gemini-modal-actions">
+          <button type="button" class="btn-gemini-cancel" id="btnCancelGeminiModal">Cancel</button>
+          <button type="button" class="btn-gemini-submit" id="btnSubmitGeminiEnhance" data-plan-id="{{ plan.id }}">
+            <span>✦ Synthesize Dossier</span>
+          </button>
+        </div>
+
+        <div class="gemini-status-message" id="geminiModalStatus"></div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+  <!-- Leaflet Map JS & Results Interactive Monograph Script -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="{{ url_for('static', filename='js/results.js') }}"></script>
+{% endblock %}

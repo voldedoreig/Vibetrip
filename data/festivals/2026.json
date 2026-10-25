@@ -1,0 +1,123 @@
+[
+  {
+    "id": "basantapur_holi",
+    "name": "Holi Festival of Colours at Basantapur",
+    "name_ne": "वसन्तपुर होली पर्व",
+    "start": "2026-03-03",
+    "end": "2026-03-03",
+    "location": "Basantapur Durbar Square, Kathmandu",
+    "slot": "afternoon",
+    "vibes": {
+      "festival_spark": 1.0,
+      "family_fun": 0.5,
+      "foodie_wanderer": 0.4
+    },
+    "description": "Joyous clouds of vibrant coloured gulal powders, water splashes, upbeat live music, and festive dancing in front of ancient royal palaces.",
+    "verify_note": "Confirm date with an official Nepali calendar before the demo (TODO_VERIFY)"
+  },
+  {
+    "id": "ghode_jatra",
+    "name": "Ghode Jatra Horse Racing Festival",
+    "name_ne": "घोडे जात्रा",
+    "start": "2026-03-19",
+    "end": "2026-03-19",
+    "location": "Tundikhel Parade Ground, Kathmandu",
+    "slot": "afternoon",
+    "vibes": {
+      "festival_spark": 0.7,
+      "adventure_seeker": 0.4
+    },
+    "description": "Galloping royal cavalry horses, acrobatic horse stunts, and cultural parades performing to ward off evil spirits beneath the open skies.",
+    "verify_note": "Confirm date with an official Nepali calendar before the demo (TODO_VERIFY)"
+  },
+  {
+    "id": "bisket_jatra",
+    "name": "Bisket Jatra Chariot Procession",
+    "name_ne": "बिस्केट जात्रा",
+    "start": "2026-04-13",
+    "end": "2026-04-15",
+    "location": "Taumadhi Square, Bhaktapur",
+    "slot": "afternoon",
+    "vibes": {
+      "heritage_historian": 0.9,
+      "creative_soul": 0.5
+    },
+    "description": "Thrilling tug-of-war pulling massive multi-tiered wooden chariots of Lord Bhairava through the medieval cobblestone streets of Bhaktapur.",
+    "verify_note": "Confirm date with an official Nepali calendar before the demo (TODO_VERIFY)"
+  },
+  {
+    "id": "buddha_jayanti",
+    "name": "Buddha Jayanti Full Moon Illuminations",
+    "name_ne": "बुद्ध जयन्ती",
+    "start": "2026-05-31",
+    "end": "2026-05-31",
+    "location": "Boudhanath & Swayambhunath Stupas",
+    "slot": "morning",
+    "vibes": {
+      "spiritual_seeker": 1.0,
+      "calm_explorer": 0.6
+    },
+    "description": "Peaceful dawn processions, sacred saffron robes, thousands of golden butter lamps, and deep rhythmic Tibetan horn chants honoring the Buddha's birth.",
+    "verify_note": "Confirm date with an official Nepali calendar before the demo (TODO_VERIFY)"
+  },
+  {
+    "id": "teej",
+    "name": "Haritalika Teej Women's Festival",
+    "name_ne": "हरितालिका तीज",
+    "start": "2026-09-14",
+    "end": "2026-09-14",
+    "location": "Pashupatinath Temple Grounds",
+    "slot": "morning",
+    "vibes": {
+      "creative_soul": 0.6,
+      "spiritual_seeker": 0.6
+    },
+    "description": "A sea of brilliant red saris, sparkling glass bangles, joyous rooftop singing, and traditional folk dances celebrating sisterhood and devotion.",
+    "verify_note": "Confirm date with an official Nepali calendar before the demo (TODO_VERIFY)"
+  },
+  {
+    "id": "indra_jatra",
+    "name": "Indra Jatra & Kumari Living Goddess Chariot",
+    "name_ne": "इन्द्रजात्रा तथा जीवित देवी कुमारी रथयात्रा",
+    "start": "2026-09-24",
+    "end": "2026-09-30",
+    "location": "Kathmandu Durbar Square",
+    "slot": "evening",
+    "vibes": {
+      "festival_spark": 0.9,
+      "heritage_historian": 0.7
+    },
+    "description": "Mesmerizing Majipa Lakhey demon masked dances, oil-torchlit streets, and the rare public procession of the Living Goddess Kumari in her golden chariot.",
+    "verify_note": "Confirm date with an official Nepali calendar before the demo (TODO_VERIFY)"
+  },
+  {
+    "id": "dashain",
+    "name": "Dashain Vijaya Dashami & Bamboo Swings",
+    "name_ne": "दशैँ विजयादशमी",
+    "start": "2026-10-17",
+    "end": "2026-10-21",
+    "location": "Kathmandu Valley & Historic Courtyards",
+    "slot": "afternoon",
+    "vibes": {
+      "family_fun": 1.0,
+      "foodie_wanderer": 0.7
+    },
+    "description": "Nepal's grandest harvest homecoming with tall bamboo swings (ping), bright red rice tika blessings, joyful kite flying, and rich family feasts.",
+    "verify_note": "Confirm date with an official Nepali calendar before the demo (TODO_VERIFY)"
+  },
+  {
+    "id": "tihar",
+    "name": "Tihar Festival of Lights & Deepawali",
+    "name_ne": "तिहार (दिपावली)",
+    "start": "2026-11-06",
+    "end": "2026-11-10",
+    "location": "All Kathmandu Valley Neighbourhoods",
+    "slot": "evening",
+    "vibes": {
+      "family_fun": 0.8,
+      "festival_spark": 0.7
+    },
+    "description": "Golden marigold garlands, intricate colourful doorstep rangolis, twinkling oil lamps on every windowsill, and lively Deusi-Bhailo musical troupes.",
+    "verify_note": "Confirm date with an official Nepali calendar before the demo (TODO_VERIFY)"
+  }
+]

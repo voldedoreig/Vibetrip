@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+{% block title %}Reader Feedback &bull; {{ t('feedback.title') }} &bull; {{ t('brand') }}{% endblock %}
+
+{% block content %}
+<div class="feedback-page-container container">
+  <header class="page-header feedback-header reveal">
+    <span class="editorial-eyebrow">Reader Correspondence</span>
+    <h1 class="page-title feedback-main-title">{{ t('feedback.title') }}</h1>
+    <p class="page-subtitle feedback-sub-lead">{{ t('feedback.subtitle') }}</p>
+  </header>
+
+  <div class="feedback-card-wrapper reveal">
+    {% if submitted %}
+      <!-- Success Thank You Card -->
+      <div class="submission-success-box text-center">
+        <div class="success-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        </div>
+        <h2 class="success-title">{{ t('feedback.success_title') }}</h2>
+        <p class="success-message">{{ t('feedback.success_msg') }}</p>
+        <div class="success-actions">
+          <a href="{{ url_for('home') }}" class="btn btn-primary">
+            {{ t('not_found.back_home') }}
+          </a>
+          <a href="{{ url_for('planner') }}" class="btn btn-outline">
+            {{ t('not_found.new_plan') }}
+          </a>
+        </div>
+      </div>
+    {% else %}
+      <!-- Feedback Form: Clean White Plate with Warm Taupe Framing -->
+      <form action="{{ url_for('feedback') }}" method="POST" class="styled-form feedback-styled-form" id="feedbackForm" novalidate>
+        <!-- Optional Linked Plan ID -->
+        {% if plan_id %}
+          <input type="hidden" name="plan_id" value="{{ plan_id }}">
+          <div class="linked-plan-pill">
+            <span>Linked to Consultation Plan #{{ plan_id }}</span>
+          </div>
+        {% endif %}
+
+        <!-- 1 to 5 Star Rating -->
+        <div class="form-group">
+          <label class="form-label" id="ratingLabel">
+            {{ t('feedback.rating_label') }} <span class="required-asterisk">*</span>
+          </label>
+          <div class="star-rating-widget" role="radiogroup" aria-labelledby="ratingLabel">
+            {% for i in range(5, 0, -1) %}
+              <input type="radio" 
+                     id="star{{ i }}" 
+                     name="rating" 
+                     value="{{ i }}" 
+                     class="star-radio" 
+                     {% if answers.get('rating') == i|string %}checked{% endif %}
+                     required>
+              <label for="star{{ i }}" class="star-label" title="{{ i }} out of 5 stars"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></label>
+            {% endfor %}
+          </div>
+          {% if errors and errors.get('rating') %}
+            <div class="field-error-message" role="alert">{{ errors.get('rating') }}</div>
+          {% endif %}
+        </div>
+
+        <!-- Recommend Yes / No Choice -->
+        <div class="form-group">
+          <label class="form-label">
+            {{ t('feedback.recommend_label') }} <span class="required-asterisk">*</span>
+          </label>
+          <div class="radio-toggle-group">
+            <label class="radio-pill-label">
+              <input type="radio" name="recommend" value="yes" {% if answers.get('recommend') == 'yes' %}checked{% endif %} required>
+              <span class="pill-text">{{ t('feedback.yes') }}</span>
+            </label>
+            <label class="radio-pill-label">
+              <input type="radio" name="recommend" value="no" {% if answers.get('recommend') == 'no' %}checked{% endif %} required>
+              <span class="pill-text">{{ t('feedback.no') }}</span>
+            </label>
+          </div>
+          {% if errors and errors.get('recommend') %}
+            <div class="field-error-message" role="alert">{{ errors.get('recommend') }}</div>
+          {% endif %}
+        </div>
+
+        <!-- Optional Name -->
+        <div class="form-group">
+          <label for="feedbackName" class="form-label">
+            {{ t('feedback.name_label') }}
+          </label>
+          <input type="text" 
+                 id="feedbackName" 
+                 name="name" 
+                 class="form-input" 
+                 maxlength="80" 
+                 value="{{ answers.get('name', '') }}" 
+                 placeholder="e.g. Samrat Shrestha">
+          {% if errors and errors.get('name') %}
+            <div class="field-error-message" role="alert">{{ errors.get('name') }}</div>
+          {% endif %}
+        </div>
+
+        <!-- Comment with Live Character Counter -->
+        <div class="form-group">
+          <label for="feedbackComment" class="form-label">
+            {{ t('feedback.comment_label') }}
+          </label>
+          <textarea id="feedbackComment" 
+                    name="comment" 
+                    class="form-textarea" 
+                    rows="4" 
+                    maxlength="500" 
+                    placeholder="{{ t('feedback.comment_placeholder') }}">{{ answers.get('comment', '') }}</textarea>
+          <div class="char-counter" id="charCounter">
+            0 / 500 characters
+          </div>
+          {% if errors and errors.get('comment') %}
+            <div class="field-error-message" role="alert">{{ errors.get('comment') }}</div>
+          {% endif %}
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary btn-large">
+            <span>{{ t('feedback.submit') }}</span> &rarr;
+          </button>
+        </div>
+      </form>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/feedback.js') }}"></script>
+{% endblock %}

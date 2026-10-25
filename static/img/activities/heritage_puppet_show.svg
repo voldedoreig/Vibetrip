@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="act_bg_heritage_puppet_show" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D6A4F"/>
+      <stop offset="100%" stop-color="#52B788"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#act_bg_heritage_puppet_show)"/>
+  
+  <path d="M0,380 Q200,320 400,360 T800,340 L800,500 L0,500 Z" fill="rgba(0,0,0,0.18)"/>
+  <rect x="70" y="50" width="660" height="400" rx="24" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/>
+
+  <circle cx="400" cy="150" r="50" fill="rgba(255,255,255,0.25)"/>
+  <text x="400" y="168" font-size="52" text-anchor="middle" dominant-baseline="central">✨</text>
+
+  <rect x="290" y="225" width="220" height="32" rx="16" fill="rgba(0,0,0,0.2)"/>
+  <text x="400" y="246" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">FOLK THEATRE</text>
+
+  <text x="400" y="305" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="28" font-weight="800" fill="#FFFFFF" text-anchor="middle">Traditional String Puppet Folklore</text>
+  <text x="400" y="342" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="24" font-weight="800" fill="#FFFFFF" text-anchor="middle"></text>
+
+  <text x="400" y="405" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="16" font-weight="600" fill="rgba(255,255,255,0.92)" text-anchor="middle">📍 Jhamsikhel, Lalitpur</text>
+</svg>

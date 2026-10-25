@@ -1,0 +1,16 @@
+# Virtual environment and Python caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Environment variables and secrets
+.env
+.env.*
+
+# Runtime data files
+data/plans/*.json
+!data/plans/.gitkeep
+data/feedback.csv
+data/contact.csv
+

@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+
+{% block title %}Settings &amp; Atmosphere &bull; {{ t('brand') }}{% endblock %}
+
+{% block content %}
+<div class="settings-page-container container">
+  <!-- Page Header -->
+  <header class="settings-header reveal">
+    <div class="settings-badge">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+      </svg>
+      <span>Preferences &amp; Customization</span>
+    </div>
+    <h1 class="settings-title">Atmosphere &amp; Display Settings</h1>
+    <p class="settings-subtitle">Calibrate the landing journal sky atmosphere, aesthetic theme, and language.</p>
+  </header>
+
+  <!-- Section 1: Atmosphere & Sky Time Mode -->
+  <section class="settings-card reveal">
+    <div class="settings-card-header">
+      <div>
+        <h2 class="settings-section-title">Expedition Sky Atmosphere</h2>
+        <p class="settings-section-desc">Select which time-of-day Himalayan sky and mountain ridgeline appears on the homepage journal. Sync with your device clock or manually lock your favourite lighting.</p>
+      </div>
+      <div class="current-sky-pill" id="activeSkyPill">
+        <span>Active:</span>
+        <strong id="activeSkyLabel">Sunrise Glow</strong>
+      </div>
+    </div>
+
+    <div class="atmosphere-grid">
+      <!-- Auto Mode -->
+      <div class="atmosphere-option-card" data-sky-mode="auto" id="atmCardAuto">
+        <div class="atm-preview atm-preview-auto">
+          <span class="atm-icon">⏱️</span>
+        </div>
+        <div class="atm-info">
+          <h3 class="atm-name">Auto (Real Time Clock)</h3>
+          <p class="atm-desc">Dynamically reflects the current hour in Kathmandu Valley (Sunrise, Daylight, Sunset, or Night).</p>
+          <span class="atm-badge">Dynamic Clock</span>
+        </div>
+        <button type="button" class="btn btn-outline btn-atm-select" data-select-sky="auto">Select Auto</button>
+      </div>
+
+      <!-- Sunrise Mode -->
+      <div class="atmosphere-option-card" data-sky-mode="sunrise" id="atmCardSunrise">
+        <div class="atm-preview atm-preview-sunrise">
+          <span class="atm-icon">🌅</span>
+        </div>
+        <div class="atm-info">
+          <h3 class="atm-name">Sunrise (5:00 AM – 10:00 AM)</h3>
+          <p class="atm-desc">Warm dawn tones with terracotta Himalayan peaks and ascending morning sun.</p>
+          <span class="atm-badge">Golden Hour</span>
+        </div>
+        <button type="button" class="btn btn-outline btn-atm-select" data-select-sky="sunrise">Select Sunrise</button>
+      </div>
+
+      <!-- Day Mode -->
+      <div class="atmosphere-option-card" data-sky-mode="day" id="atmCardDay">
+        <div class="atm-preview atm-preview-day">
+          <span class="atm-icon">☀️</span>
+        </div>
+        <div class="atm-info">
+          <h3 class="atm-name">Daylight (10:00 AM – 5:00 PM)</h3>
+          <p class="atm-desc">Crisp mountain sunlight, clear valley skies, and serene parchment ivory illumination.</p>
+          <span class="atm-badge">Natural Light</span>
+        </div>
+        <button type="button" class="btn btn-outline btn-atm-select" data-select-sky="day">Select Day</button>
+      </div>
+
+      <!-- Sunset Mode -->
+      <div class="atmosphere-option-card" data-sky-mode="sunset" id="atmCardSunset">
+        <div class="atm-preview atm-preview-sunset">
+          <span class="atm-icon">🌇</span>
+        </div>
+        <div class="atm-info">
+          <h3 class="atm-name">Golden Sunset (5:00 PM – 8:00 PM)</h3>
+          <p class="atm-desc">Deep terracotta crests, amber horizons, and golden evening light.</p>
+          <span class="atm-badge">Dusk Palette</span>
+        </div>
+        <button type="button" class="btn btn-outline btn-atm-select" data-select-sky="sunset">Select Sunset</button>
+      </div>
+
+      <!-- Night Mode -->
+      <div class="atmosphere-option-card" data-sky-mode="night" id="atmCardNight">
+        <div class="atm-preview atm-preview-night">
+          <span class="atm-icon">🌌</span>
+        </div>
+        <div class="atm-info">
+          <h3 class="atm-name">Quiet Night (9:00 PM – 5:00 AM)</h3>
+          <p class="atm-desc">Soft warm stone and moonlit ridges over quiet valley shrines.</p>
+          <span class="atm-badge">Starlit Quiet</span>
+        </div>
+        <button type="button" class="btn btn-outline btn-atm-select" data-select-sky="night">Select Night</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Unified Color Theme -->
+  <section class="settings-card reveal">
+    <div class="settings-card-header">
+      <div>
+        <h2 class="settings-section-title">Color Palette &amp; Editorial Theme</h2>
+        <p class="settings-section-desc">VibeTrip adheres to an art-directed Warm Editorial aesthetic: warm ivory (#F7F4ED), soft cream (#EEE8DC), charcoal (#292923), olive (#74785B), and terracotta (#B76E4B).</p>
+      </div>
+    </div>
+
+    <div class="theme-selection-grid">
+      <div class="theme-card active" id="themeCardWarm">
+        <div class="theme-card-preview theme-preview-warm">
+          <div class="sample-nav"></div>
+          <div class="sample-surface">
+            <span class="sample-btn"></span>
+            <span class="sample-accent"></span>
+          </div>
+        </div>
+        <div class="theme-card-content">
+          <h3>Warm Editorial (Default Monograph)</h3>
+          <p>Warm ivory canvas (#F7F4ED), crisp charcoal typography, olive and terracotta accents. Inspired by premium travel journals.</p>
+          <button type="button" class="btn btn-primary" id="btnSetThemeWarm">Active Monograph Theme</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Language Preference -->
+  <section class="settings-card reveal">
+    <div class="settings-card-header">
+      <div>
+        <h2 class="settings-section-title">Language / भाषा</h2>
+        <p class="settings-section-desc">Switch between English and Nepali across all guides, itinerary slots, and festival calendars.</p>
+      </div>
+    </div>
+
+    <div class="lang-selection-row">
+      <a href="{{ url_for('set_language', code='en') }}" class="lang-select-card {% if current_lang == 'en' %}active{% endif %}">
+        <span class="lang-flag">🇬🇧</span>
+        <div class="lang-info">
+          <strong>English</strong>
+          <span>International Edition</span>
+        </div>
+        {% if current_lang == 'en' %}
+          <span class="lang-active-check">✓ Active</span>
+        {% endif %}
+      </a>
+
+      <a href="{{ url_for('set_language', code='ne') }}" class="lang-select-card {% if current_lang == 'ne' %}active{% endif %}">
+        <span class="lang-flag">🇳🇵</span>
+        <div class="lang-info">
+          <strong>नेपाली (Nepali)</strong>
+          <span>प्रामाणिक स्थानीय संस्करण</span>
+        </div>
+        {% if current_lang == 'ne' %}
+          <span class="lang-active-check">✓ Active</span>
+        {% endif %}
+      </a>
+    </div>
+  </section>
+</div>
+{% endblock %}

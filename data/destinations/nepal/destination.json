@@ -1,0 +1,10 @@
+{
+  "id": "nepal",
+  "name": "Nepal All-Country Explorer",
+  "name_ne": "नेपाल राष्ट्रिय अनुक्रमणिका",
+  "country": "Nepal",
+  "timezone": "Asia/Kathmandu",
+  "currency": "NPR",
+  "default_language": "en",
+  "description": "The complete all-Nepal expedition archive, spanning high Himalayan peaks, alpine lakes, subtropical jungles, sacred pilgrimage sites, and medieval hill stations across all seven provinces."
+}

@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+
+{% block title %}{{ t('my_tour.title') }}{% endblock %}
+
+{% block content %}
+<div class="my-tour-wrapper container">
+  <!-- Dashboard Hero Header -->
+  <header class="tour-header reveal">
+    <div class="tour-header-info">
+      <div class="tour-header-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
+        <span>{{ t('my_tour.badge') }}</span>
+      </div>
+      <h1 class="tour-title">{{ t('my_tour.welcome', user=current_user) }}</h1>
+      <p class="tour-subtitle">
+        {{ t('my_tour.subtitle') }}
+      </p>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="tour-stats-bar">
+      <div class="tour-stat-pill">
+        <span class="stat-num">{{ saved_places|length }}</span>
+        <span class="stat-name">{{ t('my_tour.saved_sanctuaries') }}</span>
+      </div>
+      <div class="tour-stat-pill">
+        <span class="stat-num">{{ saved_plans|length }}</span>
+        <span class="stat-name">{{ t('my_tour.synthesized_plans') }}</span>
+      </div>
+      <button type="button" class="btn-print-tour" onclick="window.print();" title="Print or save as PDF">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        <span>{{ t('my_tour.print_dossier') }}</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Navigation Anchor Tabs -->
+  <div class="tour-tabs-nav" role="tablist">
+    <a href="#saved-places" class="tour-tab-btn active">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+      <span>{{ t('my_tour.tab_places') }} ({{ saved_places|length }})</span>
+    </a>
+    <a href="#saved-plans" class="tour-tab-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+      <span>{{ t('my_tour.tab_plans') }} ({{ saved_plans|length }})</span>
+    </a>
+  </div>
+
+  <!-- SECTION 1: Saved Destinations Wishlist & Notes -->
+  <section class="tour-section" id="saved-places">
+    <div class="tour-section-head">
+      <h2 class="section-heading">Curated Sanctuaries &amp; Field Notes</h2>
+      <p class="section-sub">Add reminders, best arrival times, and notes to your saved places.</p>
+    </div>
+
+    {% if saved_places %}
+      <div class="saved-places-grid">
+        {% for place in saved_places %}
+          <article class="saved-place-card" style="--card-accent: {{ place.vibe_color }};">
+            <div class="saved-card-media">
+              <a href="{{ url_for('place_detail', place_id=place.id) }}">
+                <img src="{{ place.image }}" alt="{{ place.name }}" class="saved-card-img" loading="lazy">
+              </a>
+              <span class="saved-vibe-pill" style="--pill-color: {{ place.vibe_color }};">
+                <span>{{ place.vibe_tag }}</span>
+              </span>
+            </div>
+
+            <div class="saved-card-body">
+              <div class="saved-card-head">
+                <div>
+                  <h3 class="saved-card-title">
+                    <a href="{{ url_for('place_detail', place_id=place.id) }}">{{ place.name }}</a>
+                  </h3>
+                  <span class="saved-card-loc">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>{{ place.country }}</span>
+                  </span>
+                </div>
+                <form action="{{ url_for('place_save', place_id=place.id) }}" method="POST" class="remove-place-form">
+                  <button type="submit" class="btn-remove-spot" title="Remove from dossier">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </form>
+              </div>
+
+              <div class="saved-quick-tags">
+                <span class="quick-tag">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <span>{{ place.best_hours }}</span>
+                </span>
+                <span class="quick-tag">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                  <span>{{ place.best_season }}</span>
+                </span>
+              </div>
+
+              <!-- Inline Tour Research Note Editor -->
+              <div class="saved-note-section">
+                <form action="{{ url_for('place_note', place_id=place.id) }}" method="POST" class="inline-note-form">
+                  <label for="note-{{ place.id }}" class="note-field-label">Field Notes &amp; Reminders:</label>
+                  <div class="note-input-row">
+                    <input type="text" 
+                           id="note-{{ place.id }}" 
+                           name="note" 
+                           value="{{ place.user_note or '' }}" 
+                           placeholder="e.g. Visit at dawn, take rooftop photos..." 
+                           class="inline-note-input">
+                    <button type="submit" class="btn-dashboard-save-note btn-save-inline-note">Save</button>
+                  </div>
+                </form>
+              </div>
+
+              <div class="saved-card-footer">
+                <a href="{{ url_for('place_detail', place_id=place.id) }}" class="btn-view-dossier">
+                  <span>View Full Monograph</span> &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="empty-dossier-state">
+        <p>No sanctuaries saved yet. Browse the <a href="{{ url_for('gallery') }}">Nepal Gallery</a> or trace the <a href="{{ url_for('home') }}">Expedition Journal</a> to pin places.</p>
+      </div>
+    {% endif %}
+  </section>
+
+  <!-- SECTION 2: Saved Plans -->
+  <section class="tour-section" id="saved-plans">
+    <div class="tour-section-head">
+      <h2 class="section-heading">Synthesized Itinerary Plans</h2>
+      <p class="section-sub">Consultation itineraries generated for your profile.</p>
+    </div>
+
+    {% if saved_plans %}
+      <div class="saved-plans-grid">
+        {% for plan in saved_plans %}
+          <div class="saved-plan-card">
+            <div class="plan-card-head">
+              <span class="plan-date-tag">{{ plan.created_at[:10] if plan.created_at else (plan.created[:10] if plan.created else 'Recent Plan') }}</span>
+              <span class="plan-match-tag">{{ plan.match_percent }}% Affinity</span>
+            </div>
+            <h3 class="plan-title">{{ plan.vibe_name|default(plan.vibe|capitalize) }}</h3>
+            <p class="plan-dest">{{ plan.destination|capitalize }} Valley &bull; {{ plan.days|length if (plan.days is iterable and plan.days is not string) else plan.days }} Days</p>
+            <div class="plan-card-action">
+              <a href="{{ url_for('results', plan_id=plan.id) }}" class="btn-view-plan">
+                <span>Open Itinerary Guide</span> &rarr;
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="empty-dossier-state">
+        <p>You haven't generated any custom travel plans yet. <a href="{{ url_for('planner') }}">Take the Travel Consultation</a> to create your first customized itinerary.</p>
+      </div>
+    {% endif %}
+  </section>
+</div>
+{% endblock %}

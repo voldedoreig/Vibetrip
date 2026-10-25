@@ -1,0 +1,178 @@
+[
+  {
+    "id": "calm_explorer",
+    "name": "Calm Explorer",
+    "tagline": "Slow down, breathe in nature, and find peaceful moments",
+    "description": "You love serene landscapes, quiet walking trails, lush gardens, and unhurried days away from city hustle.",
+    "icon": "",
+    "target": {
+      "energy": 1,
+      "crowd": 1,
+      "culture": 2,
+      "nature": 5,
+      "food": 2,
+      "spiritual": 2,
+      "adventure": 1
+    },
+    "theme": {
+      "primary": "#2D6A4F",
+      "accent": "#52B788",
+      "background": "#F4F9F4",
+      "text": "#1B4332"
+    }
+  },
+  {
+    "id": "festival_spark",
+    "name": "Festival Spark",
+    "tagline": "Feel the pulse of music, crowds, and celebration",
+    "description": "You thrive on joyful street carnivals, vibrant colours, rhythmic drums, ringing temple bells, and unforgettable energy.",
+    "icon": "",
+    "target": {
+      "energy": 5,
+      "crowd": 5,
+      "culture": 3,
+      "nature": 1,
+      "food": 3,
+      "spiritual": 1,
+      "adventure": 2
+    },
+    "theme": {
+      "primary": "#E11D48",
+      "accent": "#F59E0B",
+      "background": "#180828",
+      "text": "#FFF1F2"
+    }
+  },
+  {
+    "id": "adventure_seeker",
+    "name": "Adventure Seeker",
+    "tagline": "High hills, scenic trails, and fresh mountain breezes",
+    "description": "You are drawn to active ridge hikes, valley vistas, forest scrambles, and high-altitude excitement.",
+    "icon": "",
+    "target": {
+      "energy": 4,
+      "crowd": 2,
+      "culture": 1,
+      "nature": 5,
+      "food": 2,
+      "spiritual": 1,
+      "adventure": 5
+    },
+    "theme": {
+      "primary": "#EA580C",
+      "accent": "#0D9488",
+      "background": "#F8FAFC",
+      "text": "#1E293B"
+    }
+  },
+  {
+    "id": "foodie_wanderer",
+    "name": "Foodie Wanderer",
+    "tagline": "Taste authentic recipes, street bites, and aromatic spices",
+    "description": "Steaming buff and veg momos, sweet sel roti, secret courtyard eateries, and cooking workshops guide your journey.",
+    "icon": "",
+    "target": {
+      "energy": 3,
+      "crowd": 3,
+      "culture": 2,
+      "nature": 1,
+      "food": 5,
+      "spiritual": 1,
+      "adventure": 1
+    },
+    "theme": {
+      "primary": "#C2410C",
+      "accent": "#EAB308",
+      "background": "#FEFCE8",
+      "text": "#431407"
+    }
+  },
+  {
+    "id": "spiritual_seeker",
+    "name": "Spiritual Seeker",
+    "tagline": "Ancient stupas, chanting monks, and soul-calming rituals",
+    "description": "You seek peace among butter lamps, spinning brass prayer wheels, sacred riversides, and meditative hilltop shrines.",
+    "icon": "",
+    "target": {
+      "energy": 1,
+      "crowd": 2,
+      "culture": 4,
+      "nature": 3,
+      "food": 1,
+      "spiritual": 5,
+      "adventure": 0
+    },
+    "theme": {
+      "primary": "#7E22CE",
+      "accent": "#A855F7",
+      "background": "#FAF5FF",
+      "text": "#3B0764"
+    }
+  },
+  {
+    "id": "heritage_historian",
+    "name": "Heritage Historian",
+    "tagline": "Intricate woodwork, medieval palace squares, and stone tales",
+    "description": "You love diving into ancient Malla-dynasty courtyards, living stone carvings, timeless pagoda temples, and historic quarters.",
+    "icon": "",
+    "target": {
+      "energy": 2,
+      "crowd": 3,
+      "culture": 5,
+      "nature": 1,
+      "food": 2,
+      "spiritual": 2,
+      "adventure": 1
+    },
+    "theme": {
+      "primary": "#92400E",
+      "accent": "#D97706",
+      "background": "#FFFBEB",
+      "text": "#451A03"
+    }
+  },
+  {
+    "id": "creative_soul",
+    "name": "Creative Soul",
+    "tagline": "Artisan craft workshops, pottery wheels, and vibrant alleys",
+    "description": "You want to watch master artisans paint delicate thangkas, shape clay pots, weave hemp, and sketch secret courtyards.",
+    "icon": "",
+    "target": {
+      "energy": 2,
+      "crowd": 2,
+      "culture": 4,
+      "nature": 2,
+      "food": 2,
+      "spiritual": 2,
+      "adventure": 1
+    },
+    "theme": {
+      "primary": "#6366F1",
+      "accent": "#EC4899",
+      "background": "#FDF2F8",
+      "text": "#312E81"
+    }
+  },
+  {
+    "id": "family_fun",
+    "name": "Family Fun",
+    "tagline": "Gentle pacing, joyful sights, and comfortable shared memories",
+    "description": "Balanced, scenic, and approachable outings with green park strolls, cable car rides, delicious sweet shops, and easy logistics.",
+    "icon": "",
+    "target": {
+      "energy": 3,
+      "crowd": 3,
+      "culture": 2,
+      "nature": 3,
+      "food": 2,
+      "spiritual": 1,
+      "adventure": 2
+    },
+    "theme": {
+      "primary": "#0284C7",
+      "accent": "#F59E0B",
+      "background": "#F0F9FF",
+      "text": "#0C4A6E"
+    }
+  }
+]

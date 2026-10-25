@@ -1,0 +1,129 @@
+<header class="site-header" id="siteHeader">
+  <div class="header-container">
+    <!-- Brand Logo: Hand-drawn Bamboo Motif & Local Title -->
+    <a href="{{ url_for('home') }}" class="brand-logo" aria-label="{{ t('brand') }} Home">
+      <span class="logo-bamboo-mark" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 48 48" fill="none">
+          <path d="M 22 44 C 23 32, 26 20, 30 6" stroke="#2B2A27" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M 20 32 L 27 30" stroke="#2B2A27" stroke-width="2" stroke-linecap="round"/>
+          <path d="M 23 18 L 30 16" stroke="#2B2A27" stroke-width="2" stroke-linecap="round"/>
+          <path d="M 25 31 C 18 29, 10 32, 5 28 C 10 34, 18 34, 25 31 Z" fill="#6F7F5A" stroke="#2B2A27" stroke-width="1"/>
+          <path d="M 27 18 C 34 15, 42 17, 46 12 C 41 19, 33 20, 27 18 Z" fill="#6F7F5A" stroke="#2B2A27" stroke-width="1"/>
+          <circle cx="28" cy="7" r="2" fill="#C8442F"/>
+        </svg>
+      </span>
+      <div class="logo-text-group">
+        <span class="logo-text">{{ t('brand') }}</span>
+        <span class="logo-edition">{{ t('nav.valley_journal') }}</span>
+      </div>
+    </a>
+
+    <!-- Mobile Hamburger Toggle Button -->
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <!-- Main Navigation Menu (5 Primary Links) -->
+    <nav class="primary-nav" id="primaryNav" aria-label="Main Navigation">
+      <ul class="nav-list">
+        <li>
+          <a href="{{ url_for('home') }}" class="nav-link {% if request.endpoint == 'home' %}active{% endif %}">
+            <span>{{ t('nav.home') }}</span>
+            {% if request.endpoint == 'home' %}<span class="nav-active-ink-dot" aria-hidden="true"></span>{% endif %}
+          </a>
+        </li>
+        <li>
+          <a href="{{ url_for('gallery') }}" class="nav-link {% if request.endpoint == 'gallery' %}active{% endif %}">
+            <span>{{ t('nav.gallery') }}</span>
+            {% if request.endpoint == 'gallery' %}<span class="nav-active-ink-dot" aria-hidden="true"></span>{% endif %}
+          </a>
+        </li>
+        <li>
+          <a href="{{ url_for('planner') }}" class="nav-link nav-btn-planner {% if request.endpoint == 'planner' %}active{% endif %}">
+            <span>{{ t('nav.planner') }}</span>
+            {% if request.endpoint == 'planner' %}<span class="nav-active-ink-dot" aria-hidden="true"></span>{% endif %}
+          </a>
+        </li>
+        <li>
+          <a href="{{ url_for('my_tour') }}" class="nav-link nav-btn-tour {% if request.endpoint == 'my_tour' %}active{% endif %}">
+            <span>{{ t('nav.my_tour') }}</span>
+            {% if saved_count and saved_count > 0 %}
+              <span class="nav-saved-badge">{{ saved_count }}</span>
+            {% endif %}
+            {% if request.endpoint == 'my_tour' %}<span class="nav-active-ink-dot" aria-hidden="true"></span>{% endif %}
+          </a>
+        </li>
+        <li>
+          <a href="{{ url_for('about') }}" class="nav-link {% if request.endpoint == 'about' %}active{% endif %}">
+            <span>{{ t('nav.about') }}</span>
+            {% if request.endpoint == 'about' %}<span class="nav-active-ink-dot" aria-hidden="true"></span>{% endif %}
+          </a>
+        </li>
+
+        <!-- Mobile Drawer Secondary Links -->
+        <li class="mobile-only-link">
+          <a href="{{ url_for('settings') }}" class="nav-link {% if request.endpoint == 'settings' %}active{% endif %}">
+            {{ t('nav.settings') }}
+          </a>
+        </li>
+        <li class="mobile-only-link">
+          <a href="{{ url_for('feedback') }}" class="nav-link {% if request.endpoint == 'feedback' %}active{% endif %}">
+            {{ t('nav.feedback') }}
+          </a>
+        </li>
+        <li class="mobile-only-link">
+          <a href="{{ url_for('contact') }}" class="nav-link {% if request.endpoint == 'contact' %}active{% endif %}">
+            {{ t('nav.contact') }}
+          </a>
+        </li>
+      </ul>
+
+      <!-- Grouped Auth & Language Switcher -->
+      <div class="nav-actions">
+        <!-- User Account / Auth Actions -->
+        <div class="user-auth-actions">
+          {% if current_user %}
+            <a href="{{ url_for('my_tour') }}" class="user-profile-pill" title="Tour notes for {{ current_user }}">
+              <span class="user-avatar-icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </span>
+              <span class="user-name-text">{{ current_user }}</span>
+            </a>
+            <a href="{{ url_for('logout') }}" class="nav-auth-link btn-logout" title="{{ t('nav.logout') }}">
+              {{ t('nav.logout') }}
+            </a>
+          {% else %}
+            <a href="{{ url_for('login') }}" class="nav-auth-link btn-login {% if request.endpoint == 'login' %}active{% endif %}">
+              {{ t('nav.login') }}
+            </a>
+            <a href="{{ url_for('register') }}" class="nav-auth-link btn-register {% if request.endpoint == 'register' %}active{% endif %}">
+              {{ t('nav.register') }}
+            </a>
+          {% endif %}
+        </div>
+
+        <!-- Segmented Language Switcher (EN | NE) -->
+        <div class="lang-switch-segmented" role="group" aria-label="Language selector">
+          <a href="{{ url_for('set_language', code='en') }}" 
+             class="lang-pill-btn {% if current_lang == 'en' %}active{% endif %}" 
+             lang="en"
+             aria-pressed="{% if current_lang == 'en' %}true{% else %}false{% endif %}">
+            EN
+          </a>
+          <span class="lang-divider" aria-hidden="true">/</span>
+          <a href="{{ url_for('set_language', code='ne') }}" 
+             class="lang-pill-btn {% if current_lang == 'ne' %}active{% endif %}" 
+             lang="ne"
+             aria-pressed="{% if current_lang == 'ne' %}true{% else %}false{% endif %}">
+            NE
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>

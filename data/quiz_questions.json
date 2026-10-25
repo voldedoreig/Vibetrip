@@ -1,0 +1,408 @@
+[
+  {
+    "id": "q1_pace",
+    "number": 1,
+    "text": "What pace do you prefer?",
+    "help_text": "Choose how you like to explore new places.",
+    "type": "single",
+    "required": true,
+    "options": [
+      {
+        "value": "slow",
+        "label": "Slow & Unhurried",
+        "description": "Linger at each spot, take long tea breaks, soak in the surroundings.",
+        "traits": {
+          "energy": 1
+        },
+        "label_ne": "मन्द र फुर्सदिलो (Slow & Unhurried)",
+        "description_ne": "प्रत्येक ठाउँमा लामो समय बिताउने, चिया पिउँदै आराम गर्ने र वातावरणको आनन्द लिने।"
+      },
+      {
+        "value": "balanced",
+        "label": "Balanced & Steady",
+        "description": "A comfortable mix of sightseeing and relaxed downtime.",
+        "traits": {
+          "energy": 3
+        },
+        "label_ne": "सन्तुलित र सहज (Balanced & Steady)",
+        "description_ne": "घुमघाम र विश्रामको राम्रो सन्तुलन, हतार नगरी प्रमुख आकर्षणहरू घुम्ने।"
+      },
+      {
+        "value": "packed",
+        "label": "Packed & Action-Filled",
+        "description": "Discover as many incredible spots as possible from sunrise to dusk.",
+        "traits": {
+          "energy": 5
+        },
+        "label_ne": "व्यस्त र गतिविधिले भरिपूर्ण (Packed & Action-Filled)",
+        "description_ne": "सूर्योदयदेखि साँझसम्म धेरै भन्दा धेरै आकर्षणहरू अवलोकन गर्ने।"
+      }
+    ],
+    "text_ne": "तपाईं कस्तो गतिमा घुम्न रुचाउनुहुन्छ?",
+    "help_text_ne": "नयाँ ठाउँहरू घुम्दा आफ्नो मनपर्ने गति छान्नुहोस्।"
+  },
+  {
+    "id": "q2_energy",
+    "number": 2,
+    "text": "What is your energy level on a trip?",
+    "help_text": "Tell us how actively you like to spend your days.",
+    "type": "single",
+    "required": true,
+    "options": [
+      {
+        "value": "low",
+        "label": "Low & Gentle",
+        "description": "Peaceful walks, relaxing viewpoints, and calm exploration.",
+        "traits": {
+          "energy": 1,
+          "spiritual": 3
+        },
+        "label_ne": "शान्त र आरामदायी (Low & Gentle)",
+        "description_ne": "शान्त पदयात्रा, आरामदायी दृश्यावलोकन र शान्त वातावरणमा घुमघाम।"
+      },
+      {
+        "value": "medium",
+        "label": "Moderate & Curious",
+        "description": "Walking through historic alleys, visiting heritage monuments.",
+        "traits": {
+          "energy": 3,
+          "culture": 3
+        },
+        "label_ne": "मध्यम र जिज्ञासु (Moderate & Curious)",
+        "description_ne": "ऐतिहासिक गल्लीहरूमा हिँड्ने, सम्पदा स्थलहरू र मन्दिरहरूको अवलोकन गर्ने।"
+      },
+      {
+        "value": "high",
+        "label": "High & Vibrant",
+        "description": "Upbeat adventures, hill climbs, and energetic street crowds.",
+        "traits": {
+          "energy": 5,
+          "crowd": 4,
+          "adventure": 3
+        },
+        "label_ne": "उच्च र जोसिलो (High & Vibrant)",
+        "description_ne": "साहसिक यात्रा, पहाडी उकालो हिँडाइ र जीवन्त सडक उत्सवहरू।"
+      }
+    ],
+    "text_ne": "यात्रामा तपाईंको ऊर्जा स्तर (Energy Level) कस्तो रहन्छ?",
+    "help_text_ne": "तपाईं आफ्नो दिन कत्तिको सक्रिय रूपमा बिताउन चाहनुहुन्छ, हामीलाई बताउनुहोस्।"
+  },
+  {
+    "id": "q3_slot",
+    "number": 3,
+    "text": "Which time of day do you enjoy exploring most?",
+    "help_text": "We will match places with the right visiting hours for you.",
+    "type": "single",
+    "required": true,
+    "options": [
+      {
+        "value": "morning",
+        "label": "Golden Morning",
+        "description": "Crisp Himalayan breezes, morning temple bells, and sunrise viewpoints.",
+        "preferred_slot": "morning",
+        "label_ne": "सुनौलो बिहानी (Golden Morning)",
+        "description_ne": "शीतल हिमालको हावा, बिहानी मन्दिरका घण्टीहरू र सूर्योदयका दृश्यहरू।"
+      },
+      {
+        "value": "afternoon",
+        "label": "Bright Afternoon",
+        "description": "Vibrant bazaars, courtyard museums, and sunny cafes.",
+        "preferred_slot": "afternoon",
+        "label_ne": "उज्यालो दिउँसो (Bright Afternoon)",
+        "description_ne": "जीवन्त बजारहरू, चोकका सङ्ग्रहालयहरू र घमाइला क्याफेहरू।"
+      },
+      {
+        "value": "evening",
+        "label": "Enchanting Night",
+        "description": "River aarti lanterns, live music in Thamel, and illuminated stupas.",
+        "preferred_slot": "evening",
+        "label_ne": "मनमोहक साँझ (Enchanting Night)",
+        "description_ne": "नदी किनारको महाआरती, सङ्गीत र बत्तीले सजिएका स्तूपहरू।"
+      }
+    ],
+    "text_ne": "दिनको कुन समयमा घुम्न तपाईंलाई सबैभन्दा बढी मनपर्छ?",
+    "help_text_ne": "हामी तपाईंको रोजाइ अनुसार उपयुक्त भ्रमण समय मिलाउनेछौँ।"
+  },
+  {
+    "id": "q4_interests",
+    "number": 4,
+    "text": "What interests you most?",
+    "help_text": "Pick the theme that makes your heart beat faster.",
+    "type": "single",
+    "required": true,
+    "options": [
+      {
+        "value": "nature",
+        "label": "Nature & Panoramic Viewpoints",
+        "description": "Lush pine forests, botanical sanctuaries, and Himalayan horizons.",
+        "traits": {
+          "nature": 5
+        },
+        "label_ne": "प्रकृति र मनोरम दृश्यहरू (Nature & Views)",
+        "description_ne": "हरियाली सल्लाका वन, वनस्पति उद्यान र हिमाली क्षितिज।"
+      },
+      {
+        "value": "culture",
+        "label": "Culture & Ancient Heritage",
+        "description": "Ancient shrines, pagoda architecture, and sacred spiritual stories.",
+        "traits": {
+          "culture": 5,
+          "spiritual": 2
+        },
+        "label_ne": "संस्कृति र प्राचीन सम्पदा (Culture & Heritage)",
+        "description_ne": "प्राचीन मठमन्दिर, प्यागोडा शैलीका दरबार र पवित्र धार्मिक इतिहास।"
+      },
+      {
+        "value": "food",
+        "label": "Food & Street Flavours",
+        "description": "Traditional Newari feasts, street momos, spices, and cooking classes.",
+        "traits": {
+          "food": 5
+        },
+        "label_ne": "परिकार र स्थानीय स्वाद (Food & Flavours)",
+        "description_ne": "परम्परागत नेवारी समयबजी, स्थानीय मःम, मसला र रैथाने स्वाद।"
+      },
+      {
+        "value": "spiritual_sacred",
+        "label": "Sacred Spaces & Spiritual Contemplation",
+        "description": "Ancient stupas, butter lamp rituals, meditative courtyards, and sacred river ghats.",
+        "traits": {
+          "spiritual": 5,
+          "culture": 3
+        },
+        "label_ne": "पवित्र स्थल र आत्मिक ध्यान (Spiritual & Sacred)",
+        "description_ne": "प्राचीन बौद्ध स्तूप, दियो बाल्ने परम्परा, ध्यान स्थल र पवित्र घाटहरू।"
+      },
+      {
+        "value": "music_festivals",
+        "label": "Music & Cultural Festivals",
+        "description": "Thumping folk drums, masked dances, street celebrations, and concerts.",
+        "traits": {
+          "crowd": 4,
+          "culture": 3
+        },
+        "label_ne": "सङ्गीत र सांस्कृतिक जात्रा (Music & Festivals)",
+        "description_ne": "परम्परागत बाजागाजा, मुखुण्डो नाच, सडक जात्रा र उत्सवहरू।"
+      },
+      {
+        "value": "adventure",
+        "label": "Outdoor Adventure & Hiking",
+        "description": "Steep ridge hikes, panoramic cable cars, and forest tracks.",
+        "traits": {
+          "adventure": 5,
+          "nature": 3
+        },
+        "label_ne": "बाह्य साहसिक यात्रा र पदयात्रा (Adventure & Hiking)",
+        "description_ne": "डाँडाकाँडाको हाइकिङ, केवलकार यात्रा र प्राकृतिक पदमार्ग।"
+      }
+    ],
+    "text_ne": "तपाईंलाई कुन कुरामा सबैभन्दा बढी रुचि छ?",
+    "help_text_ne": "आफ्नो मनपर्ने मुख्य विषयवस्तु छान्नुहोस्।"
+  },
+  {
+    "id": "q5_crowds",
+    "number": 5,
+    "text": "How do you feel about crowds?",
+    "help_text": "How much buzz do you like around you?",
+    "type": "single",
+    "required": true,
+    "options": [
+      {
+        "value": "love",
+        "label": "Love Them!",
+        "description": "Bustling markets, lively festivals, and vibrant human energy.",
+        "traits": {
+          "crowd": 5
+        },
+        "label_ne": "भिडभाड र चहलपहल धेरै मनपर्छ (Love Them!)",
+        "description_ne": "व्यस्त बजारहरू, जात्रापर्वको रौनक र मानिसहरूको जीवन्त ऊर्जा।"
+      },
+      {
+        "value": "dont_mind",
+        "label": "Don’t Mind",
+        "description": "Comfortable with popular attractions and occasional quiet corners.",
+        "traits": {
+          "crowd": 3
+        },
+        "label_ne": "खासै फरक पर्दैन (Don't Mind)",
+        "description_ne": "प्रसिद्ध पर्यटकीय स्थलहरू र कहिलेकाहीँ शान्त ठाउँ दुवैमा सहज।"
+      },
+      {
+        "value": "quiet",
+        "label": "Prefer Quiet & Secluded",
+        "description": "Peaceful sanctuaries, quiet trails, and tranquil temple corners.",
+        "traits": {
+          "crowd": 1
+        },
+        "label_ne": "शान्त र एकान्त मनपर्छ (Prefer Quiet)",
+        "description_ne": "एकान्त मन्दिरका चोक, शान्त पदमार्ग र कोलाहलरहित वातावरण।"
+      }
+    ],
+    "text_ne": "भिडभाडबारे तपाईंको सोच कस्तो छ?",
+    "help_text_ne": "आफ्नो वरिपरि कत्तिको चहलपहल मनपराउनुहुन्छ?"
+  },
+  {
+    "id": "q6_budget",
+    "number": 6,
+    "text": "What is your budget level?",
+    "help_text": "Select your comfort level for activity and entry costs.",
+    "type": "single",
+    "required": true,
+    "options": [
+      {
+        "value": "low",
+        "label": "Budget Friendly",
+        "description": "Free viewpoints, walking tours, public temples, and pocket-friendly bites.",
+        "budget_level": 1,
+        "label_ne": "किफायती बजेट (Budget Friendly)",
+        "description_ne": "निःशुल्क दृश्यावलोकन, पैदल यात्रा, खुला मन्दिरहरू र सामान्य खाजा।"
+      },
+      {
+        "value": "medium",
+        "label": "Balanced & Moderate",
+        "description": "Standard museum passes, guided workshops, and cosy cafes.",
+        "budget_level": 2,
+        "label_ne": "सन्तुलित र मध्यम (Balanced & Moderate)",
+        "description_ne": "सङ्ग्रहालय टिकट, तालिम/कार्यशाला र राम्रा क्याफेहरू।"
+      },
+      {
+        "value": "high",
+        "label": "Premium Experience",
+        "description": "Cable car rides, private cooking masterclasses, and specialty experiences.",
+        "budget_level": 3,
+        "label_ne": "विशिष्ट अनुभव (Premium Experience)",
+        "description_ne": "केवलकार भ्रमण, निजी कुकिङ कक्षा र विशेष अनुभवहरू।"
+      }
+    ],
+    "text_ne": "तपाईंको बजेटको स्तर कस्तो छ?",
+    "help_text_ne": "गतिविधि र प्रवेश शुल्कका लागि आफ्नो सहजता स्तर छान्नुहोस्।"
+  },
+  {
+    "id": "q7_timing",
+    "number": 7,
+    "text": "When are you planning to visit?",
+    "help_text": "Choose a season, month window, or enter your exact trip dates below to see the best timing.",
+    "type": "single",
+    "required": true,
+    "options": [
+      {
+        "value": "autumn",
+        "label": "Autumn (Sep – Nov) • Peak Season",
+        "description": "Crystal blue mountain skies, festive season (Dashain, Tihar, Indra Jatra), perfect trekking weather.",
+        "season": "autumn",
+        "months": [
+          9,
+          10,
+          11
+        ],
+        "label_ne": "शरद ऋतु (असोज – मङ्सिर) • मुख्य पर्यटकीय मौसम",
+        "description_ne": "सफा नीलो आकाश, मुख्य चाडपर्वहरू (दशैँ, तिहार, इन्द्रजात्रा) र हिमाल हेर्ने उत्कृष्ट समय।"
+      },
+      {
+        "value": "spring",
+        "label": "Spring (Mar – May) • Blossom Season",
+        "description": "Blooming rhododendrons, warm sunny afternoons, vibrant Holi festival and Bisket Jatra.",
+        "season": "spring",
+        "months": [
+          3,
+          4,
+          5
+        ],
+        "label_ne": "वसन्त ऋतु (फागुन – वैशाख) • फूल फुल्ने मौसम",
+        "description_ne": "लालीगुराँस फुल्ने समय, न्यानो घमाइलो दिन, होली र बिस्केट जात्राको रौनकता।"
+      },
+      {
+        "value": "winter",
+        "label": "Winter (Dec – Feb) • Crisp & Peaceful",
+        "description": "Chilly mornings, warm midday sun, clear snow mountain views, and fewer tourist crowds.",
+        "season": "winter",
+        "months": [
+          12,
+          1,
+          2
+        ],
+        "label_ne": "हिउँद ऋतु (मंसिर – माघ) • शीतल र शान्त",
+        "description_ne": "बिहान चिसो र दिउँसो न्यानो घाम, हिउँले ढाकिएका हिमालका स्पष्ट दृश्य र कम भिडभाड।"
+      },
+      {
+        "value": "monsoon",
+        "label": "Summer / Monsoon (Jun – Aug) • Lush & Green",
+        "description": "Vibrant emerald green terraces, fresh rain showers, uncrowded heritage squares, budget deals.",
+        "season": "monsoon",
+        "months": [
+          6,
+          7,
+          8
+        ],
+        "label_ne": "वर्षा / ग्रीष्म (जेठ – साउन) • हरियाली मौसम",
+        "description_ne": "हरियाली खेतका कान्ला, ताजा वर्षा, सम्पदा क्षेत्रमा कम भिड र सहुलियत दर।"
+      },
+      {
+        "value": "flexible",
+        "label": "Flexible / Anytime of Year",
+        "description": "Show me the best spots and tell me the best time of year to visit each one.",
+        "season": "flexible",
+        "months": [],
+        "label_ne": "लचिलो / जुनसुकै समय (Flexible / Anytime)",
+        "description_ne": "उत्कृष्ट ठाउँहरू देखाउनुहोस् र कुन ठाउँ कुन बेला घुम्न राम्रो हुन्छ सुझाव दिनुहोस्।"
+      }
+    ],
+    "text_ne": "तपाईं कुन मौसम वा महिनामा भ्रमण गर्ने योजनामा हुनुहुन्छ?",
+    "help_text_ne": "ऋतु छान्नुहोस् वा आफ्नो भ्रमण तालिका हेर्न तल मिति प्रविष्ट गर्नुहोस्।"
+  },
+  {
+    "id": "q8_companions",
+    "number": 8,
+    "text": "Who are you travelling with?",
+    "help_text": "Let us know your travel crew so we recommend spots that suit everyone.",
+    "type": "single",
+    "required": true,
+    "options": [
+      {
+        "value": "alone",
+        "label": "Solo Explorer",
+        "description": "Just me, my backpack, and an appetite for discovery.",
+        "traits": {
+          "crowd": 2
+        },
+        "label_ne": "एक्लै यात्री (Solo Explorer)",
+        "description_ne": "म, मेरो झोला र नयाँ ठाउँ घुम्ने चाहना मात्र।"
+      },
+      {
+        "value": "friends",
+        "label": "Fun Friends",
+        "description": "High energy laughs, street snacks, and lively spots.",
+        "traits": {
+          "crowd": 4
+        },
+        "label_ne": "साथीहरूसँग (Fun Friends)",
+        "description_ne": "रमाइलो हाँसो, सडकका परिकार र जोसिला ठाउँहरूको खोजी।"
+      },
+      {
+        "value": "family",
+        "label": "Loving Family",
+        "description": "Comfortable pace, scenic outings, and enjoyable memories for all ages.",
+        "traits": {
+          "energy": 2,
+          "crowd": 2
+        },
+        "label_ne": "परिवारसँग (Loving Family)",
+        "description_ne": "सहज गति, मनोरम वातावरण र सबै उमेरका लागि उपयुक्त सम्झनाहरू।"
+      },
+      {
+        "value": "partner",
+        "label": "Couple / Partner",
+        "description": "Romantic viewpoints, serene stupas, and peaceful sunset corners.",
+        "traits": {
+          "spiritual": 3,
+          "nature": 3,
+          "crowd": 1
+        },
+        "label_ne": "जोडी / जीवनसाथी (Couple / Partner)",
+        "description_ne": "रोमान्टिक दृश्यहरू, शान्त स्तूप र मनमोहक सूर्यास्तका कुनाहरू।"
+      }
+    ],
+    "text_ne": "तपाईं कोसँग यात्रा गर्दै हुनुहुन्छ?",
+    "help_text_ne": "आफ्नो यात्रा टोलीबारे जानकारी दिनुहोस् ताकि सबैलाई मिल्ने ठाउँ सुझाव गर्न सकियोस्।"
+  }
+]
